@@ -249,10 +249,13 @@ string& operator=(string&& s)
 ```
 
 #### 2.1.2.2 std::move()
+```
+static_cast<remove_reference<decltype(arg)>::type&&>(arg)
+```
 -   std::move作用主要可以将一个**左值转换成右值引用**，从而可以调用C++11右值引用的拷贝构造函数
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的，如下
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODUyNTQ1ODgsMTEzMzUwODczMiwtMT
+eyJoaXN0b3J5IjpbLTE5ODA0NTg0NzAsMTEzMzUwODczMiwtMT
 k2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgy
 NjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
