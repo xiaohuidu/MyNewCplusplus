@@ -1,5 +1,3 @@
-[<< Back](https://github.com/xiaohuidu/MyNewCplusplus/blob/ad22d52aeb2e00ed16d4ae5b8007694ffd34d317/C++11%E6%96%B0%E7%89%B9%E6%80%A7.md)
-
 #### 2.1 std::move()
 xxx
 #### 2.1.1 在学习std::move 之前， 要先了解**左值**和**右值**
@@ -224,6 +222,6 @@ string& operator=(string&& s)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOT
-U3ODM0OV19
+eyJoaXN0b3J5IjpbLTM1OTM3NzkyMywtNDQyODgyNjgzLDQzMT
+AwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
