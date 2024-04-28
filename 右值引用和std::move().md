@@ -143,7 +143,7 @@ string operator+(const string& s, char ch)
 于是，对于**第二种情形**，左值引用也无能为力，只能传值返回
 
 **右值引用的使用场景和实际意义**:  为了解决上述传值返回的拷贝问题，C++11标准就增加了**右值引用** 和 **移动语义**。
-#### 2.1.2 xxx
+#### 2.1.2 std:move()
 #### 2.1.2.1 移动语义
 将一个对象中的资源移动到另一个对象（资源控制权的转移）
 1)  **移动构造函数**: 转移参数右值的资源来构造自己
@@ -221,8 +221,11 @@ string& operator=(string&& s)
 　　return *this;
 }
 ```
+
+#### 2.1.2.1 移动语义
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzMxMDg1NCwzNTU3MTI1NjYsLTM1OT
+eyJoaXN0b3J5IjpbMTI3NjA1MzM4NCwzNTU3MTI1NjYsLTM1OT
 M3NzkyMywtNDQyODgyNjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5
 XX0=
 -->
