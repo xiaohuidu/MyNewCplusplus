@@ -320,12 +320,12 @@ std::move的功能是：
 
 你对这些特点越熟悉，你就越会发现，你的初印象只不过是冰山一角。移动语义、完美转发和右值引用的世界比它所呈现的更加微妙。举个例子，**std::move并不移动任何东西，完美转发也并不完美**。移动操作并不永远比复制操作更廉价；即便如此，它也并不总是像你期望的那么廉价。而且，它也并不总是被调用，即使在当移动操作可用的时候。构造“`type&&`”也并非总是代表一个右值引用。
 
-无论你挖掘这些特性有多深，它们看起来总是还有更多隐藏起来的部分。幸运的是，它们的深度总是有限的。本章将会带你到最基础的部分。一旦到达，C++11的这部分特性将会具有非常大的意义。比如，你会掌握`std::move`和`std::forward`的惯用法。你能够适应“`type&&`”的歧义性质。你会理解移动操作的令人惊奇的不同表现的背后真相。这些片段都会豁然开朗。在这一点上，你会重新回到一开始的状态，因为移动语义、完美转发和右值引用都会又一次显得直截了当。但是这一次，它们不再使人困惑。
+无论你挖掘这些特性有多深，它们看起来总是还有更多隐藏起来的部分。幸运的是，它们的深度总是有限的。这部分将会带你到最基础的部分。一旦到达，C++11的这部分特性将会具有非常大的意义。比如，你会掌握`std::move`和`std::forward`的惯用法。你能够适应“`type&&`”的歧义性质。你会理解移动操作的令人惊奇的不同表现的背后真相。这些片段都会豁然开朗。在这一点上，你会重新回到一开始的状态，因为移动语义、完美转发和右值引用都会又一次显得直截了当。但是这一次，它们不再使人困惑。
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODg1Mzc4MzEsLTI5NjMwMDMxNCwxMz
-YyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODczMiwtMTk2MTY3
-MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLD
-QzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbMTc5NDk1MzkzNiwtMjk2MzAwMzE0LDEzNj
+I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
+MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
+MxMDAwMjg1LC03MDk1NzgzNDldfQ==
 -->
