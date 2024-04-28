@@ -313,7 +313,9 @@ std::move的功能是：
 
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
-#### 2.1.3   完美转发(forwarding)
+#### 2.1.3   转发(forwarding)
+
+
 使**接收任意数量实参的函数模板成为可能**，它可以将实参转发到其他的函数，使目标函数接收到的实参与被传递给转发函数的实参保持一致。    
 
 **右值引用**是连接这移动语义和完美转发的胶合剂。它是使移动语义和完美转发变得可能的基础语言机制。
@@ -329,5 +331,5 @@ std::move的功能是：
 形参`w`是一个**左值**，即使它的类型是一个rvalue-reference-to-`Widget`（在函数里可以取 w的地址）。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ1NDAxOTE0XX0=
+eyJoaXN0b3J5IjpbMjkxMDA0MTIwLDY0NTQwMTkxNF19
 -->
