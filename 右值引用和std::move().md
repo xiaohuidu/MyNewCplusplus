@@ -253,21 +253,24 @@ string& operator=(string&& s)
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的。
 
 在分析std::move()之前， 首先看remove_reference() 的源码:
+`remove_reference`的作用是去除`T`中的引用部分，只获取其中的类型部分。无论`T`是左值还是右值，最后只获取它的类型部分。
 ```c
-template<typename _Tp>struct remove_reference
-{ typedef _Tp   type; };
+template<typename _Tp> struct remove_reference
+{ 
+	typedef _Tp   type; 
+};
  
 // 特化版本
-template<typename _Tp>
-struct remove_reference<_Tp&>
-{ typedef _Tp   type; };
+template<typename _Tp> struct remove_reference<_Tp&>
+{ 
+	typedef _Tp   type; 
+};
  
-template<typename _Tp>
-struct remove_reference<_Tp&&>
+template<typename _Tp>struct remove_reference<_Tp&&>
 { typedef _Tp   type; };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjM4NTU2ODgsMTEzMzUwODczMiwtMT
+eyJoaXN0b3J5IjpbLTE2OTcwNTM4NDcsMTEzMzUwODczMiwtMT
 k2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgy
 NjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
