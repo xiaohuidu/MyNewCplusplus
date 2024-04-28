@@ -326,11 +326,11 @@ std::move的功能是：
 
 `void f(Widget&& w);` 
 
-形参`w`是一个左值，即使它的类型是一个rvalue-reference-to-`Widget`。
+形参`w`是一个**左值**，即使它的类型是一个rvalue-reference-to-`Widget`。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTA2NTUzNDYsLTI5NjMwMDMxNCwxMz
-YyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODczMiwtMTk2MTY3
-MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLD
-QzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbLTIzOTY2ODM0LC0yOTYzMDAzMTQsMTM2Mj
+c4OTMwOCwtNTQyMTk5NTY5LDExMzM1MDg3MzIsLTE5NjE2NzEz
+NDIsMzU1NzEyNTY2LC0zNTkzNzc5MjMsLTQ0Mjg4MjY4Myw0Mz
+EwMDAyODUsLTcwOTU3ODM0OV19
 -->
