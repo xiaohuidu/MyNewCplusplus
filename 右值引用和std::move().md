@@ -322,10 +322,15 @@ std::move的功能是：
 
 无论你挖掘这些特性有多深，它们看起来总是还有更多隐藏起来的部分。幸运的是，它们的深度总是有限的。这部分将会带你到最基础的部分。一旦到达，C++11的这部分特性将会具有非常大的意义。比如，你会掌握`std::move`和`std::forward`的惯用法。你能够适应“`type&&`”的歧义性质。你会理解移动操作的令人惊奇的不同表现的背后真相。这些片段都会豁然开朗。在这一点上，你会重新回到一开始的状态，因为移动语义、完美转发和右值引用都会又一次显得直截了当。但是这一次，它们不再使人困惑。
 
+在本小节中，非常重要的一点是要牢记形参永远是**左值**，即使它的类型是一个右值引用。比如，假设
+
+`void f(Widget&& w);` 
+
+形参`w`是一个左值，即使它的类型是一个rvalue-reference-to-`Widget`。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5NDk1MzkzNiwtMjk2MzAwMzE0LDEzNj
-I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
-MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
-MxMDAwMjg1LC03MDk1NzgzNDldfQ==
+eyJoaXN0b3J5IjpbLTEzOTA2NTUzNDYsLTI5NjMwMDMxNCwxMz
+YyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODczMiwtMTk2MTY3
+MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLD
+QzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
