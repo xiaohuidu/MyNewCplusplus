@@ -266,11 +266,13 @@ template<typename _Tp> struct remove_reference<_Tp&>
 	typedef _Tp   type; 
 };
  
-template<typename _Tp>struct remove_reference<_Tp&&>
-{ typedef _Tp   type; };
+template<typename _Tp> struct remove_reference<_Tp&&>
+{ 
+	typedef _Tp   type; 
+};
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTcwNTM4NDcsMTEzMzUwODczMiwtMT
-k2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgy
-NjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOT
+YxNjcxMzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2
+ODMsNDMxMDAwMjg1LC03MDk1NzgzNDldfQ==
 -->
