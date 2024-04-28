@@ -314,12 +314,7 @@ std::move的功能是：
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 #### 2.1.3   完美转发(forwarding)
-当你第一次了解到移动语义（_move semantics_）和完美转发（_perfect forwarding_）的时候，它们看起来非常直观：
-
--   **移动语义**使编译器有可能用廉价的移动操作来代替昂贵的拷贝操作。正如拷贝构造函数和拷贝赋值操作符给了你控制拷贝语义的权力，移动构造函数和移动赋值操作符也给了你控制移动语义的权力。移动语义也允许创建只可移动（_move-only_）的类型，例如`std::unique_ptr`，`std::future`和`std::thread`。
-    
--   **完美转发**使接收任意数量实参的函数模板成为可能，它可以将实参转发到其他的函数，使目标函数接收到的实参与被传递给转发函数的实参保持一致。
-    
+使**接收任意数量实参的函数模板成为可能**，它可以将实参转发到其他的函数，使目标函数接收到的实参与被传递给转发函数的实参保持一致。    
 
 **右值引用**是连接这两个截然不同的概念的胶合剂。它是使移动语义和完美转发变得可能的基础语言机制。
 
@@ -329,8 +324,8 @@ std::move的功能是：
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NTczMDEyLC0yOTYzMDAzMTQsMTM2Mj
-c4OTMwOCwtNTQyMTk5NTY5LDExMzM1MDg3MzIsLTE5NjE2NzEz
-NDIsMzU1NzEyNTY2LC0zNTkzNzc5MjMsLTQ0Mjg4MjY4Myw0Mz
-EwMDAyODUsLTcwOTU3ODM0OV19
+eyJoaXN0b3J5IjpbMTY4NTUyODUyNSwtMjk2MzAwMzE0LDEzNj
+I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
+MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
+MxMDAwMjg1LC03MDk1NzgzNDldfQ==
 -->
