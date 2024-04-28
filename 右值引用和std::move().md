@@ -252,7 +252,7 @@ string& operator=(string&& s)
 -   std::move作用主要可以将一个**左值转换成右值引用**，从而可以调用C++11右值引用的拷贝构造函数
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的。
 
-在分析std::move()之前， 首先看remove_reference() 的源码:
+在分析std::move()之前， 首先看remove_reference 的源码:
 `remove_reference`的作用是去除`T`中的引用部分，只获取其中的类型部分。无论`T`是左值还是右值，最后只获取它的类型部分。
 ```c
 template<typename _Tp> struct remove_reference
@@ -287,7 +287,7 @@ std::move的功能是：
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3ODMzNzAwNSwtNTQyMTk5NTY5LDExMz
+eyJoaXN0b3J5IjpbMTc1MTEzMzc3NCwtNTQyMTk5NTY5LDExMz
 M1MDg3MzIsLTE5NjE2NzEzNDIsMzU1NzEyNTY2LC0zNTkzNzc5
 MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
 -->
