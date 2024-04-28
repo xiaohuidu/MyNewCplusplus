@@ -268,7 +268,8 @@ int main () {
   myvector.push_back (std::move(bar));         // moves
 
   std::cout << "myvector contains:";
-  for (std::string& x:myvector) std::cout << ' ' << x;
+  for (std::string& x:myvector) 
+	  std::cout << ' ' << x;
   std::cout << '\n';
 
   return 0;
@@ -310,7 +311,7 @@ std::move的功能是：
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2MjY4MzM0LC01NDIxOTk1NjksMTEzMz
-UwODczMiwtMTk2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3Nzky
-MywtNDQyODgyNjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbMTM2Mjc4OTMwOCwtNTQyMTk5NTY5LDExMz
+M1MDg3MzIsLTE5NjE2NzEzNDIsMzU1NzEyNTY2LC0zNTkzNzc5
+MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
 -->
