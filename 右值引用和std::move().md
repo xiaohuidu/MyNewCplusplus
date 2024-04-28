@@ -143,7 +143,7 @@ string operator+(const string& s, char ch)
 于是，对于**第二种情形**，左值引用也无能为力，只能传值返回
 
 **右值引用的使用场景和实际意义**:  为了解决上述传值返回的拷贝问题，C++11标准就增加了**右值引用** 和 **移动语义**。
-
+-  **返回函数的局部变量**
 ```c
 QList<Pin*> getModelPins() const
 {
@@ -248,7 +248,7 @@ string& operator=(string&& s)
 #### 2.1.2.1 移动语义
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDM3MDgzNjAsMzU1NzEyNTY2LC0zNT
+eyJoaXN0b3J5IjpbLTE0OTM0NDA1NzcsMzU1NzEyNTY2LC0zNT
 kzNzc5MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0
 OV19
 -->
