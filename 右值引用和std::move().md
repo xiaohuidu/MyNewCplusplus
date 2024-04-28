@@ -168,8 +168,8 @@ QList<Pin*> getInstModelPins(std::string instId) const
 #### 2.1.2 std:move()
 ```
 -  **C++11标准的STL 容器接口**
-
 除了上面的使用场景之外，C++11标准的STL 容器的相关接口函数也增加了右值引用版本
+![enter image description here](https://github.com/xiaohuidu/MyNewCplusplus/blob/master/images/1561260-20230201151655274-574842866.png)
 #### 2.1.2.1 移动语义
 将一个对象中的资源移动到另一个对象（资源控制权的转移）
 1)  **移动构造函数**: 转移参数右值的资源来构造自己
@@ -251,7 +251,7 @@ string& operator=(string&& s)
 #### 2.1.2.1 移动语义
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjE2NzEzNDIsMzU1NzEyNTY2LC0zNT
-kzNzc5MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0
-OV19
+eyJoaXN0b3J5IjpbMTEzMzUwODczMiwtMTk2MTY3MTM0MiwzNT
+U3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLDQzMTAwMDI4
+NSwtNzA5NTc4MzQ5XX0=
 -->
