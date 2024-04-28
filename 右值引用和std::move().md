@@ -1,5 +1,5 @@
+<< Back
 #### 2.1 std::move()
-xxx
 #### 2.1.1 在学习std::move 之前， 要先了解**左值**和**右值**
 左值和右值的区分: <u>可以取地址则为左值， 不可取地址则为右值。</u>
 - **左值**: 是表达式结束后依然存在的 <u>持久对象 </u>(代表一个在内存中占有确定位置的对象),  <u>可以取地址</u>，具名变量或对象。
@@ -222,6 +222,6 @@ string& operator=(string&& s)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1OTM3NzkyMywtNDQyODgyNjgzLDQzMT
-AwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbLTE2NzA3Mjc0LC0zNTkzNzc5MjMsLTQ0Mj
+g4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
 -->
