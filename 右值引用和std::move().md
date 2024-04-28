@@ -1,4 +1,4 @@
-<< Back
+[<< Back](https://github.com/xiaohuidu/MyNewCplusplus/blob/33a6887eee7d5cd54a6058e350108d3ab66061c8/C++11%E6%96%B0%E7%89%B9%E6%80%A7.md)
 #### 2.1 std::move()
 #### 2.1.1 在学习std::move 之前， 要先了解**左值**和**右值**
 左值和右值的区分: <u>可以取地址则为左值， 不可取地址则为右值。</u>
@@ -222,6 +222,6 @@ string& operator=(string&& s)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzA3Mjc0LC0zNTkzNzc5MjMsLTQ0Mj
+eyJoaXN0b3J5IjpbMzU1NzEyNTY2LC0zNTkzNzc5MjMsLTQ0Mj
 g4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
 -->
