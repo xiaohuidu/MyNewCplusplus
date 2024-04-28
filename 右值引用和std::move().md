@@ -171,7 +171,7 @@ QList<Pin*> getInstModelPins(std::string instId) const
 除了上面的使用场景之外，C++11标准的STL 容器的相关接口函数也增加了右值引用版本
 ![enter image description here](https://github.com/xiaohuidu/MyNewCplusplus/blob/master/images/1561260-20230201151655274-574842866.png)
 #### 2.1.2 移动语义
-使编译器有可能用廉价的移动操作来代替昂贵的拷贝操作。正如拷贝构造函数和拷贝赋值操作符给了你控制拷贝语义的权力，移动构造函数和移动赋值操作符也给了你控制移动语义的权力。移动语义也允许创建只可移动（_move-only_）的类型，例如`std::unique_ptr`，`std::future`和`std::thread`
+使编译器有可能**用廉价的移动操作来代替昂贵的拷贝操作**。正如拷贝构造函数和拷贝赋值操作符给了你控制拷贝语义的权力，**移动构造函数和移动赋值操作符也给了你控制移动语义的权力**。移动语义也允许创建只可移动（_move-only_）的类型，例如`std::unique_ptr`，`std::future`和`std::thread`
 
 将一个对象中的资源移动到另一个对象（资源控制权的转移）
 1)  **移动构造函数**: 转移参数右值的资源来构造自己
@@ -329,8 +329,8 @@ std::move的功能是：
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3Njc4MDU2NCwtMjk2MzAwMzE0LDEzNj
-I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
-MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
-MxMDAwMjg1LC03MDk1NzgzNDldfQ==
+eyJoaXN0b3J5IjpbMTU5NTczMDEyLC0yOTYzMDAzMTQsMTM2Mj
+c4OTMwOCwtNTQyMTk5NTY5LDExMzM1MDg3MzIsLTE5NjE2NzEz
+NDIsMzU1NzEyNTY2LC0zNTkzNzc5MjMsLTQ0Mjg4MjY4Myw0Mz
+EwMDAyODUsLTcwOTU3ODM0OV19
 -->
