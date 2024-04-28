@@ -1,5 +1,5 @@
 [<< Back](https://github.com/xiaohuidu/MyNewCplusplus/blob/33a6887eee7d5cd54a6058e350108d3ab66061c8/C++11%E6%96%B0%E7%89%B9%E6%80%A7.md)
-#### 2.1 右值引用和std::move()
+#### 2.1 右值引用和std::move()， std::forward()
 #### 2.1.1 在学习std::move 之前， 要先了解**左值**和**右值**
 左值和右值的区分: <u>可以取地址则为左值， 不可取地址则为右值。</u>
 - **左值**: 是表达式结束后依然存在的 <u>持久对象 </u>(代表一个在内存中占有确定位置的对象),  <u>可以取地址</u>，具名变量或对象。
@@ -329,8 +329,8 @@ std::move的功能是：
 形参`w`是一个**左值**，即使它的类型是一个rvalue-reference-to-`Widget`（在函数里可以取 w的地址）。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NTkzMzM3NSwtMjk2MzAwMzE0LDEzNj
-I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
-MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
-MxMDAwMjg1LC03MDk1NzgzNDldfQ==
+eyJoaXN0b3J5IjpbNjI5NDQ2Nzk0LC0zOTU5MzMzNzUsLTI5Nj
+MwMDMxNCwxMzYyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODcz
+MiwtMTk2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtND
+QyODgyNjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
