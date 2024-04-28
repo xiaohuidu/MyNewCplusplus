@@ -170,7 +170,7 @@ QList<Pin*> getInstModelPins(std::string instId) const
 -  **C++11标准的STL 容器接口**
 除了上面的使用场景之外，C++11标准的STL 容器的相关接口函数也增加了右值引用版本
 ![enter image description here](https://github.com/xiaohuidu/MyNewCplusplus/blob/master/images/1561260-20230201151655274-574842866.png)
-#### 2.1.2移动语义
+#### 2.1.2 移动语义
 将一个对象中的资源移动到另一个对象（资源控制权的转移）
 1)  **移动构造函数**: 转移参数右值的资源来构造自己
 ```c
@@ -248,7 +248,7 @@ string& operator=(string&& s)
 }
 ```
 
-#### 2.1.2.2 std::move()
+#### 2.1.3 std::move()
 -   std::move作用主要可以将一个**左值转换成右值引用**，从而可以调用C++11右值引用的拷贝构造函数
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的。
 - 若对一个对象做move操作，就不要声明为 const. 因为对const对象的move请求会执行到copy操作上
@@ -311,9 +311,12 @@ std::move的功能是：
 
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
+#### 2.1.3 
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NDQyMDMwNSwtMjk2MzAwMzE0LDEzNj
-I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
-MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
-MxMDAwMjg1LC03MDk1NzgzNDldfQ==
+eyJoaXN0b3J5IjpbLTE0Nzk3NTAzNzIsLTI5NjMwMDMxNCwxMz
+YyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODczMiwtMTk2MTY3
+MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLD
+QzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
