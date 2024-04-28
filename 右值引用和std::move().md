@@ -252,6 +252,28 @@ string& operator=(string&& s)
 -   std::move作用主要可以将一个**左值转换成右值引用**，从而可以调用C++11右值引用的拷贝构造函数
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的。
 
+```
+// move example
+#include <utility>      // std::move
+#include <iostream>     // std::cout
+#include <vector>       // std::vector
+#include <string>       // std::string
+
+int main () {
+  std::string foo = "foo-string";
+  std::string bar = "bar-string";
+  std::vector<std::string> myvector;
+
+  myvector.push_back (foo);                    // copies
+  myvector.push_back (std::move(bar));         // moves
+
+  std::cout << "myvector contains:";
+  for (std::string& x:myvector) std::cout << ' ' << x;
+  std::cout << '\n';
+
+  return 0;
+}
+```
 在分析std::move()之前， 首先看remove_reference 的源码:
 `remove_reference`的作用是去除`T`中的引用部分，只获取其中的类型部分。无论`T`是左值还是右值，最后**只获取它的类型部分**。
 ```c
@@ -288,7 +310,7 @@ std::move的功能是：
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk5NDk3NDQwLC01NDIxOTk1NjksMTEzMz
+eyJoaXN0b3J5IjpbLTI2MjY4MzM0LC01NDIxOTk1NjksMTEzMz
 UwODczMiwtMTk2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3Nzky
 MywtNDQyODgyNjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
