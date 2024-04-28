@@ -272,15 +272,16 @@ template<typename _Tp> struct remove_reference<_Tp&&>
 };
 ```
 `std::move()` 源码:
-``
+```c
 // FUNCTION TEMPLATE move
-template <class _Ty>
-_NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty&& _Arg) noexcept { // forward _Arg as movable
+template <class _Ty> _NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty&& _Arg) noexcept 
+{ // forward _Arg as movable
     return static_cast<remove_reference_t<_Ty>&&>(_Arg);
 }
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NDU5MzY4OCwtNTQyMTk5NTY5LDExMz
+eyJoaXN0b3J5IjpbMTkyNjkwMjcwMSwtNTQyMTk5NTY5LDExMz
 M1MDg3MzIsLTE5NjE2NzEzNDIsMzU1NzEyNTY2LC0zNTkzNzc5
 MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
 -->
