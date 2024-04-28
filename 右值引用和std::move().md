@@ -171,6 +171,8 @@ QList<Pin*> getInstModelPins(std::string instId) const
 除了上面的使用场景之外，C++11标准的STL 容器的相关接口函数也增加了右值引用版本
 ![enter image description here](https://github.com/xiaohuidu/MyNewCplusplus/blob/master/images/1561260-20230201151655274-574842866.png)
 #### 2.1.2 移动语义
+使编译器有可能用廉价的移动操作来代替昂贵的拷贝操作。正如拷贝构造函数和拷贝赋值操作符给了你控制拷贝语义的权力，移动构造函数和移动赋值操作符也给了你控制移动语义的权力。移动语义也允许创建只可移动（_move-only_）的类型，例如`std::unique_ptr`，`std::future`和`std::thread`
+
 将一个对象中的资源移动到另一个对象（资源控制权的转移）
 1)  **移动构造函数**: 转移参数右值的资源来构造自己
 ```c
@@ -311,12 +313,24 @@ std::move的功能是：
 
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
-#### 2.1.3 
+#### 2.1.3   完美转发(forwarding)
+当你第一次了解到移动语义（_move semantics_）和完美转发（_perfect forwarding_）的时候，它们看起来非常直观：
+
+-   **移动语义**使编译器有可能用廉价的移动操作来代替昂贵的拷贝操作。正如拷贝构造函数和拷贝赋值操作符给了你控制拷贝语义的权力，移动构造函数和移动赋值操作符也给了你控制移动语义的权力。移动语义也允许创建只可移动（_move-only_）的类型，例如`std::unique_ptr`，`std::future`和`std::thread`。
+    
+-   **完美转发**使接收任意数量实参的函数模板成为可能，它可以将实参转发到其他的函数，使目标函数接收到的实参与被传递给转发函数的实参保持一致。
+    
+
+**右值引用**是连接这两个截然不同的概念的胶合剂。它是使移动语义和完美转发变得可能的基础语言机制。
+
+你对这些特点越熟悉，你就越会发现，你的初印象只不过是冰山一角。移动语义、完美转发和右值引用的世界比它所呈现的更加微妙。举个例子，`std::move`并不移动任何东西，完美转发也并不完美。移动操作并不永远比复制操作更廉价；即便如此，它也并不总是像你期望的那么廉价。而且，它也并不总是被调用，即使在当移动操作可用的时候。构造“`type&&`”也并非总是代表一个右值引用。
+
+无论你挖掘这些特性有多深，它们看起来总是还有更多隐藏起来的部分。幸运的是，它们的深度总是有限的。本章将会带你到最基础的部分。一旦到达，C++11的这部分特性将会具有非常大的意义。比如，你会掌握`std::move`和`std::forward`的惯用法。你能够适应“`type&&`”的歧义性质。你会理解移动操作的令人惊奇的不同表现的背后真相。这些片段都会豁然开朗。在这一点上，你会重新回到一开始的状态，因为移动语义、完美转发和右值引用都会又一次显得直截了当。但是这一次，它们不再使人困惑。
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzk3NTAzNzIsLTI5NjMwMDMxNCwxMz
-YyNzg5MzA4LC01NDIxOTk1NjksMTEzMzUwODczMiwtMTk2MTY3
-MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLD
-QzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbMjA3Njc4MDU2NCwtMjk2MzAwMzE0LDEzNj
+I3ODkzMDgsLTU0MjE5OTU2OSwxMTMzNTA4NzMyLC0xOTYxNjcx
+MzQyLDM1NTcxMjU2NiwtMzU5Mzc3OTIzLC00NDI4ODI2ODMsND
+MxMDAwMjg1LC03MDk1NzgzNDldfQ==
 -->
