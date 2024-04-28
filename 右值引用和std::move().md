@@ -253,7 +253,7 @@ string& operator=(string&& s)
 -   std::move应该是针对你的对象中有在**堆上分配内存**这种情况而设置的。
 
 在分析std::move()之前， 首先看remove_reference 的源码:
-`remove_reference`的作用是去除`T`中的引用部分，只获取其中的类型部分。无论`T`是左值还是右值，最后只获取它的类型部分。
+`remove_reference`的作用是去除`T`中的引用部分，只获取其中的类型部分。无论`T`是左值还是右值，最后**只获取它的类型部分**。
 ```c
 template<typename _Tp> struct remove_reference
 { 
@@ -281,13 +281,14 @@ template <class _Ty> _NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty&& _
 ```
 std::move的功能是：
 
--   传递的是左值，推导为左值引用，仍旧static_cast转换为右值引用。    
+-   **传递的是左值**，推导为左值引用，仍旧static_cast转换为右值引用。    
 -   传递的是右值，推导为右值引用，仍旧static_cast转换为右值引用。    
 -   在返回处，直接范围右值引用类型即可。还是通过renive_reference获得_Tp类型，然后直接type&&即可。
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MTEzMzc3NCwtNTQyMTk5NTY5LDExMz
-M1MDg3MzIsLTE5NjE2NzEzNDIsMzU1NzEyNTY2LC0zNTkzNzc5
-MjMsLTQ0Mjg4MjY4Myw0MzEwMDAyODUsLTcwOTU3ODM0OV19
+eyJoaXN0b3J5IjpbLTEyNjA3Njc3MzAsLTU0MjE5OTU2OSwxMT
+MzNTA4NzMyLC0xOTYxNjcxMzQyLDM1NTcxMjU2NiwtMzU5Mzc3
+OTIzLC00NDI4ODI2ODMsNDMxMDAwMjg1LC03MDk1NzgzNDldfQ
+==
 -->
