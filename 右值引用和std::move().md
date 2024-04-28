@@ -248,10 +248,10 @@ string& operator=(string&& s)
 }
 ```
 
-#### 2.1.2.1 移动语义
+#### 2.1.2.2 std::move()
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzMzUwODczMiwtMTk2MTY3MTM0MiwzNT
-U3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgyNjgzLDQzMTAwMDI4
-NSwtNzA5NTc4MzQ5XX0=
+eyJoaXN0b3J5IjpbLTE2NTMzNTAyMTksMTEzMzUwODczMiwtMT
+k2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3NzkyMywtNDQyODgy
+NjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
