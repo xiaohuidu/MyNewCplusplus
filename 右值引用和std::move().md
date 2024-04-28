@@ -281,14 +281,14 @@ template <class _Ty> _NODISCARD constexpr remove_reference_t<_Ty>&& move(_Ty&& _
 ```
 std::move的功能是：
 
--   **传递的是左值**，推导为左值引用，仍旧static_cast转换为右值引用。    
--   传递的是右值，推导为右值引用，仍旧static_cast转换为右值引用。    
+-   **传递的是左值**，推导为左值引用，仍旧static_cast**转换为右值引用**。    
+-   **传递的是右值**，推导为右值引用，仍旧static_cast**转换为右值引用**。    
 -   在返回处，直接范围右值引用类型即可。还是通过renive_reference获得_Tp类型，然后直接type&&即可。
+
 所以std::remove_reference<_Tp>::type&&，就是一个右值引用，我们就知道了std::move干的事情了。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjA3Njc3MzAsLTU0MjE5OTU2OSwxMT
-MzNTA4NzMyLC0xOTYxNjcxMzQyLDM1NTcxMjU2NiwtMzU5Mzc3
-OTIzLC00NDI4ODI2ODMsNDMxMDAwMjg1LC03MDk1NzgzNDldfQ
-==
+eyJoaXN0b3J5IjpbNjk5NDk3NDQwLC01NDIxOTk1NjksMTEzMz
+UwODczMiwtMTk2MTY3MTM0MiwzNTU3MTI1NjYsLTM1OTM3Nzky
+MywtNDQyODgyNjgzLDQzMTAwMDI4NSwtNzA5NTc4MzQ5XX0=
 -->
