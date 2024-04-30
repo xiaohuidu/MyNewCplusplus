@@ -32,17 +32,16 @@ int main() {
 
 decltype处理顶层const和引用的方式与auto有些不同，如果decltype使用的表达式是个变量，则decltype返回该变量的类型(包括顶层const和引用在内)。例如：
 
-c++
+```cpp
 
-复制代码
-
-`#include <iostream>
+#include <iostream>
 int main(){
  const int ci=0, &cj=ci;
  decltype(ci) x=0; //x的类型是const int；
  decltype(cj) y=x; //y的类型是const int &，y绑定到变量x；
  decltype(cj) z;   //错误，z是引用，必须初始化；
-}` 
+}
+```
 
 对于非引用(指针)，decltype关键字和auto关键字的作用类似，但是保留表达式的**引用**及**const限定符**，decltype能够精确地推导出表达式本身的类型，不会像auto那样在某些情况下舍弃掉引用和cv限定符。
 
@@ -337,5 +336,5 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjY2MTM3NDAsLTY5NTA1MDE2NV19
+eyJoaXN0b3J5IjpbLTE4MzQ2NjcwMzEsLTY5NTA1MDE2NV19
 -->
