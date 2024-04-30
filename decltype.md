@@ -43,7 +43,7 @@ int main(){
 }
 ```
 
-对于非引用(指针)，decltype关键字和auto关键字的作用类似，但是保留表达式的**引用**及**const限定符**。
+对于非引用(指针)，decltype关键字和auto关键字的作用类似，但是保留表达式的引用及const限定符。
 decltype能够精确地推导出表达式本身的类型，不会像auto那样在某些情况下舍弃掉引用和cv限定符。
 
 ### 引用与指针
@@ -335,6 +335,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOT
-Y3NTQsLTE4MzQ2NjcwMzEsLTY5NTA1MDE2NV19
+eyJoaXN0b3J5IjpbNjIyOTE1MDAsLTYzOTI3NTA4LC0zMjk3Nj
+A2Niw5NjIxOTY3NTQsLTE4MzQ2NjcwMzEsLTY5NTA1MDE2NV19
+
 -->
