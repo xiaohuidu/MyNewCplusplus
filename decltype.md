@@ -6,17 +6,13 @@ decltype 是“declare type”的缩写，译为“声明类型”。 **decltype
 ## 基础用法
 
 ### 语法
-
-cpp
-
-复制代码
-
-`auto varname = value; 
+```cpp
+auto varname = value; 
 decltype(exp) varname [= value]; 
 // varname 表示变量名，value 表示赋给变量的值
 // exp 表示一个表达式，方括号[ ]表示可有可无。` 
-
-对比我们上一篇文章介绍的auto，有一些区别：
+```
+decltype 和auto的额区：
 
 -   auto 必须要根据=右边的初始值 value 推导出变量的类型；所以auto要求变量必须初始化，也就是在定义变量的同时必须给它赋值，不然会编译报错。
 -   decltype 根据 exp 表达式推导出变量的类型，跟=右边的 value 没有关系。 所以decltype 不强制要求初始化。
@@ -343,5 +339,5 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA2MTY3MzQyLC02OTUwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbLTE1NDE1OTk2NDcsLTY5NTA1MDE2NV19
 -->
