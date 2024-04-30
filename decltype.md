@@ -13,8 +13,8 @@ decltype(exp) varname [= value];
 // exp 表示一个表达式，方括号[ ]表示可有可无。` 
 ```
 decltype 和auto的区别：
--   auto 必须要根据=右边的初始值 value 推导出变量的类型；所以auto要求变量必须初始化，也就是在定义变量的同时必须给它赋值，不然会编译报错。
--   decltype 根据 exp 表达式推导出变量的类型，跟=右边的 value 没有关系。 所以decltype 不强制要求初始化。
+-   auto 必须要根据=右边的初始值 value 推导出变量的类型；所以**auto要求变量必须初始化**，也就是在定义变量的同时必须给它赋值，不然会编译报错。
+-   decltype 根据 exp 表达式推导出变量的类型，跟=右边的 value 没有关系。 所以**decltype 不强制要求初始化**。
 
 c++
 
@@ -338,5 +338,5 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMDgzNjE4NywtNjk1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbNjMyNDMxODk5LC02OTUwNTAxNjVdfQ==
 -->
