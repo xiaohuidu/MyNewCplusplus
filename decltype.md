@@ -70,6 +70,7 @@ int main(){
 ```
 
 -   **decltype与引用**：decltype处理引用时需要保留引用，这点和auto是有区别。例如：
+
 ```cpp
 #include <iostream>
 int main(){
@@ -335,6 +336,6 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzOTI3NTA4LDk2MjE5Njc1NCwtMTgzND
+eyJoaXN0b3J5IjpbLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzND
 Y2NzAzMSwtNjk1MDUwMTY1XX0=
 -->
