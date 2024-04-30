@@ -52,11 +52,9 @@ decltype能够精确地推导出表达式本身的类型，不会像auto那样�
 
 -   **decltype与指针**：decltype处理指针时需要保留指针，这点和auto是有区别。例如：
 
-c++
+```cpp
 
-复制代码
-
-`#include <iostream>
+#include <iostream>
 int main(){
  int tempA = 2;
  int *ptrTempA = &tempA;
@@ -66,7 +64,8 @@ int main(){
  //dclTempB为一个引用int &，引用必须初始化；
  // 否则错误：error: 'dclTempB' declared as reference but not initialized
  decltype(*ptrTempA) dclTempB = tempA;
-}` 
+}
+```
 
 -   **decltype与引用**：decltype处理引用时需要保留引用，这点和auto是有区别。例如：
 
@@ -337,6 +336,6 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExOTU2MjA5LC0xODM0NjY3MDMxLC02OT
+eyJoaXN0b3J5IjpbOTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OT
 UwNTAxNjVdfQ==
 -->
