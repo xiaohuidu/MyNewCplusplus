@@ -18,14 +18,14 @@ decltype 和auto的区别：
 
 ```cpp
 
-`#include <iostream>
+#include <iostream>
 int main() {
  auto x = 5; //必须初始化，不然会报错，auto是根据初始值推导出变量的类型的
  decltype(10)y; //可以不初始化，因为是根据()里面的内容推导出来的类型
  decltype(10)z = 100; //也可以不初始化。
  auto str1 = "decltype_test";
  decltype(str1) str2 = "decltype_test2";
-}` 
+}
 ```
 
 ### cv 限定符
@@ -337,5 +337,5 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTMwOTE3NDAsLTY5NTA1MDE2NV19
+eyJoaXN0b3J5IjpbLTEzMjY2MTM3NDAsLTY5NTA1MDE2NV19
 -->
