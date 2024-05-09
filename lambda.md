@@ -250,10 +250,12 @@ void fnTest()
 |[=]  |以值的形式捕获所有外部变量  |
 |[&]  |以引用形式捕获所有外部变量  |
 |[=, &x]  |变量x以引用形式捕获，其余变量以传值形式捕获  |
+|[&, x, this]  |变量x, this 以引用形式捕获，其余变量以传值形式捕获  |
 |[&, x]  |变量x以值的形式捕获，其余变量以引用形式捕获
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzOTIwOTc0NiwtMTM2MDgxNzEwOSwzOD
-U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
+eyJoaXN0b3J5IjpbMjA4OTUyMzM1NCwxNDM5MjA5NzQ2LC0xMz
+YwODE3MTA5LDM4NTgwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAz
+N119
 -->
