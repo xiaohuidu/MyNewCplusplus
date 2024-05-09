@@ -9,7 +9,7 @@ static int c = 30 ;//延长了生命期
 
 ```
 
-C++11中，标准委员会赋予了auto全新的含义即：auto不再是一个存储类型指示符，而是作为一个新的类型指示符来指示编译器，auto声明的变量必须由编译器在编译时期推导而得。
+C++11中，标准委员会赋予了auto全新的含义即：auto不再是一个存储类型指示符，而是作为一个新的类型指示符来指示编译器，**auto声明的变量必须由编译器在编译时期推导而得**。
 
 ## 二、auto 原理
 
@@ -504,5 +504,5 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwODYwNTk3N119
+eyJoaXN0b3J5IjpbLTI0NDUyODM0NSwtOTA4NjA1OTc3XX0=
 -->
