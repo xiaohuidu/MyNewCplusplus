@@ -257,8 +257,8 @@ int main(){
 
 decltype(auto)是C++14新增的类型指示符，可以用来声明变量以及指示函数返回类型。
 
--   当decltype(auto)被用于声明变量时，该变量必须立即初始化。假设该变量的初始化表达式为e，那么该变量的类型将被推导为decltype(e)。也就是说在推导变量类型时，先用初始化表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定变量的类型。
--   当decltype(auto)被用于指示函数的返回值类型时。假设函数返回表达式e，那么该函数的返回值类型将被推导为decltype(e)。也就是说在推导函数返回值类型时，先用返回值表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定函数返回值的类型。
+-   **当decltype(auto)被用于声明变量时，该变量必须立即初始化**。假设该变量的初始化表达式为e，那么该变量的类型将被推导为decltype(e)。也就是说在推导变量类型时，先用初始化表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定变量的类型。
+-   **当decltype(auto)被用于指示函数的返回值类型时。假设函数返回表达式e，那么该函数的返回值类型将被推导为decltype(e)**。也就是说在推导函数返回值类型时，先用返回值表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定函数返回值的类型。
 
 ```cpp
 #include <iostream>
@@ -324,8 +324,9 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNTYyNzYyMywtMTEwMjg3NDY2MSwtMT
-A2MTcwNTcwNSwxNTI4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2
-ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOT
-YyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbMjEwMzY2NjM0MywxOTA1NjI3NjIzLC0xMT
+AyODc0NjYxLC0xMDYxNzA1NzA1LDE1Mjg1MDI3NTAsLTIwOTI0
+MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3NjQsLTYzOTI3NTA4LC
+0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4MzQ2NjcwMzEsLTY5NTA1
+MDE2NV19
 -->
