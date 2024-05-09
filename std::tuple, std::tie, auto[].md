@@ -43,7 +43,7 @@ auto [name, age, height] = person;
 
 这样就可以像使用结构体一样方便地访问元组中的各个成员变量了。
 
-#### 三、std::tie
+**三、std::tie**
 
 std::tie是一个非常有用的函数模板，它可以将多个变量绑定到一个元组中，并且可以通过修改元组中的值来同时修改这些变量的值。
 ```
@@ -56,7 +56,7 @@ std::tie(name, age, height) = std::make_tuple("Tom", 20, 1.75);
 
 在这个例子中，std::tie将name、age和height三个变量绑定到一个元组中，并且通过std::make_tuple函数创建了一个包含三个元素的元组。然后，我们可以使用**赋值运算符**将元组中的值分别赋给name、age和height三个变量。
 
-#### 四、C++17特性auto[]
+ **四、C++17特性auto[]**
 
 C++17引入了一种新的语法auto[]，它可以**自动推导出数组中元素的类型**，并且可以用于对元组进行索引访问。
 
@@ -72,5 +72,5 @@ std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto
 在这里，我们首先使用结构化绑定语法将元组中的每个元素绑定到一个变量中，并输出它们的值。然后，我们使用auto[]来访问元组中的各个元素，其中auto[]会自动推导出元素的类型，从而避免了手动指定索引的繁琐。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgyMjQ3MTYzLDI4MzQ2Njc0NF19
+eyJoaXN0b3J5IjpbLTcwOTk4MjA5LDI4MzQ2Njc0NF19
 -->
