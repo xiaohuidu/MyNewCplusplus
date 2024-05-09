@@ -132,7 +132,7 @@ decltype(auto) func(Container& c, Index i) {  // C++ 14
 
 这个容器是通过非`const`左值引用传入的，因为通过返回一个容器元素的引用是来修改容器是被允许的。但是这也意味着不可能将右值传入这个函数。右值不能和一个左值引用绑定（除非是`const`的左值引用，但这里不是这种情况）。
 
-当然，如果想传递一个`右值容器`给func模板函数，那么`右值容器`作为一个临时对象，在ffun函数结束时被销毁，如果返回这个临时容器中元素的引用，很显然这个引用在函数结束时也被悬空。但是有时可能用户也仅仅是想拷贝这个临时容器的一个元素，那么有没有办法做到？当然可以，看下面示例：
+当然，如果想传递一个`右值容器`给func模板函数，那么`右值容器`作为一个临时对象，在fun函数结束时被销毁，如果返回这个临时容器中元素的引用，很显然这个引用在函数结束时也被悬空。但是有时可能用户也仅仅是想拷贝这个临时容器的一个元素，那么有没有办法做到？当然可以，看下面示例：
 
 ```cpp
 template<typename Container, typename Index>
@@ -148,14 +148,14 @@ auto func(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // 
 #include <iostream>
 #include <vector>
 template<typename Container, typename Index>
-auto f(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // C++11
+auto func(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // C++11
 {
 	 return std::forward<Container>(c)[i];
 }
 int main() {
  std::vector<int> v(8);
- f(v, 3);   // 1
- f(v, 3) = 5;  // 2
+ func(v, 3);   // 1
+ func(v, 3) = 5;  // 2
  std::cout << v[3] << "\n";  // output 5
  auto x = f((std::vector<int>){1,2,3,4,5,6,7}, 3);  // 3
  std::cout << x << "\n";  // output 4
@@ -329,8 +329,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjE3MDU3MDUsMTUyODUwMjc1MCwtMj
-A5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1
-MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNj
-k1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbODkzNTY0MzQ3LC0xMDYxNzA1NzA1LDE1Mj
+g1MDI3NTAsLTIwOTI0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3
+NjQsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4Mz
+Q2NjcwMzEsLTY5NTA1MDE2NV19
 -->
