@@ -105,7 +105,7 @@ const int* p2 = &a;//p2是底层const
 
 编译器为auto推断的类型并不总是与初始化器的类型完全相同。相反，编译器调整类型以符合正常的初始化规则。
 
-首先，auto通常忽略引用。正如我们所看到的，当我们使用引用时，我们实际上是在使用引用所指向的对象。
+首先，**auto通常忽略引用**。正如我们所看到的，当我们使用引用时，我们实际上是在使用引用所指向的对象。
 
 特别是，当使用引用作为初始化器时，初始化器是相应的对象。编译器使用该对象的类型进行auto的类型推导:
 
@@ -504,6 +504,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU5NDg5MzE5LC0xNDA4MTEwNzY1LC00MD
-IyMzA2NjksLTkwODYwNTk3N119
+eyJoaXN0b3J5IjpbMTY4NTM2NTE1OSwtMTQwODExMDc2NSwtND
+AyMjMwNjY5LC05MDg2MDU5NzddfQ==
 -->
