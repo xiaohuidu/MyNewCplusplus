@@ -13,9 +13,7 @@ C++11中，标准委员会赋予了auto全新的含义即：auto不再是一个�
 
 ## 二、auto 原理
 
-auto的自动类型推断发生在编译期，所以使用auto并不会造成程序运行时效率的降低。而是否会造成编译期的时间消耗，我认为是不会的，在未使用auto时，编译器也需要得知右操作数的类型，再与左操作数的类型进行比较，检查是否可以发生相应的转化，是否需要进行隐式类型转换。
-
-  
+auto的自动类型推断发生在编译期，所以使用auto并不会造成程序运行时效率的降低。而是否会造成编译期的时间消耗，我认为是不会的，在未使用auto时，编译器也需要得知右操作数的类型，再与左操作数的类型进行比较，检查是否可以发生相应的转化，是否需要进行隐式类型转换。  
 
 需要注意的是，auto不是一个类型的“声明”，而是一个“占位符”，编译器在编译期会将auto替换为变量实际的类型。**使用auto定义变量时必须对其进行初始化**，在编译阶段编译器需要根据初始化表达式来推导auto的实际类型。它自动推导变量类型是根据“=”右侧的变量类型决定的。
 
@@ -493,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3OTY3NDk1LC0xNDA4MTEwNzY1LC00MD
-IyMzA2NjksLTkwODYwNTk3N119
+eyJoaXN0b3J5IjpbMTAzNTUxNTAzNywtMTQwODExMDc2NSwtND
+AyMjMwNjY5LC05MDg2MDU5NzddfQ==
 -->
