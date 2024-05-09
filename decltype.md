@@ -102,7 +102,7 @@ int main(){
 #include <vector>
 template<typename Container, typename Index>
 auto f(Container& c, Index i) -> decltype(c[i]) {
- return c[i];
+	 return c[i];
 }
 int main() {
  std::vector<int> v(8);
@@ -110,6 +110,7 @@ int main() {
  f(v, 3) = 5;  // 2
 }` 
 ```
+
 到了 C++14，我们这样写也是对的：
 
 c++
@@ -335,7 +336,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMjUxMDEyNywtMjA5MjQzOTMxMCw0Mz
-kzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2
-LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbNzc1MjU5NTc5LC0yMDkyNDM5MzEwLDQzOT
+M2ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYs
+OTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
 -->
