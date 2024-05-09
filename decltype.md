@@ -124,7 +124,7 @@ auto func(Container& c, Index i) {  // C++ 14
 然而，这还是有问题。假设 c 中对象的类型为 int，则 c[i] 返回的类型为 int&，经过 auto 后，引用会被忽略，变为 int。这时，返回的就是右值而不是左值。上面的语句②就会编译错误。如果想要返回左值，则必须这样写：
 
 ```cpp
-`template<typename Container, typename Index>
+template<typename Container, typename Index>
 decltype(auto) func(Container& c, Index i) {  // C++ 14
 	 return c[i];
 } // 返回了 int&
@@ -134,15 +134,13 @@ decltype(auto) func(Container& c, Index i) {  // C++ 14
 
 当然，如果想传递一个`右值容器`给f模板函数，那么`右值容器`作为一个临时对象，在f函数结束时被销毁，如果返回这个临时容器中元素的引用，很显然这个引用在函数结束时也被悬空。但是有时可能用户也仅仅是想拷贝这个临时容器的一个元素，那么有没有办法做到？当然可以，看下面示例：
 
-c++
-
-复制代码
-
-`template<typename Container, typename Index>
+```cpp
+template<typename Container, typename Index>
 auto f(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // C++11
 {
- return std::forward<Container>(c)[i];
-}` 
+	 return std::forward<Container>(c)[i];
+}
+```
 
 首先，Container参数用了万能引用，可以接收任何类型，左值或右值都可以。我们用std::forward实现我们想要的效果。调用forward，若原来是一个右值，那么他转出来就是一个右值，否则为一个左值。
 
@@ -333,8 +331,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjIxMzkwNTU2LDE1Mjg1MDI3NTAsLTIwOT
-I0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3NjQsLTYzOTI3NTA4
-LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4MzQ2NjcwMzEsLTY5NT
-A1MDE2NV19
+eyJoaXN0b3J5IjpbLTE0MjY3NDY1MTMsMTUyODUwMjc1MCwtMj
+A5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1
+MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNj
+k1MDUwMTY1XX0=
 -->
