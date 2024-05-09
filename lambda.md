@@ -71,9 +71,44 @@ cout << f(4, 3) << endl;
 
 **值捕获**
 值捕获和参数传递中的值传递类似，被捕获的变量的值在Lambda表达式创建时通过值拷贝的方式传入，因此随后对该变量的修改不会影响影响Lambda表达式中的值。在VS2017中创建如下代码并加以分析：
+```
+int testFunc1()
+{
+    int nTest1 = 23;
 
+    auto f = [nTest1] (int a, int b) -> int
+    {
+        return a + b + 42 + nTest1;
+        //nTest1 = 333;              不能在lambda表达式中修改捕获变量的值
+    };
+
+    cout << f(4, 3) << "&nTest1=" << nTest1 << endl;
+}
+```
+
+需要注意的是，不能在lambda表达式中修改捕获变量的值。其实根据上面的反汇编分析，我们已经知道，lambda表达式中的代码是在一个单独的函数中执行的，这个函数在调用时创建了自己的栈帧，而其使用的nTest1局部变量在testFunc1的栈帧中，虽然通过ebp可以进行栈帧回溯，但显然这是一种不合情理的做法。因此可以断定，捕获列表中出现的局部变量一定会通过某种方式传递给lambda匿名类。到底采用的是哪种方式呢？我们来揭晓答案：
+
+```
+    49:     auto f = [nTest1] (int a, int b) -> int
+    50:     {
+    51:         return a + b + 42 + nTest1;
+    52:     };
+01183C08 8D 45 E8             lea         eax,[nTest1]  
+01183C0B 50                   push        eax  
+01183C0C 8D 4D DC             lea         ecx,[f]  
+01183C0F E8 0C E3 FF FF       call        <lambda_ed51e51ff76776313a28b716c94bbc2d>::<lambda_ed51e51ff76776313a28b716c94bbc2d> (01181F20h)  
+    ; 省略无关代码
+    54:     cout << f(4, 3) << "&nTest1=" << nTest1 << endl;
+01183C1D 8B 45 E8             mov         eax,dword ptr [nTest1]  
+01183C20 50                   push        eax  
+01183C21 68 40 BE 18 01       push        offset string "&nTest1=" (0118BE40h)  
+01183C26 6A 03                push        3  
+01183C28 6A 04                push        4  
+01183C2A 8D 4D DC             lea         ecx,[f]  
+01183C2D E8 4E F7 FF FF       call        <lambda_ed51e51ff76776313a28b716c94bbc2d>::operator() (01183380h)  
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwMjQwMjg2NSwtMTM2MDgxNzEwOSwzOD
+eyJoaXN0b3J5IjpbLTc0MTEzMzQ1MywtMTM2MDgxNzEwOSwzOD
 U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
