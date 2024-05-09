@@ -14,7 +14,10 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 5. return type：返回类型
 6. function body：函数体
 此外，我们还可以省略其中的某些成分来声明“不完整”的lambda表达式，常见的有以下几种：
+|  序号| 格式 |
+|--|--|
+| 1 |  |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbLTEyOTg4NTIxODEsMTU5MTQzNDAzN119
 -->
