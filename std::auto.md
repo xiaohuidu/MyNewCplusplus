@@ -34,7 +34,7 @@ deducePos(v.begin());
 
 ```
 
-而auto类型变量不会是引用类型_（模板实参推断的规则）_，所以要用auto&_（C++14支持直接用decltype(auto)推断原始类型）_，第二个auto推断对应于下面这个模板传参时的情形，同样T就是为auto推断的类型,例如：
+而**auto类型变量不会是引用类型**（模板实参推断的规则），所以要用auto&_（**C++14支持直接用decltype(auto)推断原始类型**）_，第二个auto推断对应于下面这个模板传参时的情形，同样T就是为auto推断的类型,例如：
 
 ```cpp
 std::vector<int> v{1,2,3,4,5,6};
@@ -504,5 +504,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMjIzMDY2OSwtOTA4NjA1OTc3XX0=
+eyJoaXN0b3J5IjpbLTE0MDgxMTA3NjUsLTQwMjIzMDY2OSwtOT
+A4NjA1OTc3XX0=
 -->
