@@ -94,7 +94,8 @@ int main(){
 
 ### 模板声明
 
-在C++11中，**decltype最主要的用处可能就是用来声明一个函数模板，在这个函数模板中返回值的类型取决于参数的类型。**举个例子，假设我们想写一个函数，这个函数中接受一个支持方括号索引（也就是"[]"）的容器作为参数，验证用户的合法性后返回索引结果。这个函数的返回值类型应该和索引操作的返回值类型是一样的。
+在C++11中，**decltype最主要的用处可能就是用来声明一个函数模板，在这个函数模板中返回值的类型取决于参数的类型**
+举个例子，假设我们想写一个函数，这个函数中接受一个支持方括号索引（也就是"[]"）的容器作为参数，验证用户的合法性后返回索引结果。这个函数的返回值类型应该和索引操作的返回值类型是一样的。
 
 ```cpp
 #include <iostream>
@@ -333,7 +334,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyODUwMjc1MCwtMjA5MjQzOTMxMCw0Mz
-kzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2
-LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbMTkzODQ2OTc2NCwxNTI4NTAyNzUwLC0yMD
+kyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUw
+OCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OT
+UwNTAxNjVdfQ==
 -->
