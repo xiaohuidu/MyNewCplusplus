@@ -253,9 +253,10 @@ void fnTest()
 |[&, x, this]  |变量x, this 以值形式捕获，其余变量以引用形式捕获  |
 |[&, x]  |变量x以值的形式捕获，其余变量以引用形式捕获
 
-
+**mutable修饰符**
+默认情况下Lambda函数总是一个const函数，mutable可以取消其常量性。在使用该修饰符时，参数列表不可省略（即使参数为空）。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNj
-A4MTcxMDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3
-XX0=
+eyJoaXN0b3J5IjpbODc2ODI2NDMxLDI2ODk2MzkzNCwxNDM5Mj
+A5NzQ2LC0xMzYwODE3MTA5LDM4NTgwOTYyMiw5NDY1MzQ3NTMs
+MTU5MTQzNDAzN119
 -->
