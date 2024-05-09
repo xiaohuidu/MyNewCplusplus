@@ -220,7 +220,7 @@ auto arr[3] = { 1,2,3 };//会报错
 
 ```
 
-(4)如果初始化表达式是引用，则去除引用语义，如：
+(4)**如果初始化表达式是引用，则去除引用语义**，如：
 
 ```cpp
 int  a = 1;
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA2MDk0ODEzLC0xNDA4MTEwNzY1LC00MD
-IyMzA2NjksLTkwODYwNTk3N119
+eyJoaXN0b3J5IjpbNDM1MzMyNTczLDkwNjA5NDgxMywtMTQwOD
+ExMDc2NSwtNDAyMjMwNjY5LC05MDg2MDU5NzddfQ==
 -->
