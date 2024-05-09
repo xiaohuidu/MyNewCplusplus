@@ -47,7 +47,7 @@ cout << f(4, 3) << endl;
 class  f_class
 {
 public:
-	void  operator()(void)const 
+	void  operator()(int a, int b)const 
 	{
 		return a + b + 42;
 	}
@@ -284,7 +284,7 @@ int  main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTU0NzM4MTYsMTY2NTkzMjQwMCw4Nz
+eyJoaXN0b3J5IjpbLTE4NzI1NDQzNjksMTY2NTkzMjQwMCw4Nz
 Y4MjY0MzEsMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcx
 MDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
