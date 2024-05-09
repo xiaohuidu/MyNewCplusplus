@@ -263,14 +263,14 @@ int  main()
 {
 	int  m = 0;
 	int  n = 0;
-	[&, n] (int a) mutable { m = ++n + a; }(4);`
-cout << m << endl << n << endl;`
-}`
+	[&, n] (int a) mutable { m = ++n + a; }(4);
+	cout << m << endl << n << endl;
+}
 ```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzQyMzkwMTAsODc2ODI2NDMxLDI2OD
-k2MzkzNCwxNDM5MjA5NzQ2LC0xMzYwODE3MTA5LDM4NTgwOTYy
-Miw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbMTY2NTkzMjQwMCw4NzY4MjY0MzEsMjY4OT
+YzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcxMDksMzg1ODA5NjIy
+LDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
