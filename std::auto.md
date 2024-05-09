@@ -447,7 +447,7 @@ lvalue
 
 ```
 
-## 合并两个重载函数变为一个函数模板，
+合并两个重载函数变为一个函数模板，
 
 ```cpp
 template<typename T>
@@ -491,6 +491,7 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODk0MTI1MTUsOTA2MDk0ODEzLC0xND
-A4MTEwNzY1LC00MDIyMzA2NjksLTkwODYwNTk3N119
+eyJoaXN0b3J5IjpbLTcyMjc4MDAyNywtMTU4OTQxMjUxNSw5MD
+YwOTQ4MTMsLTE0MDgxMTA3NjUsLTQwMjIzMDY2OSwtOTA4NjA1
+OTc3XX0=
 -->
