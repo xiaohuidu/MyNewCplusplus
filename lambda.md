@@ -230,7 +230,7 @@ void fnTest()
 00C23F58 8B 08                mov         ecx,dword ptr [eax]  
 00C23F5A C7 01 83 00 00 00    mov         dword ptr [ecx],83h 
 ```
-也是用指针完成的。其实这时nTest1的值已经被修改了。但是为什么cout打印出来还是2333呢？这其实是由于cout时从由向左压入参数的结果，再仔细看看：
+也是用指针完成的。其实这时nTest1的值已经被修改了。但是为什么cout打印出来还是2333呢？这**其实是由于cout时从由向左压入参数的结果**，再仔细看看：
 ```
 00C23C24 8B 45 E8             mov         eax,dword ptr [nTest1]  
 00C23C27 50                   push        eax                   ; eax=2333
@@ -239,7 +239,17 @@ void fnTest()
 00C23C2F 6A 04                push        4  
 ```
 注意前两句，已将调用lambda对象前的值压栈了，则传入的值当然是2333。但在cout语句执行后查看nTest1的值，其实已经被修改为131了。
+
+隐式捕获
+上面的值捕获和引用捕获都需要我们在捕获列表中显示列出Lambda表达式中使用的外部变量。除此之外，我们还可以让编译器根据函数体中的代码来推断需要捕获哪些变量，这种方式称之为隐式捕获。隐式捕获有两种方式，分别是[=]和[&]。[=]表示以值捕获的方式捕获外部变量，[&]表示以引用捕获的方式捕获外部变量。
+
+下面将所有捕获方式总结如下：
+————————————————
+
+                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+                        
+原文链接：https://blog.csdn.net/LPWSTR/article/details/79633944
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTMxNjMyNzgsLTEzNjA4MTcxMDksMz
-g1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbLTU2MDcyMTY3MSwtMTM2MDgxNzEwOSwzOD
+U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
