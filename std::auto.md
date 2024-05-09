@@ -353,7 +353,7 @@ const auto&& x：vector）,常量右值引用无实际意义，可以被常量�
 
 使用auto标明一个变量，这个变量永远不会是引用变量。
 
-使用auto&标明一个变量，这个变量有可能被编译器推导为引用变量。
+使用auto&标明一个变量，这个变量**有可能**被编译器推导为引用变量。
 
 区别1：改变原来的值
 
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5OTA4Njc0OSw5MDYwOTQ4MTMsLTE0MD
-gxMTA3NjUsLTQwMjIzMDY2OSwtOTA4NjA1OTc3XX0=
+eyJoaXN0b3J5IjpbLTE1ODk0MTI1MTUsOTA2MDk0ODEzLC0xND
+A4MTEwNzY1LC00MDIyMzA2NjksLTkwODYwNTk3N119
 -->
