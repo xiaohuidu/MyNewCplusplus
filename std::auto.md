@@ -195,9 +195,9 @@ const auto &m3 = &ci;//m3为const int * const &
 auto a;
 ```
 
-未初始化的auto不能用。
+**未初始化的auto不能用**。
 
-（2）在同一行定义多个变量,定义在一个auto序列的变量必须始终推导成同一类型
+（2）**在同一行定义多个变量,定义在一个auto序列的变量必须始终推导成同一类型**
 
 当在同一行声明多个变量时，这些变量必须是相同的类型，否则编译器将会报错，因为编译器实际只对第一个类型进行推导，然后用推导出来的类型定义其他变量。
 
@@ -210,7 +210,7 @@ auto c = 1, d = 1.11;
 
 （3）auto不能推导的场景
 
-auto不能作为函数的参数和声明数组
+**auto不能作为函数的参数和声明数组**
 
 ```cpp
 void TestAuto(auto a) {
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNTUxNTAzNywtMTQwODExMDc2NSwtND
-AyMjMwNjY5LC05MDg2MDU5NzddfQ==
+eyJoaXN0b3J5IjpbOTA2MDk0ODEzLC0xNDA4MTEwNzY1LC00MD
+IyMzA2NjksLTkwODYwNTk3N119
 -->
