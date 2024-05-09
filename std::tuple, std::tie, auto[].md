@@ -54,7 +54,7 @@ double height;
 std::tie(name, age, height) = std::make_tuple("Tom", 20, 1.75);
 ```
 
-在这个例子中，std::tie将name、age和height三个变量绑定到一个元组中，并且通过std::make_tuple函数创建了一个包含三个元素的元组。然后，我们可以使用[赋值运算符](https://so.csdn.net/so/search?q=%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6&spm=1001.2101.3001.7020)将元组中的值分别赋给name、age和height三个变量。
+在这个例子中，std::tie将name、age和height三个变量绑定到一个元组中，并且通过std::make_tuple函数创建了一个包含三个元素的元组。然后，我们可以使用[赋值运算符]将元组中的值分别赋给name、age和height三个变量。
 
 #### 四、C++17特性auto[]
 
@@ -72,5 +72,5 @@ std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto
 在这里，我们首先使用结构化绑定语法将元组中的每个元素绑定到一个变量中，并输出它们的值。然后，我们使用auto[]来访问元组中的各个元素，其中auto[]会自动推导出元素的类型，从而避免了手动指定索引的繁琐。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgzNDY2NzQ0XX0=
+eyJoaXN0b3J5IjpbLTE2NDk4NDQ2NDksMjgzNDY2NzQ0XX0=
 -->
