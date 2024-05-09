@@ -49,7 +49,7 @@ decltype能够精确地推导出表达式本身的类型，不会像auto那样�
 ### 引用与指针
 
 使用关键字decltype的时候，左值和右值有所不同。
-如果表达式的求值结果是**左值**，decltype作用于该表达式(不是变量)**得到引用**。例如，假定p的类型是`int*`，因为解引用符生成左值，所以decltype(*p)的结果是int&。
+如果表达式的求值结果是**左值**，decltype作用于该表达式(不是变量)**得到引用**。例如，假定p的类型是`int*`，因为解引用符(*)生成左值，所以decltype(*p)的结果是int&。
 如果表达式的求值结果是**右值**，得到**指向指针的指针**，例如，decltype(&p)的结果是int*，因为取地址运算符生成右值。
 
 -   **decltype与指针**：decltype处理指针时需要**保留指针**，这点和auto是有区别。例如：
@@ -66,6 +66,7 @@ int main(){
  //dclTempB为一个引用int &，引用必须初始化；
  // 否则错误：error: 'dclTempB' declared as reference but not initialized
  decltype(*ptrTempA) dclTempB = tempA;
+ decltype(&ptrTempA) dcT
 }
 ```
 
@@ -335,7 +336,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTY1MDk2NCw0MzkzNjg0OTIsLTMyMj
-k3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwt
-MTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbLTIwMTU4MTUwNTgsNDM5MzY4NDkyLC0zMj
+I5NzU3NjQsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQs
+LTE4MzQ2NjcwMzEsLTY5NTA1MDE2NV19
 -->
