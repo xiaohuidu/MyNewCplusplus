@@ -263,7 +263,7 @@ std::cout << typeid(b).name() << std::endl;   // 这里输出 int*
 
 ```
 
-（8）如果表达式为数组且auto带上&，则推导类型为数组类型。
+（8）**如果表达式为数组且auto带上&，则推导类型为数组类型**。
 
 ```cpp
 int a[3] = { 1, 2, 3 };
@@ -273,7 +273,7 @@ std::cout << typeid(b).name() << std::endl; // 这里输出 int[3]
 
 ```
 
-（9）函数或模板参数不能被声明为auto。
+（9）**函数或模板参数不能被声明为auto。**
 
 ```cpp
 void func(auto a)  // 错误
@@ -286,7 +286,7 @@ void deduceElement(T& element);
 
 ```
 
-（10）auto不是一个真正的类型，仅仅是一个占位符，不能使用一些以类型为操作数的操作符，如sizeof或typeid：
+（10）**auto不是一个真正的类型，仅仅是一个占位符，不能使用一些以类型为操作数的操作符，如sizeof或typeid**：
 
 ```cpp
 std::cout << sizeof(auto) << std::endl;        // 错误
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwNTE2ODkzLDkwNjA5NDgxMywtMTQwOD
+eyJoaXN0b3J5IjpbMjYzMjk3NjI5LDkwNjA5NDgxMywtMTQwOD
 ExMDc2NSwtNDAyMjMwNjY5LC05MDg2MDU5NzddfQ==
 -->
