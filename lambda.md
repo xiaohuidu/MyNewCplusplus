@@ -32,7 +32,7 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 
 在VS2017中构造一个简单的lambda表达式如下：
 ```
-auto f = [] (int a, int b) -> int
+auto f = [nTest1] (int a, int b) -> int
 {
         return a + b + 42;
 };
@@ -47,10 +47,16 @@ cout << f(4, 3) << endl;
 class  f_class
 {
 public:
+    f_calass(int n) 
+    {
+        nTest1 = n
+    }
 	void  operator()(int a, int b)const 
 	{
 		return a + b + 42;
 	}
+private:
+int nTest1;
 };
 
 //用构造的类创建对象，print此时就是一个函数对象
@@ -284,7 +290,7 @@ int  main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzI1NDQzNjksMTY2NTkzMjQwMCw4Nz
-Y4MjY0MzEsMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcx
-MDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbODQ2MjQ1ODgwLDE2NjU5MzI0MDAsODc2OD
+I2NDMxLDI2ODk2MzkzNCwxNDM5MjA5NzQ2LC0xMzYwODE3MTA5
+LDM4NTgwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
 -->
