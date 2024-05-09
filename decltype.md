@@ -173,8 +173,8 @@ template <typename T>
 class Base {
 public:
 	 void func(T& container) {
-	 m_it = container.begin();
- }
+		 m_it = container.begin();
+	 }
 private:
 	 //T::iterator并不能包括所有的迭代器类型，
 	 //当 T 是一个 const 容器时，应当使用 const_iterator。
@@ -324,8 +324,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MzMyNDQyNywtMTA2MTcwNTcwNSwxNT
-I4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1
-NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xOD
-M0NjY3MDMxLC02OTUwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbLTExMDI4NzQ2NjEsLTEwNjE3MDU3MDUsMT
+UyODUwMjc1MCwtMjA5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3
+NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMT
+gzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
 -->
