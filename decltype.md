@@ -200,11 +200,8 @@ int main() {
 -   如果 exp 是一个左值，或者被括号( )包围，那么 decltype(exp) 的类型就是 exp 的引用；假设 exp 的类型为 T，那么 decltype(exp) 的类型就是 T&。
 -   如果 exp 是T类型的x值，那么decltype(exp )的结果类型为T&&。 注：x值（xvalue）是C++11新引入的值的种类，介于传统的左值和右值之间。最常见的x值为无名右值引用。
 
-cpp
-
-复制代码
-
-`#include <iostream>
+```cpp
+#include <iostream>
 using namespace std;
 class Base{
 public:
@@ -255,7 +252,8 @@ int main(){
  decltype(std::move(x)) a = 1;  //std::move(x)得到一个右值引用，符合推导规则四，所以推导结果为int&&
  }
  return 0;
-}` 
+}
+```
 
 ## decltype(auto) - C++14
 
@@ -329,8 +327,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkzNTY0MzQ3LC0xMDYxNzA1NzA1LDE1Mj
-g1MDI3NTAsLTIwOTI0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3
-NjQsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4Mz
-Q2NjcwMzEsLTY5NTA1MDE2NV19
+eyJoaXN0b3J5IjpbLTQyNTczODA2NiwtMTA2MTcwNTcwNSwxNT
+I4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1
+NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xOD
+M0NjY3MDMxLC02OTUwNTAxNjVdfQ==
 -->
