@@ -109,7 +109,7 @@ const int* p2 = &a;//p2是底层const
 
 特别是，当使用引用作为初始化器时，初始化器是相应的对象。编译器使用该对象的类型进行auto的类型推导:
 
-其次，auto通常忽略顶层const。在初始化中，通常会保留低级const，例如当初始化器是指向const对象的指针时，将被保留：
+其次，**auto通常忽略顶层const**。在**初始化中，通常会保留低级const**，例如当初始化器是指向const对象的指针时，将被保留：
 
 ```cpp
 int i = 0, &r = i;
@@ -504,6 +504,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NTM2NTE1OSwtMTQwODExMDc2NSwtND
-AyMjMwNjY5LC05MDg2MDU5NzddfQ==
+eyJoaXN0b3J5IjpbMTgwNTYyNTM1LC0xNDA4MTEwNzY1LC00MD
+IyMzA2NjksLTkwODYwNTk3N119
 -->
