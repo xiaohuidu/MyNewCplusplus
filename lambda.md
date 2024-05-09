@@ -21,8 +21,15 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 | 2 |[capture list] (params list) {function body}  |
 | 3 |[capture list] {function body}  |
 
+其中：
+
+格式1声明了const类型的表达式，这种类型的表达式不能修改捕获列表中的值。
+格式2省略了返回值类型，但编译器可以根据以下规则推断出Lambda表达式的返回类型：
+如果function body中存在return语句，则该Lambda表达式的返回类型由return语句的返回类型确定
+如果function body中没有return语句，则返回值为void类型。
+格式3中省略了参数列表，类似普通函数中的无参函数。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njk4NjgyMDMsMzg1ODA5NjIyLDk0Nj
+eyJoaXN0b3J5IjpbLTE4NTE3NjU0NTUsMzg1ODA5NjIyLDk0Nj
 UzNDc1MywxNTkxNDM0MDM3XX0=
 -->
