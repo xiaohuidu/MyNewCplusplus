@@ -312,7 +312,7 @@ for(auto& x : vector)  // 非常量左值引用
 
 ```
 
-当需要对原数据进行同步修改时，就需要添加&，即vector的引用。  
+当**需要对原数据进行同步修改时，就需要添加&**，即vector的引用。  
 会在改变x的同时修改vector。
 
 5.3
@@ -333,7 +333,7 @@ for(const auto& x : vector) //，常量左值引用
 
 ```
 
-使用 const 可以避免无意中修改数据的编程错误；  
+**使用 const 可以避免无意中修改数据的编程错误**；  
 使用 const 能让函数接收 const 和非 const 类型的实参，否则将只能接收非 const 类型的实参；  
 使用 const 引用能够让函数正确生成并使用临时变量（当传入实参与形参符合自动转换要求时可以通过临时变量进行自动类型转换）。
 
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NTU4NjAxMyw5MDYwOTQ4MTMsLTE0MD
+eyJoaXN0b3J5IjpbMTI5OTA4Njc0OSw5MDYwOTQ4MTMsLTE0MD
 gxMTA3NjUsLTQwMjIzMDY2OSwtOTA4NjA1OTc3XX0=
 -->
