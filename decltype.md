@@ -123,14 +123,12 @@ auto func(Container& c, Index i) {  // C++ 14
 
 然而，这还是有问题。假设 c 中对象的类型为 int，则 c[i] 返回的类型为 int&，经过 auto 后，引用会被忽略，变为 int。这时，返回的就是右值而不是左值。上面的语句②就会编译错误。如果想要返回左值，则必须这样写：
 
-c++
-
-复制代码
-
+```cpp
 `template<typename Container, typename Index>
 decltype(auto) f(Container& c, Index i) {  // C++ 14
- return c[i];
-} // 返回了 int&` 
+	 return c[i];
+} // 返回了 int&
+```
 
 这个容器是通过非`const`左值引用传入的，因为通过返回一个容器元素的引用是来修改容器是被允许的。但是这也意味着不可能将右值传入这个函数。右值不能和一个左值引用绑定（除非是`const`的左值引用，但这里不是这种情况）。
 
@@ -335,8 +333,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgxMjk5NDQyLDE1Mjg1MDI3NTAsLTIwOT
-I0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3NjQsLTYzOTI3NTA4
-LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4MzQ2NjcwMzEsLTY5NT
-A1MDE2NV19
+eyJoaXN0b3J5IjpbMTUwNzUyNzcxMSwxNTI4NTAyNzUwLC0yMD
+kyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUw
+OCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OT
+UwNTAxNjVdfQ==
 -->
