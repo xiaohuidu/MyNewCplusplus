@@ -96,8 +96,8 @@ char
 在代码表现上是：
 
 ```cpp
-int* cosnt p1 = &a;//p1是顶层const
-cosnt int* p2 = &a;//p2是底层const
+int* const p1 = &a;//p1是顶层const
+const int* p2 = &a;//p2是底层const
 
 ```
 
@@ -504,6 +504,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDgxMTA3NjUsLTQwMjIzMDY2OSwtOT
-A4NjA1OTc3XX0=
+eyJoaXN0b3J5IjpbODU5NDg5MzE5LC0xNDA4MTEwNzY1LC00MD
+IyMzA2NjksLTkwODYwNTk3N119
 -->
