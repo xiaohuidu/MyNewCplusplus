@@ -228,22 +228,22 @@ int main(){
  }
  { // 规则二
  //decltype类型推导
- int n = 100;
- decltype(func_int_r(100, 'A')) a = n;  //a 的类型为 int&
- decltype(func_int_rr()) b = 0;  //b 的类型为 int&&
- decltype(func_int(10.5)) c = 0;   //c 的类型为 int
- decltype(fun_cint_r(1,2,3))  x = n;    //x 的类型为 const int &
- decltype(func_cint_rr()) y = 0;  // y 的类型为 const int&&
+	 int n = 100;
+	 decltype(func_int_r(100, 'A')) a = n;  //a 的类型为 int&
+	 decltype(func_int_rr()) b = 0;  //b 的类型为 int&&
+	 decltype(func_int(10.5)) c = 0;   //c 的类型为 int
+	 decltype(fun_cint_r(1,2,3))  x = n;    //x 的类型为 const int &
+	 decltype(func_cint_rr()) y = 0;  // y 的类型为 const int&&
  }
  { // 规则三
- const Base obj = Base();
- //带有括号的表达式
- decltype(obj.i) a = 0;  //obj.i 为类的成员访问表达式，符合推导规则一，a 的类型为 int
- decltype((obj.i)) b = a;  //obj.i 带有括号，符合推导规则三，b 的类型为 int&。
- //加法表达式
- int n = 0, m = 0;
- decltype(n + m) c = 0;  //n+m 得到一个右值，符合推导规则一，所以推导结果为 int
- decltype(n = n + m) d = c;  //n=n+m 得到一个左值，符号推导规则三，所以推导结果为 int& 
+	 const Base obj = Base();
+	 //带有括号的表达式
+	 decltype(obj.i) a = 0;  //obj.i 为类的成员访问表达式，符合推导规则一，a 的类型为 int
+	 decltype((obj.i)) b = a;  //obj.i 带有括号，符合推导规则三，b 的类型为 int&。
+	 //加法表达式
+	 int n = 0, m = 0;
+	 decltype(n + m) c = 0;  //n+m 得到一个右值，符合推导规则一，所以推导结果为 int
+	 decltype(n = n + m) d = c;  //n=n+m 得到一个左值，符号推导规则三，所以推导结果为 int& 
  }
  { // 规则四
  int x = 0;
@@ -324,7 +324,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwODk5MzEwMywtMTEwMjg3NDY2MSwtMT
+eyJoaXN0b3J5IjpbMTk1OTM2ODUxMSwtMTEwMjg3NDY2MSwtMT
 A2MTcwNTcwNSwxNTI4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2
 ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOT
 YyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
