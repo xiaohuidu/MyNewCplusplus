@@ -252,13 +252,8 @@ void fnTest()
 |[=, &x]  |变量x以引用形式捕获，其余变量以传值形式捕获  |
 |[&, x]  |变量x以值的形式捕获，其余变量以引用形式捕获
 
-————————————————
-
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-                        
-原文链接：https://blog.csdn.net/LPWSTR/article/details/79633944  |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNzI2NzA3NCwtMTM2MDgxNzEwOSwzOD
+eyJoaXN0b3J5IjpbMTQzOTIwOTc0NiwtMTM2MDgxNzEwOSwzOD
 U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
