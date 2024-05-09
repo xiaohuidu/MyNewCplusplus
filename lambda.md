@@ -12,9 +12,9 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 3. mutable指示符：用来说用是否可以修改捕获的变量
 4. exception：异常设定
 5. return type：返回类型
-function body：函数体
+6. function body：函数体
 此外，我们还可以省略其中的某些成分来声明“不完整”的lambda表达式，常见的有以下几种：
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzNTcwNTg1M119
+eyJoaXN0b3J5IjpbMTU5MTQzNDAzN119
 -->
