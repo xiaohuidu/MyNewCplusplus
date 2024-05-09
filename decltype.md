@@ -66,11 +66,12 @@ int main(){
  //dclTempB为一个引用int &，引用必须初始化；
  // 否则错误：error: 'dclTempB' declared as reference but not initialized
  decltype(*ptrTempA) dclTempB = tempA;
- decltype(&ptrTempA) dcT
+ // &ptrTempA 是指向指针的指针， 是个右值， 所以类型是int*
+ decltype(&ptrTempA) dclTempC = ptrTempA
 }
 ```
 
--   **decltype与引用**：decltype处理引用时需要保留引用，这点和auto是有区别。例如：
+-   **decltype与引用**：decltype处理引用时需要**保留引用**，这点和auto是有区别。例如：
 ```cpp
 #include <iostream>
 int main(){
@@ -336,7 +337,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTU4MTUwNTgsNDM5MzY4NDkyLC0zMj
+eyJoaXN0b3J5IjpbLTIwOTI0MzkzMTAsNDM5MzY4NDkyLC0zMj
 I5NzU3NjQsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQs
 LTE4MzQ2NjcwMzEsLTY5NTA1MDE2NV19
 -->
