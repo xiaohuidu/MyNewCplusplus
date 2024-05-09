@@ -125,7 +125,7 @@ auto func(Container& c, Index i) {  // C++ 14
 
 ```cpp
 `template<typename Container, typename Index>
-decltype(auto) f(Container& c, Index i) {  // C++ 14
+decltype(auto) func(Container& c, Index i) {  // C++ 14
 	 return c[i];
 } // 返回了 int&
 ```
@@ -333,8 +333,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTM5Mjg2MjYsMTUyODUwMjc1MCwtMj
-A5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1
-MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNj
-k1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbMjIxMzkwNTU2LDE1Mjg1MDI3NTAsLTIwOT
+I0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3NjQsLTYzOTI3NTA4
+LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4MzQ2NjcwMzEsLTY5NT
+A1MDE2NV19
 -->
