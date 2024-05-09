@@ -231,7 +231,7 @@ auto &c = b; // 此时c的类型才是int&
 
 ```
 
-（5）如果初始化表达式为const或volatile（或者两者兼有），则除去const/volatile语义。
+（5）**如果初始化表达式为const或volatile（或者两者兼有），则除去const/volatile语义。**
 
 ```cpp
 const int a = 10;
@@ -243,7 +243,7 @@ c = 100;   // 非法
 
 ```
 
-（6）如果auto关键字带上&号，则不去除const语义。
+（6）**如果auto关键字带上&号，则不去除const语义**。
 
 ```cpp
 const int a = 10;
@@ -253,7 +253,7 @@ b = 10;   /非法
 
 ```
 
-（7）初始化表达式为数组时，auto关键字推导类型为指针。
+（7）**初始化表达式为数组时，auto关键字推导类型为指针**。
 
 ```cpp
 int a[3] = { 1, 2, 3 };
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM1MzMyNTczLDkwNjA5NDgxMywtMTQwOD
+eyJoaXN0b3J5IjpbODIwNTE2ODkzLDkwNjA5NDgxMywtMTQwOD
 ExMDc2NSwtNDAyMjMwNjY5LC05MDg2MDU5NzddfQ==
 -->
