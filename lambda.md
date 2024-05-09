@@ -28,8 +28,10 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 如果function body中存在return语句，则该Lambda表达式的返回类型由return语句的返回类型确定
 如果function body中没有return语句，则返回值为void类型。
 格式3中省略了参数列表，类似普通函数中的无参函数。
+## 简单lambda表达式及其原理分析
 
+在VS2017中构造一个简单的lambda表达式如下：
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTE3NjU0NTUsMzg1ODA5NjIyLDk0Nj
-UzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbLTU5ODE0MDU3OSwzODU4MDk2MjIsOTQ2NT
+M0NzUzLDE1OTE0MzQwMzddfQ==
 -->
