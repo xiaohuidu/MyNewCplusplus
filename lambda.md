@@ -31,7 +31,18 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 ## 简单lambda表达式及其原理分析
 
 在VS2017中构造一个简单的lambda表达式如下：
+```
+auto f = [] (int a, int b) -> int
+{
+        return a + b + 42;
+};
+003A3BC0 6A 03                push        3  
+003A3BC2 6A 04                push        4  
+003A3BC4 8D 4D EB             lea         ecx,[f]  
+003A3BC7 E8 04 E4 FF FF       call        <lambda_f2fe7ac06244f603e089b2eaef4ffd5c>::operator() (03A1FD0h) 
+cout << f(4, 3) << endl;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5ODE0MDU3OSwzODU4MDk2MjIsOTQ2NT
+eyJoaXN0b3J5IjpbMTg5ODYyMjcwNCwzODU4MDk2MjIsOTQ2NT
 M0NzUzLDE1OTE0MzQwMzddfQ==
 -->
