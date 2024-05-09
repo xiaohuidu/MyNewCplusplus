@@ -28,7 +28,7 @@ std::tuple是C++11引入的一个新特性，它是一个固定长度的、类�
 std::tuple<std::string, int, double> person = {"Tom", 20, 1.75};
 ```
 
-与结构体不同，std::tuple的成员变量无法通过点运算符直接访问。为了访问元组中的各个元素，我们可以使用std::[get函数]或者结构化绑定(structured binding)语法。
+与结构体不同，std::tuple的成员变量无法通过点运算符直接访问。为了访问元组中的各个元素，我们可以使用std::get函数或者结构化绑定(structured binding)语法。
 
 在C++17之前，我们使用std::get来访问元组中的各个元素，如下所示：
 ```
@@ -72,5 +72,5 @@ std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto
 在这里，我们首先使用结构化绑定语法将元组中的每个元素绑定到一个变量中，并输出它们的值。然后，我们使用auto[]来访问元组中的各个元素，其中auto[]会自动推导出元素的类型，从而避免了手动指定索引的繁琐。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNzc2NDg2Ml19
+eyJoaXN0b3J5IjpbLTI4Mzg5OTk3Nl19
 -->
