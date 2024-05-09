@@ -1,4 +1,4 @@
-## 一、auto发展历程
+## 一、std::auto发展历程
 
 在早期C/C++中auto的含义是：使用auto修饰的变量，是具有自动存储器的局部变量，但遗憾的是一直没有人去使用它，大家可思考下为什么？
 
@@ -504,5 +504,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczOTE5MDE0MCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTkwODYwNTk3NywtNzM5MTkwMTQwLDczMD
+k5ODExNl19
 -->
