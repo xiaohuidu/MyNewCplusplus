@@ -42,6 +42,27 @@ auto f = [] (int a, int b) -> int
 003A3BC7 E8 04 E4 FF FF       call        <lambda_f2fe7ac06244f603e089b2eaef4ffd5c>::operator() (03A1FD0h) 
 cout << f(4, 3) << endl;
 ```
+编译器会把它编译成下面的类: 
+```
+`class`  `f_class`
+`{`
+
+`public``:`
+
+`void`  `operator()(``void``)` `const`
+
+`{`
+
+`cout <<` `"Hello World！"`  `<< endl;`
+
+`}`
+
+`};`
+
+`//用构造的类创建对象，print此时就是一个函数对象`
+
+`auto`  `print = print_class();`
+```
 
 可以看到，调用该functor时，call到的是一个lambda对象的operator()位置，该位置反汇编代码如下：
 ```
@@ -270,7 +291,7 @@ int  main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NTkzMjQwMCw4NzY4MjY0MzEsMjY4OT
-YzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcxMDksMzg1ODA5NjIy
-LDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbLTE3MjY3NDY4MjQsMTY2NTkzMjQwMCw4Nz
+Y4MjY0MzEsMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcx
+MDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
