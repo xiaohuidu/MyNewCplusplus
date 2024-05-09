@@ -107,7 +107,7 @@ int testFunc1()
 01183C2A 8D 4D DC             lea         ecx,[f]  
 01183C2D E8 4E F7 FF FF       call        <lambda_ed51e51ff76776313a28b716c94bbc2d>::operator() (01183380h)  
 ```
-基本可以断定，nTest是在lambda匿名类构造时传入的。并且传入的是nTest1的引用（由于C++的引用本身就是语法糖，反汇编层面看到的是指针，但是结合源码分析不难得出这里应该是引用）。下面跟踪进其构造函数一探究竟：
+基本可以断定，**nTest是在lambda匿名类构造时传入的**。并且传入的是nTest1的引用（由于C++的引用本身就是语法糖，反汇编层面看到的是指针，但是结合源码分析不难得出这里应该是引用）。下面跟踪进其构造函数一探究竟：
 ```
 01181F20 55                   push        ebp  
 01181F21 8B EC                mov         ebp,esp  
@@ -240,6 +240,6 @@ void fnTest()
 ```
 注意前两句，已将调用lambda对象前的值压栈了，则传入的值当然是2333。但在cout语句执行后查看nTest1的值，其实已经被修改为131了。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUwMzEzMDk5LC0xMzYwODE3MTA5LDM4NT
+eyJoaXN0b3J5IjpbOTg4MzUxMzcxLC0xMzYwODE3MTA5LDM4NT
 gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
 -->
