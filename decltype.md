@@ -108,7 +108,7 @@ auto func(Container& c, Index i) -> decltype(c[i]) {
 int main() {
  std::vector<int> v(8);
  f(v, 3);   // 1
- f(v, 3) = 5;  // 2
+ f(v, 3) = 5;  // ②
 }
 ```
 
@@ -333,8 +333,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNzUyNzcxMSwxNTI4NTAyNzUwLC0yMD
-kyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUw
-OCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OT
-UwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbLTE3MTM5Mjg2MjYsMTUyODUwMjc1MCwtMj
+A5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1
+MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNj
+k1MDUwMTY1XX0=
 -->
