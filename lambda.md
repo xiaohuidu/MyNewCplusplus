@@ -206,7 +206,7 @@ void fnTest()
 00C23C31 8D 4D DC             lea         ecx,[f]  
 00C23C34 E8 B7 02 00 00       call        <lambda_856c2229edde1846e85c005aaea059db>::operator() (0C23EF0h)  
 ```
-可以看到，lambda表达式匿名对象在构造函数中依然传入了nTest的地址（引用），下面看看构造函数：
+可以看到，lambda表达式匿名对象在构造函数中**依然传入了nTest的地址**（引用），下面看看构造函数：
 ```
 ; 省略一大堆现场保护代码
 00C21F40 89 4D F8             mov         dword ptr [this],ecx  
@@ -216,7 +216,7 @@ void fnTest()
 00C21F4B 8B 45 F8             mov         eax,dword ptr [this]  
 ; 省略一大堆现场恢复代码
 ```
-哈哈，注意这句 mov dword ptr [eax],ecx ，由于构造函数调用时，传入的是nTest1的地址，这里渠道地址后，直接存到了成员对象中。而在其operator()函数中，取出nTest1值的代码如下：
+哈哈，注意这句 mov dword ptr [eax],ecx ，由于构造函数调用时，传入的是nTest1的地址，这里取到地址后，直接存到了成员对象中。而在其operator()函数中，取出nTest1值的代码如下：
 ```
 00C23F1A 8B 45 F8             mov         eax,dword ptr [this]  
 00C23F1D 8B 08                mov         ecx,dword ptr [eax]  
@@ -240,6 +240,6 @@ void fnTest()
 ```
 注意前两句，已将调用lambda对象前的值压栈了，则传入的值当然是2333。但在cout语句执行后查看nTest1的值，其实已经被修改为131了。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg4MzUxMzcxLC0xMzYwODE3MTA5LDM4NT
-gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbLTE1MTMxNjMyNzgsLTEzNjA4MTcxMDksMz
+g1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
