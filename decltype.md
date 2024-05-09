@@ -164,7 +164,7 @@ int main() {
 
 ### 非静态成员的类型
 
-我们都知道 auto 并不适用于所有的自动类型推导场景，auto 只能用于类的静态成员，不能用于类的非静态成员（普通成员）。在某些特殊情况下 auto 用起来非常不方便，甚至压根无法使用，所以 decltype 关键字也被引入到 C++11 中。如果我们想推导非静态成员的类型，这个时候就必须使用 decltype 了。看下面例子：
+我们都知道 auto 并不适用于所有的自动类型推导场景，**auto 只能用于类的静态成员，不能用于类的非静态成员（普通成员）**。在某些特殊情况下 auto 用起来非常不方便，甚至压根无法使用，所以 decltype 关键字也被引入到 C++11 中。如**果我们想推导非静态成员的类型，这个时候就必须使用 decltype 了**。看下面例子：
 
 ```cpp
 #include <vector>
@@ -172,14 +172,14 @@ using namespace std;
 template <typename T>
 class Base {
 public:
- void func(T& container) {
- m_it = container.begin();
+	 void func(T& container) {
+	 m_it = container.begin();
  }
 private:
- //T::iterator并不能包括所有的迭代器类型，
- //当 T 是一个 const 容器时，应当使用 const_iterator。
- // typename T::iterator m_it;  //注意这里 
- decltype(T().begin()) m_it;  //注意这里
+	 //T::iterator并不能包括所有的迭代器类型，
+	 //当 T 是一个 const 容器时，应当使用 const_iterator。
+	 // typename T::iterator m_it;  //注意这里 
+	 decltype(T().begin()) m_it;  //注意这里
 };
 int main() {
  const vector<int> v;		//注意这里
@@ -324,7 +324,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTAzNjM2NjksLTEwNjE3MDU3MDUsMT
+eyJoaXN0b3J5IjpbLTEwNDkyNDU0OTMsLTEwNjE3MDU3MDUsMT
 UyODUwMjc1MCwtMjA5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3
 NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMT
 gzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
