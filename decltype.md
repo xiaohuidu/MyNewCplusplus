@@ -97,8 +97,7 @@ int main(){
 在C++11中，**decltype最主要的用处可能就是用来声明一个函数模板，在这个函数模板中返回值的类型取决于参数的类型。**举个例子，假设我们想写一个函数，这个函数中接受一个支持方括号索引（也就是"[]"）的容器作为参数，验证用户的合法性后返回索引结果。这个函数的返回值类型应该和索引操作的返回值类型是一样的。
 
 ```cpp
-
-`#include <iostream>
+#include <iostream>
 #include <vector>
 template<typename Container, typename Index>
 auto func(Container& c, Index i) -> decltype(c[i]) {
@@ -108,19 +107,17 @@ int main() {
  std::vector<int> v(8);
  f(v, 3);   // 1
  f(v, 3) = 5;  // 2
-}` 
+}
 ```
 
 到了 C++14，我们这样写也是对的：
 
-c++
-
-复制代码
-
-`template<typename Container, typename Index>
-auto f(Container& c, Index i) {  // C++ 14
- return c[i];
-} // 返回了 int` 
+```cpp
+template<typename Container, typename Index>
+auto func(Container& c, Index i) {  // C++ 14
+	 return c[i];
+} // 返回了 int
+```
 
 然而，这还是有问题。假设 c 中对象的类型为 int，则 c[i] 返回的类型为 int&，经过 auto 后，引用会被忽略，变为 int。这时，返回的就是右值而不是左值。上面的语句②就会编译错误。如果想要返回左值，则必须这样写：
 
@@ -336,7 +333,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MDgzNTg1MSwtMjA5MjQzOTMxMCw0Mz
+eyJoaXN0b3J5IjpbMTUyODUwMjc1MCwtMjA5MjQzOTMxMCw0Mz
 kzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2
 LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
 -->
