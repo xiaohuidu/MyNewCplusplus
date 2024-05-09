@@ -210,7 +210,7 @@ auto c = 1, d = 1.11;
 
 （3）auto不能推导的场景
 
-**auto不能作为函数的参数和声明数组**
+**auto不能作为函数的参数和声明数组。**
 
 ```cpp
 void TestAuto(auto a) {
@@ -218,6 +218,15 @@ void TestAuto(auto a) {
 } // 报错
 auto arr[3] = { 1,2,3 };//会报错
 
+```
+C++17 引入了auto[]  来推导数字元素的类型， 并且可以用来索引shu
+```
+std::tuple<std::string, int, double> person = {"Tom",20, 1.75};
+auto [name, age, height] = person;
+std::cout << "Name: " << name << ", Age: " << age << ", Height: " << height << std::endl;
+
+// 使用auto[]访问元组中的各个元素
+std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto[2] << std::endl;
 ```
 
 (4)**如果初始化表达式是引用，则去除引用语义**，如：
@@ -491,7 +500,7 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMjc4MDAyNywtMTU4OTQxMjUxNSw5MD
-YwOTQ4MTMsLTE0MDgxMTA3NjUsLTQwMjIzMDY2OSwtOTA4NjA1
-OTc3XX0=
+eyJoaXN0b3J5IjpbODU3ODgwODAzLC03MjI3ODAwMjcsLTE1OD
+k0MTI1MTUsOTA2MDk0ODEzLC0xNDA4MTEwNzY1LC00MDIyMzA2
+NjksLTkwODYwNTk3N119
 -->
