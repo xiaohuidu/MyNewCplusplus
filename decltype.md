@@ -194,9 +194,9 @@ int main() {
 使用 `decltype(exp)` 获取类型时，编译器将根据以下三条规则得出结果：
 
 -   **如果 exp 是一个不被括号()包围的表达式，或者是一个类成员访问表达式，或者是一个单独的变量，那么 decltype(exp) 的类型就和 exp 一致**，这是最普遍最常见的情况。 注：这里的`不被括号()包围`是指表达式exp自身带的小括号，而不是decltype(exp)中的小括号。
--   如果 exp 是函数调用，那么 decltype(exp) 的类型就和函数返回值的类型一致。
--   如果 exp 是一个左值，或者被括号( )包围，那么 decltype(exp) 的类型就是 exp 的引用；假设 exp 的类型为 T，那么 decltype(exp) 的类型就是 T&。
--   如果 exp 是T类型的x值，那么decltype(exp )的结果类型为T&&。 注：x值（xvalue）是C++11新引入的值的种类，介于传统的左值和右值之间。最常见的x值为无名右值引用。
+-   **如果 exp 是函数调用，那么 decltype(exp) 的类型就和函数返回值的类型一致。**
+-   **如果 exp 是一个左值，或者被括号( )包围，那么 decltype(exp) 的类型就是 exp 的引用**；假设 exp 的类型为 T，那么 decltype(exp) 的类型就是 T&。
+-   **如果 exp 是T类型的x值，那么decltype(exp )的结果类型为T&&**。 注：x值（xvalue）是C++11新引入的值的种类，介于传统的左值和右值之间。最常见的x值为无名右值引用。
 
 ```cpp
 #include <iostream>
@@ -324,8 +324,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2OTU2MDk5NywtMTEwMjg3NDY2MSwtMT
-A2MTcwNTcwNSwxNTI4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2
-ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOT
-YyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbOTgwMjg5NTUsLTExMDI4NzQ2NjEsLTEwNj
+E3MDU3MDUsMTUyODUwMjc1MCwtMjA5MjQzOTMxMCw0MzkzNjg0
+OTIsLTMyMjk3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2Mj
+E5Njc1NCwtMTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
 -->
