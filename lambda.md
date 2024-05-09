@@ -223,8 +223,23 @@ void fnTest()
 00C23F1F 8B FC                mov         edi,esp  
 00C23F21 8B 11                mov         edx,dword ptr [ecx]  
 ```
-
+可以看到，是通过成员变量中的指针完成的。此外再看看对其赋值的操作：
+```
+    52:         nTest1 = 131;
+00C23F55 8B 45 F8             mov         eax,dword ptr [this]  
+00C23F58 8B 08                mov         ecx,dword ptr [eax]  
+00C23F5A C7 01 83 00 00 00    mov         dword ptr [ecx],83h 
+```
+也是用指针完成的。其实这时nTest1的值已经被修改了。但是为什么cout打印出来还是2333呢？这其实是由于cout时从由向左压入参数的结果，再仔细看看：
+```
+00C23C24 8B 45 E8             mov         eax,dword ptr [nTest1]  
+00C23C27 50                   push        eax                   ; eax=2333
+00C23C28 68 90 BB C2 00       push        offset string "&nTest1=" (0C2BB90h)  
+00C23C2D 6A 03                push        3  
+00C23C2F 6A 04                push        4  
+```
+注意前两句，已将调用lambda对象前的值压栈了，则传入的值当然是2333。但在cout语句执行后查看nTest1的值，其实已经被修改为131了。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDg4NjM2NzksLTEzNjA4MTcxMDksMz
-g1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbMjUwMzEzMDk5LC0xMzYwODE3MTA5LDM4NT
+gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
 -->
