@@ -29,9 +29,7 @@ auto pos = v.begin();
 
 template<typename T>
 void deducePos(T pos);
-
 deducePos(v.begin());
-
 ```
 
 而**auto类型变量不会是引用类型**（模板实参推断的规则），所以要用auto&_（**C++14支持直接用decltype(auto)推断原始类型**）_，第二个auto推断对应于下面这个模板传参时的情形，同样T就是为auto推断的类型,例如：
@@ -44,9 +42,7 @@ auto& element = *pos++;
 // auto& element = *pos++的推断等价于如下调用模板的推断
 template<typename T>
 void deduceElement(T& element);
-
 deduceElement(*pos++);
-
 ```
 
   
@@ -80,7 +76,6 @@ int
 char
 int *
 char
-
 ```
 
 ### 2.auto  和const
@@ -98,7 +93,6 @@ char
 ```cpp
 int* const p1 = &a;//p1是顶层const
 const int* p2 = &a;//p2是底层const
-
 ```
 
 **复合类型compound type、const和auto的关系是什么？**
@@ -119,8 +113,6 @@ auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
 auto d = &i; // d is an int*(& of an int object is int*)
 auto e = &ci; // e is const int*(& of a const object is low-level const)
 auto f = &cr; // e is const int*(& of a const object is low-level const)
-
-
 ```
 
 下面看忽视顶层const指针的例子：
@@ -135,7 +127,6 @@ const int* const pz3= &z;//pz3为const int* const（同时包含底层和顶层c
 auto apz1 = pz1;//apz1为int*
 auto apz2 = pz2;//apz2为const int*
 auto apz3 = pz3;//apz3为cosnt int*
-
 ```
 
   
@@ -147,7 +138,6 @@ int i = 0, &r = i;
 const int ci = i, &cr = ci;
 const auto f = ci; // deduced type of ci is int; f has type const int
 const auto g = &ci; // deduced type of ci is const int*; g has type const int* const 
-
 ```
 
   
@@ -161,7 +151,6 @@ const auto cb1 = ci; //同上
 
 const auto ca1 = &i;//cal为常量指针。&i本是int*，因为规则3，强行将cal提升为常量指针int *const
 const auto ccp = &ci;//本来&ci为const int *，因为规则3，加了const后，提示为const int * const
-
 ```
 
 ### 3.声明为auto引用：auto &
@@ -504,6 +493,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNTYyNTM1LC0xNDA4MTEwNzY1LC00MD
+eyJoaXN0b3J5IjpbLTQ3OTY3NDk1LC0xNDA4MTEwNzY1LC00MD
 IyMzA2NjksLTkwODYwNTk3N119
 -->
