@@ -60,9 +60,13 @@ cout << f(4, 3) << endl;
 00BA2002 5D                   pop         ebp  
 00BA2003 C2 08 00             ret         8  
 ```
+注意：
 
+1.  如果在lambda表达式中忽略括号和形参列表，则相当于指定的函数没有入参。
+2.  lambda表达式中不能指定参数的默认值。
+3.  如果忽略返回值类型，则由编译器做自动类型推断，详细规则如第一部分所示。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjA4MTcxMDksMzg1ODA5NjIyLDk0Nj
-UzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbNjAxNjcyMjE3LC0xMzYwODE3MTA5LDM4NT
+gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
 -->
