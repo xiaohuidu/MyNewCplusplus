@@ -173,8 +173,58 @@ void fnTest()
     cout << f(4, 3) << "&nTest1=" << nTest1 << endl;        //nTest1 = 23333
 }
 ```
+这个结果有点诡异，按说传递引用并进行修改以后，结果应该会对外部的局部变量产生影响，但这里并没有。反汇编看看什么情况：
+```
+00C23C01 C7 45 E8 17 00 00 00 mov         dword ptr [nTest1],17h  
+    48: 
+    49:     auto f = [&nTest1] (int a, int b) -> int
+    50:     {
+    51:         cout << "In functor before change nTest=" << nTest1 << endl;    //nTest1=23333
+    52:         nTest1 = 131;
+    53:         cout << "In functor after change nTest=" << nTest1 << endl;     // nTest1 = 131
+    54:         return a + b + 42 + nTest1;
+    55:     };
+00C23C08 8D 45 E8             lea         eax,[nTest1]  
+00C23C0B 50                   push        eax  
+00C23C0C 8D 4D DC             lea         ecx,[f]  
+00C23C0F E8 0C E3 FF FF       call        <lambda_856c2229edde1846e85c005aaea059db>::<lambda_856c2229edde1846e85c005aaea059db> (0C21F20h)  
+    56: 
+    57:     nTest1 = 23333;     
+00C23C14 C7 45 E8 25 5B 00 00 mov         dword ptr [nTest1],5B25h  
+    58: 
+    59:     cout << f(4, 3) << "&nTest1=" << nTest1 << endl;        //nTest1 = 23333
+00C23C1B 8B F4                mov         esi,esp  
+00C23C1D 68 DC 10 C2 00       push        offset std::endl<char,std::char_traits<char> > (0C210DCh)  
+    58: 
+    59:     cout << f(4, 3) << "&nTest1=" << nTest1 << endl;        //nTest1 = 23333
+00C23C22 8B FC                mov         edi,esp  
+00C23C24 8B 45 E8             mov         eax,dword ptr [nTest1]  
+00C23C27 50                   push        eax  
+00C23C28 68 90 BB C2 00       push        offset string "&nTest1=" (0C2BB90h)  
+00C23C2D 6A 03                push        3  
+00C23C2F 6A 04                push        4  
+00C23C31 8D 4D DC             lea         ecx,[f]  
+00C23C34 E8 B7 02 00 00       call        <lambda_856c2229edde1846e85c005aaea059db>::operator() (0C23EF0h)  
+```
+可以看到，lambda表达式匿名对象在构造函数中依然传入了nTest的地址（引用），下面看看构造函数：
+```
+; 省略一大堆现场保护代码
+00C21F40 89 4D F8             mov         dword ptr [this],ecx  
+00C21F43 8B 45 F8             mov         eax,dword ptr [this]  
+00C21F46 8B 4D 08             mov         ecx,dword ptr [<nTest1>]  
+00C21F49 89 08                mov         dword ptr [eax],ecx  
+00C21F4B 8B 45 F8             mov         eax,dword ptr [this]  
+; 省略一大堆现场恢复代码
+```
+哈哈，注意这句 mov dword ptr [eax],ecx ，由于构造函数调用时，传入的是nTest1的地址，这里渠道地址后，直接存到了成员对象中。而在其operator()函数中，取出nTest1值的代码如下：
+```
+00C23F1A 8B 45 F8             mov         eax,dword ptr [this]  
+00C23F1D 8B 08                mov         ecx,dword ptr [eax]  
+00C23F1F 8B FC                mov         edi,esp  
+00C23F21 8B 11                mov         edx,dword ptr [ecx]  
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0OTAwNjM0MywtMTM2MDgxNzEwOSwzOD
-U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
+eyJoaXN0b3J5IjpbLTE2NDg4NjM2NzksLTEzNjA4MTcxMDksMz
+g1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
