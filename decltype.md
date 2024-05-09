@@ -314,19 +314,10 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 `decltype`几乎总是得到一个变量或表达式的类型而不需要任何修改，对于非变量名的类型为`T`的左值表达式，`decltype`总是返回`T&`。
 
 通常，**我们使用 auto类型说明符和 decltype 类型说明符来帮助编写模板库，使用 auto 并 decltype 声明其返回类型的模板函数取决于其模板参数的类型**。
-
-好了，到这里，decltype基本就介绍完了。
-
-  
-
-作者：Codemaxi  
-链接：https://juejin.cn/post/7092020261972606983  
-来源：稀土掘金  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDAyMTU1NzcsMjEwMzY2NjM0MywxOT
-A1NjI3NjIzLC0xMTAyODc0NjYxLC0xMDYxNzA1NzA1LDE1Mjg1
-MDI3NTAsLTIwOTI0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3Nj
-QsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4MzQ2
-NjcwMzEsLTY5NTA1MDE2NV19
+eyJoaXN0b3J5IjpbLTkxNzE3MTkwMiwyMTAzNjY2MzQzLDE5MD
+U2Mjc2MjMsLTExMDI4NzQ2NjEsLTEwNjE3MDU3MDUsMTUyODUw
+Mjc1MCwtMjA5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NC
+wtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2
+NzAzMSwtNjk1MDUwMTY1XX0=
 -->
