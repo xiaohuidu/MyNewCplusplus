@@ -303,7 +303,7 @@ for(auto x : vector)
 
 ```
 
-auto会拷贝一份容器内的vector，在修改x时不会改变原容器当中的vector值，只会改变拷贝的vector。
+auto会**拷贝一份容器内的vector**，在修改x时不会改变原容器当中的vector值，只会改变拷贝的vector。
 
 5.2
 
@@ -491,6 +491,6 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYzMjk3NjI5LDkwNjA5NDgxMywtMTQwOD
-ExMDc2NSwtNDAyMjMwNjY5LC05MDg2MDU5NzddfQ==
+eyJoaXN0b3J5IjpbMTI2NTU4NjAxMyw5MDYwOTQ4MTMsLTE0MD
+gxMTA3NjUsLTQwMjIzMDY2OSwtOTA4NjA1OTc3XX0=
 -->
