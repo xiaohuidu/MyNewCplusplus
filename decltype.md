@@ -262,11 +262,8 @@ decltype(auto)是C++14新增的类型指示符，可以用来声明变量以及�
 -   当decltype(auto)被用于声明变量时，该变量必须立即初始化。假设该变量的初始化表达式为e，那么该变量的类型将被推导为decltype(e)。也就是说在推导变量类型时，先用初始化表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定变量的类型。
 -   当decltype(auto)被用于指示函数的返回值类型时。假设函数返回表达式e，那么该函数的返回值类型将被推导为decltype(e)。也就是说在推导函数返回值类型时，先用返回值表达式替换decltype(auto)当中的auto，然后再根据decltype的语法规则来确定函数返回值的类型。
 
-c++
-
-复制代码
-
-`#include <iostream>
+```cpp
+#include <iostream>
   
 template<typename T> 
 T compileTypeId();  // 用于编译出错，根据错误信息打印出T的类型
@@ -293,22 +290,24 @@ int main() {
  compileTypeId<decltype(g2())>();  // int&&
  compileTypeId<decltype(g3())>();  // int&
  compileTypeId<decltype(g4())>();  // int
-}` 
+}
+```
 
 根据编译错误信息可以看出实际的类型：
 
 csharp
 
-复制代码
 
-``<source>:21: undefined reference to `int compileTypeId<int>()'
+```
+<source>:21: undefined reference to `int compileTypeId<int>()'
 <source>:22: undefined reference to `int&& compileTypeId<int&&>()'
 <source>:23: undefined reference to `int& compileTypeId<int&>()'
 <source>:24: undefined reference to `int compileTypeId<int>()'
 <source>:25: undefined reference to `int compileTypeId<int>()'
 <source>:26: undefined reference to `int&& compileTypeId<int&&>()'
 <source>:27: undefined reference to `int& compileTypeId<int&>()'
-<source>:28: undefined reference to `int compileTypeId<int>()'`` 
+<source>:28: undefined reference to `int compileTypeId<int>()'
+```
 
 ## 总结
 
@@ -327,8 +326,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyNTczODA2NiwtMTA2MTcwNTcwNSwxNT
-I4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1
-NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xOD
-M0NjY3MDMxLC02OTUwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbNTYyNDgxMDA2LC0xMDYxNzA1NzA1LDE1Mj
+g1MDI3NTAsLTIwOTI0MzkzMTAsNDM5MzY4NDkyLC0zMjI5NzU3
+NjQsLTYzOTI3NTA4LC0zMjk3NjA2Niw5NjIxOTY3NTQsLTE4Mz
+Q2NjcwMzEsLTY5NTA1MDE2NV19
 -->
