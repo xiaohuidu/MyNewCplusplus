@@ -44,24 +44,17 @@ cout << f(4, 3) << endl;
 ```
 编译器会把它编译成下面的类: 
 ```
-`class`  `f_class`
-`{`
+class  f_class
+{
+public:
+	void  operator()(void)const 
+	{
+		return a + b + 42;
+	}
+};
 
-`public``:`
-
-`void`  `operator()(``void``)` `const`
-
-`{`
-
-`cout <<` `"Hello World！"`  `<< endl;`
-
-`}`
-
-`};`
-
-`//用构造的类创建对象，print此时就是一个函数对象`
-
-`auto`  `print = print_class();`
+//用构造的类创建对象，print此时就是一个函数对象
+auto  f= print_class();`
 ```
 
 可以看到，调用该functor时，call到的是一个lambda对象的operator()位置，该位置反汇编代码如下：
@@ -291,7 +284,7 @@ int  main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjY3NDY4MjQsMTY2NTkzMjQwMCw4Nz
-Y4MjY0MzEsMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcx
-MDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
+eyJoaXN0b3J5IjpbMzA2ODQ3NDc5LDE2NjU5MzI0MDAsODc2OD
+I2NDMxLDI2ODk2MzkzNCwxNDM5MjA5NzQ2LC0xMzYwODE3MTA5
+LDM4NTgwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
 -->
