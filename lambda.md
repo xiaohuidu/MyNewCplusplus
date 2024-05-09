@@ -42,7 +42,27 @@ auto f = [] (int a, int b) -> int
 003A3BC7 E8 04 E4 FF FF       call        <lambda_f2fe7ac06244f603e089b2eaef4ffd5c>::operator() (03A1FD0h) 
 cout << f(4, 3) << endl;
 ```
+
+可以看到，调用该functor时，call到的是一个lambda对象的operator()位置，该位置反汇编代码如下：
+```
+00BA1FD0 55                   push        ebp  
+00BA1FD1 8B EC                mov         ebp,esp  
+00BA1FD3 81 EC CC 00 00 00    sub         esp,0CCh  
+; 省略一堆东西
+00BA1FF0 89 4D F8             mov         dword ptr [this],ecx  
+    49:         return a + b + 42;
+00BA1FF3 8B 45 0C             mov         eax,dword ptr [b]  
+00BA1FF6 8B 4D 08             mov         ecx,dword ptr [a]  
+00BA1FF9 8D 44 01 2A          lea         eax,[ecx+eax+2Ah]  
+    50:     };
+; 省略一堆东西
+00BA2000 8B E5                mov         esp,ebp  
+00BA2002 5D                   pop         ebp  
+00BA2003 C2 08 00             ret         8  
+```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5ODYyMjcwNCwzODU4MDk2MjIsOTQ2NT
-M0NzUzLDE1OTE0MzQwMzddfQ==
+eyJoaXN0b3J5IjpbLTEzNjA4MTcxMDksMzg1ODA5NjIyLDk0Nj
+UzNDc1MywxNTkxNDM0MDM3XX0=
 -->
