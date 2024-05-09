@@ -144,16 +144,13 @@ auto func(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // 
 
 首先，Container参数用了万能引用，可以接收任何类型，左值或右值都可以。我们用std::forward实现我们想要的效果。调用forward，若原来是一个右值，那么他转出来就是一个右值，否则为一个左值。
 
-c++
-
-复制代码
-
-`#include <iostream>
+```cpp
+#include <iostream>
 #include <vector>
 template<typename Container, typename Index>
 auto f(Container&& c, Index i) -> decltype(std::forward<Container>(c)[i]) // C++11
 {
- return std::forward<Container>(c)[i];
+	 return std::forward<Container>(c)[i];
 }
 int main() {
  std::vector<int> v(8);
@@ -162,7 +159,8 @@ int main() {
  std::cout << v[3] << "\n";  // output 5
  auto x = f((std::vector<int>){1,2,3,4,5,6,7}, 3);  // 3
  std::cout << x << "\n";  // output 4
-}` 
+}
+```
 
 ### 非静态成员的类型
 
@@ -331,8 +329,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzNTMwNzU3MCwxNTI4NTAyNzUwLC0yMD
-kyNDM5MzEwLDQzOTM2ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUw
-OCwtMzI5NzYwNjYsOTYyMTk2NzU0LC0xODM0NjY3MDMxLC02OT
-UwNTAxNjVdfQ==
+eyJoaXN0b3J5IjpbLTEwNjE3MDU3MDUsMTUyODUwMjc1MCwtMj
+A5MjQzOTMxMCw0MzkzNjg0OTIsLTMyMjk3NTc2NCwtNjM5Mjc1
+MDgsLTMyOTc2MDY2LDk2MjE5Njc1NCwtMTgzNDY2NzAzMSwtNj
+k1MDUwMTY1XX0=
 -->
