@@ -246,8 +246,8 @@ int main(){
 	 decltype(n = n + m) d = c;  //n=n+m 得到一个左值，符号推导规则三，所以推导结果为 int& 
  }
  { // 规则四
- int x = 0;
- decltype(std::move(x)) a = 1;  //std::move(x)得到一个右值引用，符合推导规则四，所以推导结果为int&&
+	 int x = 0;
+	 decltype(std::move(x)) a = 1;  //std::move(x)得到一个右值引用，符合推导规则四，所以推导结果为int&&
  }
  return 0;
 }
@@ -324,7 +324,7 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1OTM2ODUxMSwtMTEwMjg3NDY2MSwtMT
+eyJoaXN0b3J5IjpbLTg1MDEzMDk0NSwtMTEwMjg3NDY2MSwtMT
 A2MTcwNTcwNSwxNTI4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2
 ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOT
 YyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
