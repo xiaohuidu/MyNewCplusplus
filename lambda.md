@@ -107,8 +107,52 @@ int testFunc1()
 01183C2A 8D 4D DC             lea         ecx,[f]  
 01183C2D E8 4E F7 FF FF       call        <lambda_ed51e51ff76776313a28b716c94bbc2d>::operator() (01183380h)  
 ```
+基本可以断定，nTest是在lambda匿名类构造时传入的。并且传入的是nTest1的引用（由于C++的引用本身就是语法糖，反汇编层面看到的是指针，但是结合源码分析不难得出这里应该是引用）。下面跟踪进其构造函数一探究竟：
+```
+01181F20 55                   push        ebp  
+01181F21 8B EC                mov         ebp,esp  
+01181F23 81 EC CC 00 00 00    sub         esp,0CCh  
+; 省略部分现场保护和堆栈填充int 3的代码
+01181F40 89 4D F8             mov         dword ptr [this],ecx 
+; 01181F40 89 4D F8             mov         dword ptr [ebp-8],ecx 
+01181F43 8B 45 F8             mov         eax,dword ptr [this]  
+; 01181F43 8B 45 F8             mov         eax,dword ptr [ebp-8]  
+01181F46 8B 4D 08             mov         ecx,dword ptr [<nTest1>] 
+; 01181F46 8B 4D 08             mov         ecx,dword ptr [ebp+8] 
+01181F49 8B 11                mov         edx,dword ptr [ecx]  
+01181F4B 89 10                mov         dword ptr [eax],edx  
+01181F4D 8B 45 F8             mov         eax,dword ptr [this] 
+; 01181F4D 8B 45 F8             mov         eax,dword ptr [ebp-8]
+; 省略部分现场恢复代码
+01181F53 8B E5                mov         esp,ebp  
+01181F55 5D                   pop         ebp  
+01181F56 C2 04 00             ret         4  
+```
+
+由此可以确定，lambda匿名类会将捕获参数中的变量添加到其成员变量中，并设置一个带有该参数引用类型的构造函数。最后再来看看在其operator()函数中是怎样使用捕获变量的：
+```
+    49:     auto f = [nTest1] (int a, int b) -> int
+    50:     {
+01183380 55                   push        ebp  
+01183381 8B EC                mov         ebp,esp  
+01183383 81 EC CC 00 00 00    sub         esp,0CCh  
+; 省略部分现场保护和堆栈填充int 3的代码
+011833A0 89 4D F8             mov         dword ptr [this],ecx  
+    51:         return a + b + 42 + nTest1;
+011833A3 8B 45 08             mov         eax,dword ptr [a]  
+011833A6 03 45 0C             add         eax,dword ptr [b]  
+011833A9 8B 4D F8             mov         ecx,dword ptr [this]  
+011833AC 8B 11                mov         edx,dword ptr [ecx]  
+011833AE 8D 44 10 2A          lea         eax,[eax+edx+2Ah]  
+    52:     };
+; 省略部分现场恢复代码
+011833B5 8B E5                mov         esp,ebp  
+011833B7 5D                   pop         ebp  
+011833B8 C2 08 00             ret         8  
+```
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MTEzMzQ1MywtMTM2MDgxNzEwOSwzOD
+eyJoaXN0b3J5IjpbMTQ1NjM3NzI4NSwtMTM2MDgxNzEwOSwzOD
 U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
