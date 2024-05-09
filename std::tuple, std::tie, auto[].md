@@ -58,7 +58,7 @@ std::tie(name, age, height) = std::make_tuple("Tom", 20, 1.75);
 
 #### 四、C++17特性auto[]
 
-C++17引入了一种新的语法auto[]，它可以自动推导出数组中元素的类型，并且可以用于对元组进行索引访问。
+C++17引入了一种新的语法auto[]，它可以**自动推导出数组中元素的类型**，并且可以用于对元组进行索引访问。
 
 下面是一个使用auto[]来访问元组中的各个元素的示例：
 ```
@@ -72,5 +72,5 @@ std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto
 在这里，我们首先使用结构化绑定语法将元组中的每个元素绑定到一个变量中，并输出它们的值。然后，我们使用auto[]来访问元组中的各个元素，其中auto[]会自动推导出元素的类型，从而避免了手动指定索引的繁琐。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjUxNjIyOSwyODM0NjY3NDRdfQ==
+eyJoaXN0b3J5IjpbMjgyMjQ3MTYzLDI4MzQ2Njc0NF19
 -->
