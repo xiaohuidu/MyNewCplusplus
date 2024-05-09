@@ -245,8 +245,14 @@ void fnTest()
 |捕获形式  |说明  |
 |--|--|
 |[]  |不捕获任何外部变量  |
+|[变量名, …]  |默认以值得形式捕获指定的多个外部变量（用逗号分隔），如果引用捕获，需要显示声明（使用&说明符）  |
+|[this]  |以值的形式捕获this指针  |
+|[=]  |以值的形式捕获所有外部变量  |
+|[]  |不捕获任何外部变量  |
+|[]  |不捕获任何外部变量  |
+|[]  |不捕获任何外部变量  |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI5MDg4MzY0LC0xMzYwODE3MTA5LDM4NT
-gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbMTg2NDI4MjYyNiwtMTM2MDgxNzEwOSwzOD
+U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
