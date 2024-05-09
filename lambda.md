@@ -69,11 +69,11 @@ cout << f(4, 3) << endl;
 **捕获列表**
 由于lambda表达式是在某函数内定义的，因此我们可能希望其能使用**函数内的局部变量**，这时则可以使用所谓捕获列表。总体说来，一共有三种捕获方式：**值捕获**、**引用捕获**和**外部捕获**。
 
-值捕获
+**值捕获**
 值捕获和参数传递中的值传递类似，被捕获的变量的值在Lambda表达式创建时通过值拷贝的方式传入，因此随后对该变量的修改不会影响影响Lambda表达式中的值。在VS2017中创建如下代码并加以分析：
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA3MjUxMjc5LC0xMzYwODE3MTA5LDM4NT
-gwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbLTkwMjQwMjg2NSwtMTM2MDgxNzEwOSwzOD
+U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
