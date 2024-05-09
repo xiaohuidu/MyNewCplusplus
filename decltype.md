@@ -203,10 +203,10 @@ int main() {
 using namespace std;
 class Base{
 public:
- int i;
- static int si;
- string str;
- float ff;
+	 int i;
+	 static int si;
+	 string str;
+	 float ff;
 };
 int Base::si = 0;
 //函数声明
@@ -216,15 +216,15 @@ int func_int(double);  //返回值为 int
 const int& fun_cint_r(int, int, int);  //返回值为 const int&
 const int&& func_cint_rr(void);  //返回值为 const int&&
 int main(){
- { // 规则一
- int n = 0;
- const int &r = n;
- Base base = Base();
- decltype(n) a = n;  //n 为 int 类型，a 被推导为 int 类型
- decltype(r) b = n;     //r 为 const int& 类型, b 被推导为 const int& 类型
- decltype(Base::si) c = 0;  //si 为类 Base 的一个 int 类型的成员变量，c 被推导为 int 类型
- //str 为类 Base 的一个 string 类型的成员变量， url 被推导为 string 类型
- decltype(base.str) url = "http://www.baidu.com"; 
+{ // 规则一
+	 int n = 0;
+	 const int &r = n;
+	 Base base = Base();
+	 decltype(n) a = n;  //n 为 int 类型，a 被推导为 int 类型
+	 decltype(r) b = n;     //r 为 const int& 类型, b 被推导为 const int& 类型
+	 decltype(Base::si) c = 0;  //si 为类 Base 的一个 int 类型的成员变量，c 被推导为 int 类型
+	 //str 为类 Base 的一个 string 类型的成员变量， url 被推导为 string 类型
+	 decltype(base.str) url = "http://www.baidu.com"; 
  }
  { // 规则二
  //decltype类型推导
@@ -324,8 +324,8 @@ auto 虽然在书写格式上比 decltype 简单，但是它的推导规则复�
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgwMjg5NTUsLTExMDI4NzQ2NjEsLTEwNj
-E3MDU3MDUsMTUyODUwMjc1MCwtMjA5MjQzOTMxMCw0MzkzNjg0
-OTIsLTMyMjk3NTc2NCwtNjM5Mjc1MDgsLTMyOTc2MDY2LDk2Mj
-E5Njc1NCwtMTgzNDY2NzAzMSwtNjk1MDUwMTY1XX0=
+eyJoaXN0b3J5IjpbMTcwODk5MzEwMywtMTEwMjg3NDY2MSwtMT
+A2MTcwNTcwNSwxNTI4NTAyNzUwLC0yMDkyNDM5MzEwLDQzOTM2
+ODQ5MiwtMzIyOTc1NzY0LC02MzkyNzUwOCwtMzI5NzYwNjYsOT
+YyMTk2NzU0LC0xODM0NjY3MDMxLC02OTUwNTAxNjVdfQ==
 -->
