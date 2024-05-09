@@ -150,9 +150,31 @@ int testFunc1()
 011833B7 5D                   pop         ebp  
 011833B8 C2 08 00             ret         8  
 ```
+真相大白了，值捕获时，C++编译器在构建lambda表达式的匿名类时将局部变量的引用传入，并在构造函数中完成对相应成员变量的赋值。在调用其operator()函数时，如果用到了捕获列表中的局部变量，则从给匿名类对象的成员变量中取出。
 
+### 引用捕获
+
+使用引用捕获一个外部变量，需在捕获列表变量前面加上一个引用说明符&。如下：
+```
+void fnTest()
+{
+    int nTest1 = 23;
+
+    auto f = [&nTest1] (int a, int b) -> int
+    {
+        cout << "In functor before change nTest=" << nTest1 << endl;    //nTest1=23333
+        nTest1 = 131;
+        cout << "In functor after change nTest=" << nTest1 << endl;     // nTest1 = 131
+        return a + b + 42 + nTest1;
+    };
+
+    nTest1 = 23333;     
+
+    cout << f(4, 3) << "&nTest1=" << nTest1 << endl;        //nTest1 = 23333
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NjM3NzI4NSwtMTM2MDgxNzEwOSwzOD
+eyJoaXN0b3J5IjpbLTU0OTAwNjM0MywtMTM2MDgxNzEwOSwzOD
 U4MDk2MjIsOTQ2NTM0NzUzLDE1OTE0MzQwMzddfQ==
 -->
