@@ -54,7 +54,7 @@ public:
 };
 
 //用构造的类创建对象，print此时就是一个函数对象
-auto  f= print_class();`
+auto  f= f_class();
 ```
 
 可以看到，调用该functor时，call到的是一个lambda对象的operator()位置，该位置反汇编代码如下：
@@ -284,7 +284,7 @@ int  main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA2ODQ3NDc5LDE2NjU5MzI0MDAsODc2OD
-I2NDMxLDI2ODk2MzkzNCwxNDM5MjA5NzQ2LC0xMzYwODE3MTA5
-LDM4NTgwOTYyMiw5NDY1MzQ3NTMsMTU5MTQzNDAzN119
+eyJoaXN0b3J5IjpbLTE0MTU0NzM4MTYsMTY2NTkzMjQwMCw4Nz
+Y4MjY0MzEsMjY4OTYzOTM0LDE0MzkyMDk3NDYsLTEzNjA4MTcx
+MDksMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxNDM0MDM3XX0=
 -->
