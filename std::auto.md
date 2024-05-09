@@ -219,7 +219,7 @@ void TestAuto(auto a) {
 auto arr[3] = { 1,2,3 };//会报错
 
 ```
-C++17 引入了auto[]  来推导数字元素的类型， 并且可以用来索引shu
+C++17 引入了auto[]  来推导数字元素的类型， 并且可以用来索引数组
 ```
 std::tuple<std::string, int, double> person = {"Tom",20, 1.75};
 auto [name, age, height] = person;
@@ -500,7 +500,7 @@ int&
 xvalue
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU3ODgwODAzLC03MjI3ODAwMjcsLTE1OD
+eyJoaXN0b3J5IjpbNjEwMzg0NTM1LC03MjI3ODAwMjcsLTE1OD
 k0MTI1MTUsOTA2MDk0ODEzLC0xNDA4MTEwNzY1LC00MDIyMzA2
 NjksLTkwODYwNTk3N119
 -->
