@@ -23,8 +23,15 @@ lambda表达式的本质就是**重载了()运算符的类**，这种类通常�
 |
 | 3     | [capture list] {function body}                                              
  |
+SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+
+|                |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|1|`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4OTk2NjkxLDk0NjUzNDc1MywxNTkxND
+eyJoaXN0b3J5IjpbMzg1ODA5NjIyLDk0NjUzNDc1MywxNTkxND
 M0MDM3XX0=
 -->
