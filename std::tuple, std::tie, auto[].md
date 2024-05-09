@@ -19,7 +19,8 @@ Person person = {"Tom", 20, 1.75
 ```
 由此可见，结构体可以方便地组合多个不同类型的数据，并且可以通过点运算符(.)访问各个成员变量。
 
-二、std::tuple
+**二、std::tuple**
+
 std::tuple是C++11引入的一个新特性，它是一个固定长度的、类型安全的序列容器。它可以将多个值组合成一个元组(tuple)，并且可以方便地对元组中的各个元素进行访问、拆分和排序等操作。
 
 下面是一个使用std::tuple来存储三个不同类型变量的示例：
@@ -71,5 +72,5 @@ std::cout << "Name: " << auto[0] << ", Age: " << auto[1] << ", Height: " << auto
 在这里，我们首先使用结构化绑定语法将元组中的每个元素绑定到一个变量中，并输出它们的值。然后，我们使用auto[]来访问元组中的各个元素，其中auto[]会自动推导出元素的类型，从而避免了手动指定索引的繁琐。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzE5NTAxOTJdfQ==
+eyJoaXN0b3J5IjpbLTcwNDM2NjQzMF19
 -->
