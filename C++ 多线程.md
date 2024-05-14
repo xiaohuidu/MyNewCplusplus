@@ -417,7 +417,7 @@ enum class cv_status { no_timeout, timeout };
 
 当前线程调用 wait() 后将被阻塞(此时当前线程应该获得了锁（mutex），不妨设获得锁 lck)，直到另外某个线程调用 notify_* 唤醒了当前线程。在线程被阻塞时，该函数会自动调用 lck.unlock() 释放锁，使得其他被阻塞在锁竞争上的线程得以继续执行。另外，一旦当前线程获得通知(notified，通常是另外某个线程调用 notify_* 唤醒了当前线程)，wait()函数也是自动调用 lck.lock()，使得lck的状态和 wait 函数被调用时相同。代码示例：
 
-```text
+```cpp
 #include <iostream>           // std::cout
 #include <thread>             // std::thread, std::this_thread::yield
 #include <mutex>              // std::mutex, std::unique_lock
@@ -685,6 +685,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk2NjU0MzgwLDUxNDU3MzM0OCwtNzAyMz
-UzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4LC03MD
+IzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
