@@ -7,13 +7,13 @@ C++11提供了语言层面上的多线程，包含在头文件<thread>中。它�
 ![](https://pic2.zhimg.com/80/v2-76e5e48c9c1d60f9868452cfc9ce7d85_720w.webp)
 
 
-### 1.3、创建线程
+### 1.1、创建线程
 
 创建线程很简单，只需要把函数添加到线程当中即可。
 
 -   形式1：
 
-```text
+```cpp
 std::thread myThread ( thread_fun);
 //函数形式为void thread_fun()
 myThread.join();
@@ -22,7 +22,7 @@ myThread.join();
 
 -   形式2：
 
-```text
+```cpp
 std::thread myThread ( thread_fun(100));
 myThread.join();
 //函数形式为void thread_fun(int x)
@@ -31,7 +31,7 @@ myThread.join();
 
 -   形式3：
 
-```text
+```cpp
 std::thread (thread_fun,1).detach();
 //直接创建线程，没有名字
 //函数形式为void thread_fun(int x)
@@ -754,5 +754,5 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTY2MDI4MDRdfQ==
+eyJoaXN0b3J5IjpbLTIxMDU0Njk2ODJdfQ==
 -->
