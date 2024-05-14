@@ -6,52 +6,6 @@ C++11提供了语言层面上的多线程，包含在头文件<thread>中。它�
 
 ![](https://pic2.zhimg.com/80/v2-76e5e48c9c1d60f9868452cfc9ce7d85_720w.webp)
 
-### 1.1、多进程与多线程
-
--   多进程并发
-
-使用多进程并发是将一个应用程序划分为多个独立的进程（每个进程只有一个线程），这些独立的进程间可以互相通信，共同完成任务。由于操作系统对进程提供了大量的保护机制，以避免一个进程修改了另一个进程的数据，使用多进程比使用多线程更容易写出相对安全的代码。但是这也造就了多进程并发的两个缺点：
-
-1.  在进程间的通信，无论是使用信号、套接字，还是文件、管道等方式，其使用要么比较复杂，要么就是速度较慢或者两者兼而有之。
-2.  运行多个线程的开销很大，操作系统要分配很多的资源来对这些进程进行管理。
-
-当多个进程并发完成同一个任务时，不可避免的是：**操作同一个数据和进程间的相互通信**，上述的两个缺点也就决定了多进程的并发并不是一个好的选择。所以就引入了多线程的并发。
-
--   多线程并发
-
-多线程并发指的是在同一个进程中执行多个线程。
-
-优点：有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列，但是线程不独立的拥有资源，依赖于创建它的进程而存在。也就是说，同一进程中的多个线程共享相同的地址空间，可以访问进程中的大部分数据，指针和引用可以在线程间进行传递。这样，同一进程内的多个线程能够很方便的进行数据共享以及通信，也就比进程更适用于并发操作。
-
-缺点：由于缺少操作系统提供的保护机制，在多线程共享数据及通信时，就需要程序员做更多的工作以保证对共享数据段的操作是以预想的操作顺序进行的，并且要极力的避免死锁(deadlock)。
-
-**相关视频推荐**
-
-[多进程、多线程、线程使用场景分析](https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1754y1J7uz/)
-
-[高并发场景下，三种锁方案：互斥锁，自旋锁，原子操作的优缺点](https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV18Y411M7jR/)
-
-[手把手实现线程池（120行），实现异步操作，解决项目性能问题](https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1ug411n7sb/)
-
-[c/c++ linux服务器开发/后台架构师免费学习地址​ke.qq.com/course/417774?flowToken=1013300](https://link.zhihu.com/?target=https%3A//ke.qq.com/course/417774%3FflowToken%3D1013300)
-
-需要C/C++ Linux服务器架构师学习资料加qun**[812855908](https://link.zhihu.com/?target=https%3A//jq.qq.com/%3F_wv%3D1027%26k%3DCPEKNvom)**获取（资料包括**C/C++，Linux，golang技术，Nginx，ZeroMQ，MySQL，Redis，fastdfs，MongoDB，ZK，流媒体，CDN，P2P，K8S，Docker，TCP/IP，协程，DPDK，ffmpeg**等），免费分享
-
-![](https://pic1.zhimg.com/80/v2-af0a3327da4eb90bd73a6347b49f3c18_720w.webp)
-
-### 1.2、多线程理解
-
--   单CPU内核的多个线程。
-
-一个时间片运行一个线程的代码，并不是真正意义的并行计算。
-
-![](https://pic2.zhimg.com/80/v2-a92ab069058b1bd71b8a71699775bb31_720w.webp)
-
--   多个cpu或者多个内核
-
-可以做到真正的并行计算。
-
-![](https://pic1.zhimg.com/80/v2-a4a019857d551b6d0aa66bc5482171c0_720w.webp)
 
 ### 1.3、创建线程
 
@@ -800,5 +754,5 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2NTk5OTQ0OV19
+eyJoaXN0b3J5IjpbLTExMTY2MDI4MDRdfQ==
 -->
