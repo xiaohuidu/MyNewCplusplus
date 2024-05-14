@@ -199,6 +199,69 @@ int main()
     return 0;
 }
 ```
+### 异常情况下等待线程完成
+
+当决定以detach方式让线程在后台运行时，可以在创建`thread`的实例后立即调用`detach`，这样线程就会后`thread`的实例分离，即使出现了异常`thread`的实例被销毁，仍然能保证线程在后台运行。
+
+但线程以join方式运行时，需要在主线程的合适位置调用`join`方法，如果调用`join`前出现了异常，`thread`被销毁，线程就会被异常所终结。为了避免异常将线程终结，或者由于某些原因，例如线程访问了局部变量，就要保证线程一定要在函数退出前完成，就要保证要在函数退出前调用`join`
+
+```cpp
+void func() {
+	thread t([]{
+		cout << "hello C++ 11" << endl;
+	});
+
+	try
+	{
+		do_something_else();
+	}
+	catch (...)
+	{
+		t.join();
+		throw;
+	}
+	t.join();
+}
+```
+
+上面代码能够保证在正常或者异常的情况下，都会调用`join`方法，这样线程一定会在函数`func`退出前完成。但是使用这种方法，不但代码冗长，而且会出现一些作用域的问题，并不是一个很好的解决方法。
+
+一种比较好的方法是资源获取即初始化（RAII,Resource Acquisition Is Initialization)，该方法提供一个类，在析构函数中调用`join`。
+
+cpp
+
+```cpp
+class thread_guard
+{
+	thread &t;
+public :
+	explicit thread_guard(thread& _t) :
+		t(_t){}
+
+	~thread_guard()
+	{
+		if (t.joinable())
+			t.join();
+	}
+
+	thread_guard(const thread_guard&) = delete;
+	thread_guard& operator=(const thread_guard&) = delete;
+};
+
+void func(){
+
+	thread t([]{
+		cout << "Hello thread" <<endl ;
+	});
+
+	thread_guard g(t);
+}
+```
+
+无论是何种情况，当函数退出时，局部变量`g`调用其析构函数销毁，从而能够保证`join`一定会被调用。
+
+### [](https://immortalqx.github.io/2021/12/04/cpp-notes-3/#%E5%90%91%E7%BA%BF%E7%A8%8B%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0 "向线程传递参数")向线程传递参数
+
 
 ### 1.3、this_thread
 
@@ -720,7 +783,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEyOTc4OTA2LC0xMjQ0OTI5NzM4LDUxND
-U3MzM0OCwtNzAyMzUzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2
-ODJdfQ==
+eyJoaXN0b3J5IjpbLTIwNzMzMTcwMjEsNTEyOTc4OTA2LC0xMj
+Q0OTI5NzM4LDUxNDU3MzM0OCwtNzAyMzUzMDk0LC01NTI3MTA4
+NjIsLTIxMDU0Njk2ODJdfQ==
 -->
