@@ -348,7 +348,7 @@ void safe_increment()
 -   **不可复制，可移动**
 -   条件变量需要该类型的锁作为参数（此时必须使用unique_lock）
 
-所有 lock_guard 能够做到的事情，都可以使用 unique_lock 做到，反之则不然。那么何时使lock_guard呢？很简单，需要使用锁的时候，首先考虑使用 lock_guard，因为lock_guard是最简单的锁。
+所有 lock_guard 能够做到的事情，都可以使用 unique_lock 做到，反之则不然。那么何时使lock_guard呢？很简单，**需要使用锁的时候，首先考虑使用 lock_guard，因为lock_guard是最简单的锁**。
 
 下面是代码举例：
 
@@ -712,6 +712,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI3NDA5NTA4LDUxNDU3MzM0OCwtNzAyMz
-UzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbLTE0MDE4NjkyMTIsNTE0NTczMzQ4LC03MD
+IzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
