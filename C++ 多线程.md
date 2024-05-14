@@ -544,7 +544,7 @@ int main ()
 
 线程池实现代码：
 
-```text
+```cpp
 #ifndef _THREADPOOL_H
 #define _THREADPOOL_H
 #include <vector>
@@ -685,7 +685,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMjQwNDE1NCwtMTI0NDkyOTczOCw1MT
+eyJoaXN0b3J5IjpbLTM2NzY0MTU1NiwtMTI0NDkyOTczOCw1MT
 Q1NzMzNDgsLTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5
 NjgyXX0=
 -->
