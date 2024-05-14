@@ -407,12 +407,9 @@ condition_variable条件变量可以阻塞（wait、wait_for、wait_until）调�
 - wait_until:  Wait until notified or time point
 - notify_one: 解锁一个线程，如果有多个，则未知哪个线程执行
 - notify_all:  解锁所有线程
+- cv_status: 这是一个类，表示variable 的状态，如下所示
 
-cv_status
-
-这是一个类，表示variable 的状态，如下所示
-
-```text
+```cpp
 enum class cv_status { no_timeout, timeout };
 ```
 
@@ -688,6 +685,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzNDk3NjU0OSw1MTQ1NzMzNDgsLTcwMj
-M1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
+eyJoaXN0b3J5IjpbMjk2NjU0MzgwLDUxNDU3MzM0OCwtNzAyMz
+UzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
