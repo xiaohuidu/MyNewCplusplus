@@ -188,25 +188,10 @@ this_thread::sleep_until(system_clock::from_time_t(mktime(ptm)));
 
 mutex头文件主要声明了与互斥量(mutex)相关的类。mutex提供了4种互斥类型，如下表所示。
 
-类型
-
-说明
-
-std::mutex
-
-最基本的 Mutex 类。
-
-std::recursive_mutex
-
-递归 Mutex 类。
-
-std::time_mutex
-
-定时 Mutex 类。
-
-std::recursive_timed_mutex
-
-定时递归 Mutex 类。
+- std::mutex： 最基本的 Mutex 类。
+- std::recursive_mutex：递归 Mutex 类。
+- std::time_mutex：定时 Mutex 类。
+- std::recursive_timed_mutex：定时递归 Mutex 类。
 
 std::mutex 是C++11 中最基本的互斥量，std::mutex 对象提供了独占所有权的特性——即不支持递归地对 std::mutex 对象上锁，而 std::recursive_lock 则可以递归地对互斥量对象上锁。
 
@@ -729,6 +714,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMT
-A1NDY5NjgyXX0=
+eyJoaXN0b3J5IjpbLTY0MjE1NTIzOCwtNzAyMzUzMDk0LC01NT
+I3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
