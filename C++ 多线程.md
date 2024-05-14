@@ -333,7 +333,7 @@ thread t(&_tagNode::do_some_work, &node,20);
 
 ### 转移线程的所有权")转移线程的所有权
 
-`thread`是可移动的(movable)的，但不可复制(copyable)。可以通过`move`来改变线程的所有权，灵活的决定线程在什么时候join或者detach。
+**`thread`是可移动的(movable)的，但不可复制(copyable)**。可以通过`move`来改变线程的所有权，灵活的决定线程在什么时候join或者detach。
 
 cpp
 
@@ -870,7 +870,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNjEwMzcxNSw1NTY4Mjk5NTAsNTEyOT
-c4OTA2LC0xMjQ0OTI5NzM4LDUxNDU3MzM0OCwtNzAyMzUzMDk0
-LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbMTM3MDY5NzgyNywyMTM2MTAzNzE1LDU1Nj
+gyOTk1MCw1MTI5Nzg5MDYsLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4
+LC03MDIzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
