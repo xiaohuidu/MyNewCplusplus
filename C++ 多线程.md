@@ -213,7 +213,7 @@ mutex常用操作：
 
 同一个mutex变量上锁之后，一个时间段内，只允许一个线程访问它。例如：
 
-```text
+```cpp
 #include <iostream>  // std::cout
 #include <thread>  // std::thread
 #include <mutex>  // std::mutex
@@ -712,6 +712,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MDI1MDY1MCwtNzAyMzUzMDk0LC01NT
-I3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbNTE0NTczMzQ4LC03MDIzNTMwOTQsLTU1Mj
+cxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
