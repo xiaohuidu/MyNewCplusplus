@@ -259,7 +259,7 @@ void func(){
 
 无论是何种情况，当函数退出时，局部变量`g`调用其析构函数销毁，从而能够保证`join`一定会被调用。
 
-### [](https://immortalqx.github.io/2021/12/04/cpp-notes-3/#%E5%90%91%E7%BA%BF%E7%A8%8B%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0 "向线程传递参数")向线程传递参数
+### 向线程传递参数
 
 向线程调用的函数传递参数也是很简单的，只需要在构造`thread`的实例时，依次传入即可。例如：
 
@@ -872,7 +872,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MDY2ODQ1LDU1NjgyOTk1MCw1MTI5Nz
-g5MDYsLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4LC03MDIzNTMwOTQs
-LTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbLTIwOTczMzg3MTUsNTU2ODI5OTUwLDUxMj
+k3ODkwNiwtMTI0NDkyOTczOCw1MTQ1NzMzNDgsLTcwMjM1MzA5
+NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
 -->
