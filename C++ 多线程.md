@@ -75,7 +75,7 @@ int main()
 }
 ```
 
-### 1.4、join与detach方式
+### 1.2、join与detach方式
 
 当线程启动后，一定要在和线程相关联的thread销毁前，确定以何种方式等待线程执行结束。比如上例中的join。
 
@@ -754,5 +754,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbMjA1MjQ3ODU4MCwtNTUyNzEwODYyLC0yMT
+A1NDY5NjgyXX0=
 -->
