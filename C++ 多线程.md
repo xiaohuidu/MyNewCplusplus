@@ -20,6 +20,21 @@ myThread.join();
 //同一个函数可以代码复用，创建多个线程
 ```
 
+-   lambda表达式
+    
+    使用lambda表达式启动线程输出数字
+    
+    cpp
+    
+ ```cpp
+    for (int i = 0; i < 4; i++)
+    {
+    	thread t([i]{
+    		cout << i << endl;
+    	});
+    	t.detach();
+    }
+```
 -   形式2：
 
 ```cpp
@@ -685,7 +700,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NzY0MTU1NiwtMTI0NDkyOTczOCw1MT
-Q1NzMzNDgsLTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5
-NjgyXX0=
+eyJoaXN0b3J5IjpbMzAxNDYxODA0LC0xMjQ0OTI5NzM4LDUxND
+U3MzM0OCwtNzAyMzUzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2
+ODJdfQ==
 -->
