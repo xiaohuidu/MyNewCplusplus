@@ -172,9 +172,9 @@ this_thread是一个类，它有4个功能函数，具体如下：
 - std::this_thread::get_id()：获取线程id
 - std::this_thread::yield()：放弃线程执行，回到就绪状态
 - std::this_thread::sleep_for(std::chrono::seconds(1))： 暂停1秒
-- this_thread::sleep_until ：
+- this_thread::sleep_until ：暂停直到某一刻
 
-```text
+```cpp
 using std::chrono::system_clock;
 std::time_t tt = system_clock::to_time_t(system_clock::now());
 struct std::tm * ptm = std::localtime(&tt);
@@ -729,6 +729,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NTUyNjcyNywtNTUyNzEwODYyLC0yMT
+eyJoaXN0b3J5IjpbLTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMT
 A1NDY5NjgyXX0=
 -->
