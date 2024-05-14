@@ -402,27 +402,11 @@ condition_variable头文件有两个variable类，一个是condition_variable，
 
 condition_variable条件变量可以阻塞（wait、wait_for、wait_until）调用的线程直到使用（notify_one或notify_all）通知恢复为止。condition_variable是一个类，这个类既有构造函数也有析构函数，使用时需要构造对应的condition_variable对象，调用对象相应的函数来实现上面的功能。
 
-
-
-wait
-
-Wait until notified
-
-wait_for
-
-Wait for timeout or until notified
-
-wait_until
-
-Wait until notified or time point
-
-notify_one
-
-解锁一个线程，如果有多个，则未知哪个线程执行
-
-notify_all
-
-解锁所有线程
+- wait:  Wait until notified
+- wait_for:  Wait for timeout or until notified
+- wait_until:  Wait until notified or time point
+- notify_one: 解锁一个线程，如果有多个，则未知哪个线程执行
+- notify_all:  解锁所有线程
 
 cv_status
 
@@ -704,6 +688,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU1MjAyMDA2LDUxNDU3MzM0OCwtNzAyMz
-UzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbMTYzNDk3NjU0OSw1MTQ1NzMzNDgsLTcwMj
+M1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
 -->
