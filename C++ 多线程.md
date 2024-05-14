@@ -209,8 +209,6 @@ mutex常用操作：
 
 （3）同一个线程已经对它上锁，将会产生死锁。
 
-死锁：是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。
-
 下面结合实例对lock和unlock进行说明。
 
 同一个mutex变量上锁之后，一个时间段内，只允许一个线程访问它。例如：
@@ -714,6 +712,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MjE1NTIzOCwtNzAyMzUzMDk0LC01NT
+eyJoaXN0b3J5IjpbLTU4MDI1MDY1MCwtNzAyMzUzMDk0LC01NT
 I3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
