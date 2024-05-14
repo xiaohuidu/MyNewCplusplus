@@ -345,7 +345,7 @@ void safe_increment()
 -   创建时可以不锁定（通过指定第二个参数为std::defer_lock），而在需要时再锁定
 -   可以随时加锁解锁
 -   作用域规则同 lock_grard，析构时自动释放锁
--   不可复制，可移动
+-   **不可复制，可移动**
 -   条件变量需要该类型的锁作为参数（此时必须使用unique_lock）
 
 所有 lock_guard 能够做到的事情，都可以使用 unique_lock 做到，反之则不然。那么何时使lock_guard呢？很简单，需要使用锁的时候，首先考虑使用 lock_guard，因为lock_guard是最简单的锁。
@@ -712,6 +712,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE0NTczMzQ4LC03MDIzNTMwOTQsLTU1Mj
-cxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbODI3NDA5NTA4LDUxNDU3MzM0OCwtNzAyMz
+UzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
