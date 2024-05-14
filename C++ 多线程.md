@@ -261,6 +261,96 @@ void func(){
 
 ### [](https://immortalqx.github.io/2021/12/04/cpp-notes-3/#%E5%90%91%E7%BA%BF%E7%A8%8B%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0 "向线程传递参数")向线程传递参数
 
+向线程调用的函数传递参数也是很简单的，只需要在构造`thread`的实例时，依次传入即可。例如：
+
+cpp
+
+```cpp
+void func(int *a,int n){}
+
+int buffer[10];
+thread t(func,buffer,10);
+t.join();
+```
+
+需要注意的是，**默认的会将传递的参数以拷贝的方式复制到线程空间，即使参数的类型是引用。**例如：
+
+cpp
+
+```cpp
+void func(int a,const string& str);
+thread t(func,3,"hello");
+```
+
+`func`的第二个参数是`string &`，而传入的是一个字符串字面量。该字面量以`const char*`类型传入线程空间后，在**线程的空间内转换为`string`**。
+
+如果在线程中使用引用来更新对象时，就需要注意了。默认的是将对象拷贝到线程空间，其引用的是拷贝的线程空间的对象，而不是初始希望改变的对象。如下：
+
+cpp
+
+```cpp
+class _tagNode
+{
+public:
+	int a;
+	int b;
+};
+
+void func(_tagNode &node)
+{
+	node.a = 10;
+	node.b = 20;
+}
+
+void f()
+{
+	_tagNode node;
+
+	thread t(func, node);
+	t.join();
+
+	cout << node.a << endl ;
+	cout << node.b << endl ;
+}
+```
+
+在线程内，将对象的字段a和b设置为新的值，但是在线程调用结束后，这两个字段的值并不会改变。这样由于引用的实际上是局部变量`node`的一个拷贝，而不是`node`本身。在将对象传入线程的时候，调用`std::ref`，将`node`的引用传入线程，而不是一个拷贝。例如：`thread t(func,std::ref(node));`
+
+也可以使用类的成员函数作为线程函数，示例如下
+
+cpp
+
+```cpp
+class _tagNode{
+
+public:
+	void do_some_work(int a);
+};
+_tagNode node;
+
+thread t(&_tagNode::do_some_work, &node,20);
+```
+
+上面创建的线程会调用`node.do_some_work(20)`，第三个参数为成员函数的第一个参数，以此类推。
+
+### [](https://immortalqx.github.io/2021/12/04/cpp-notes-3/#%E8%BD%AC%E7%A7%BB%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%89%80%E6%9C%89%E6%9D%83 "转移线程的所有权")转移线程的所有权
+
+`thread`是可移动的(movable)的，但不可复制(copyable)。可以通过`move`来改变线程的所有权，灵活的决定线程在什么时候join或者detach。
+
+cpp
+
+```cpp
+thread t1(f1);
+thread t3(move(t1));
+```
+
+将线程从t1转移给t3,这时候t1就不再拥有线程的所有权，调用`t1.join`或`t1.detach`会出现异常，要使用t3来管理线程。这也就意味着`thread`可以作为函数的返回类型，或者作为参数传递给函数，能够更为方便的管理线程。
+
+线程的标识类型为`std::thread::id`，有两种方式获得到线程的id。
+
+-   通过`thread`的实例调用`get_id()`直接获取
+-   在当前线程上调用`this_thread::get_id()`获取
+
 
 ### 1.3、this_thread
 
@@ -782,7 +872,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU2ODI5OTUwLDUxMjk3ODkwNiwtMTI0ND
-kyOTczOCw1MTQ1NzMzNDgsLTcwMjM1MzA5NCwtNTUyNzEwODYy
-LC0yMTA1NDY5NjgyXX0=
+eyJoaXN0b3J5IjpbMjA1MDY2ODQ1LDU1NjgyOTk1MCw1MTI5Nz
+g5MDYsLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4LC03MDIzNTMwOTQs
+LTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
