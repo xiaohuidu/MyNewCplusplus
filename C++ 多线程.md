@@ -284,9 +284,8 @@ thread t(func,3,"hello");
 
 `func`的第二个参数是`string &`，而传入的是一个字符串字面量。该字面量以`const char*`类型传入线程空间后，在**线程的空间内转换为`string`**。
 
-如果在线程中使用引用来更新对象时，就需要注意了。默认的是将对象拷贝到线程空间，其引用的是拷贝的线程空间的对象，而不是初始希望改变的对象。如下：
+如果在线程中使用引用来更新对象时，就需要注意了。默认的是将对象拷贝到线程空间，其**引用的是拷贝的线程空间的对象，而不是初始希望改变的对象**。如下：
 
-cpp
 
 ```cpp
 class _tagNode
@@ -872,7 +871,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTczMzg3MTUsNTU2ODI5OTUwLDUxMj
-k3ODkwNiwtMTI0NDkyOTczOCw1MTQ1NzMzNDgsLTcwMjM1MzA5
-NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
+eyJoaXN0b3J5IjpbMTUxNzk3MTk5NCw1NTY4Mjk5NTAsNTEyOT
+c4OTA2LC0xMjQ0OTI5NzM4LDUxNDU3MzM0OCwtNzAyMzUzMDk0
+LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
