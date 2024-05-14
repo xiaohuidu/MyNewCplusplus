@@ -39,6 +39,30 @@ myThread.join();
 //函数形式为void thread_fun(int x)
 //同一个函数可以代码复用，创建多个线程
 ```
+使用重载了()运算符的类实现多线程数字输出
+
+
+```cpp
+class Task
+{
+public:
+	void operator()(int i)
+	{
+		cout << i << endl;
+	}
+};
+
+int main()
+{
+	
+	for (uint8_t i = 0; i < 4; i++)
+	{
+		Task task;
+		thread t(task, i);
+		t.detach();	
+	}
+}
+```
 
 -   形式3：
 
@@ -696,7 +720,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMzNjc4OTY2LC0xMjQ0OTI5NzM4LDUxND
+eyJoaXN0b3J5IjpbNTEyOTc4OTA2LC0xMjQ0OTI5NzM4LDUxND
 U3MzM0OCwtNzAyMzUzMDk0LC01NTI3MTA4NjIsLTIxMDU0Njk2
 ODJdfQ==
 -->
