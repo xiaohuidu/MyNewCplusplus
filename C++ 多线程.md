@@ -165,7 +165,7 @@ int main()
 }
 ```
 
-### 1.5、this_thread
+### 1.3、this_thread
 
 this_thread是一个类，它有4个功能函数，具体如下：
 
@@ -754,6 +754,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MjQ3ODU4MCwtNTUyNzEwODYyLC0yMT
+eyJoaXN0b3J5IjpbLTE0MTg3Mzg2NiwtNTUyNzEwODYyLC0yMT
 A1NDY5NjgyXX0=
 -->
