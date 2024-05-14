@@ -226,7 +226,7 @@ void func() {
 
 上面代码能够保证在正常或者异常的情况下，都会调用`join`方法，这样线程一定会在函数`func`退出前完成。但是使用这种方法，不但代码冗长，而且会出现一些作用域的问题，并不是一个很好的解决方法。
 
-一种比较好的方法是资源获取即初始化（RAII,Resource Acquisition Is Initialization)，该方法提供一个类，在析构函数中调用`join`。
+一种比较好的方法是**资源获取即初始化（RAII**,Resource Acquisition Is Initialization)，该方法提供一个类，在析构函数中调用`join`。
 
 
 ```cpp
@@ -782,7 +782,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNTAyMzE3MCw1MTI5Nzg5MDYsLTEyND
-Q5Mjk3MzgsNTE0NTczMzQ4LC03MDIzNTMwOTQsLTU1MjcxMDg2
-MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbNTU2ODI5OTUwLDUxMjk3ODkwNiwtMTI0ND
+kyOTczOCw1MTQ1NzMzNDgsLTcwMjM1MzA5NCwtNTUyNzEwODYy
+LC0yMTA1NDY5NjgyXX0=
 -->
