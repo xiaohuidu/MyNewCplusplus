@@ -352,7 +352,7 @@ void safe_increment()
 
 下面是代码举例：
 
-```text
+```cpp
 #include <mutex>
 #include <thread>
 #include <iostream>
@@ -712,6 +712,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDE4NjkyMTIsNTE0NTczMzQ4LC03MD
-IzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbMTQ1MjM0NzQ3MCw1MTQ1NzMzNDgsLTcwMj
+M1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
 -->
