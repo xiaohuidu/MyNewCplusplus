@@ -286,7 +286,6 @@ thread t(func,3,"hello");
 
 如果在线程中使用引用来更新对象时，就需要注意了。默认的是将对象拷贝到线程空间，其**引用的是拷贝的线程空间的对象，而不是初始希望改变的对象**。如下：
 
-
 ```cpp
 class _tagNode
 {
@@ -332,7 +331,7 @@ thread t(&_tagNode::do_some_work, &node,20);
 
 上面创建的线程会调用`node.do_some_work(20)`，第三个参数为成员函数的第一个参数，以此类推。
 
-### [](https://immortalqx.github.io/2021/12/04/cpp-notes-3/#%E8%BD%AC%E7%A7%BB%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%89%80%E6%9C%89%E6%9D%83 "转移线程的所有权")转移线程的所有权
+### 转移线程的所有权")转移线程的所有权
 
 `thread`是可移动的(movable)的，但不可复制(copyable)。可以通过`move`来改变线程的所有权，灵活的决定线程在什么时候join或者detach。
 
@@ -871,7 +870,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNzk3MTk5NCw1NTY4Mjk5NTAsNTEyOT
+eyJoaXN0b3J5IjpbMjEzNjEwMzcxNSw1NTY4Mjk5NTAsNTEyOT
 c4OTA2LC0xMjQ0OTI5NzM4LDUxNDU3MzM0OCwtNzAyMzUzMDk0
 LC01NTI3MTA4NjIsLTIxMDU0Njk2ODJdfQ==
 -->
