@@ -169,25 +169,9 @@ int main()
 
 this_thread是一个类，它有4个功能函数，具体如下：
 
-函数
-
-使用
-
-说明
-
-get_id
-
-std::this_thread::get_id()
-
-获取线程id
-
-yield
-
-std::this_thread::yield()
-
-放弃线程执行，回到就绪状态
-
-sleep_for
+- std::this_thread::get_id()：获取线程id
+- std::this_thread::yield()：放弃线程执行，回到就绪状态
+- 
 
 std::this_thread::sleep_for(std::chrono::seconds(1));
 
@@ -754,6 +738,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTg3Mzg2NiwtNTUyNzEwODYyLC0yMT
+eyJoaXN0b3J5IjpbLTkxNjAyNzA1OSwtNTUyNzEwODYyLC0yMT
 A1NDY5NjgyXX0=
 -->
