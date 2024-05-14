@@ -39,7 +39,7 @@ std::thread (thread_fun,1).detach();
 
 std::thread (thread_fun,1).detach();
 
--   For Example
+-   代码实例:
 
 使用g++编译下列代码的方式：
 
@@ -754,5 +754,5 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
 -->
