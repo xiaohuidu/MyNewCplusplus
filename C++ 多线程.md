@@ -396,7 +396,9 @@ int main()
 
 ## 3、condition_variable
 
-condition_variable头文件有两个variable类，一个是condition_variable，另一个是condition_variable_any。**condition_variable必须结合unique_lock使用**。condition_variable_any可以使用任何的锁。下面以condition_variable为例进行介绍。
+condition_variable头文件有两个variable类，一个是condition_variable，另一个是condition_variable_any。**condition_variable必须结合unique_lock使用**。condition_variable_any可以使用任何的锁。
+
+下面以condition_variable为例进行介绍。
 
 condition_variable条件变量可以阻塞（wait、wait_for、wait_until）调用的线程直到使用（notify_one或notify_all）通知恢复为止。condition_variable是一个类，这个类既有构造函数也有析构函数，使用时需要构造对应的condition_variable对象，调用对象相应的函数来实现上面的功能。
 
@@ -712,6 +714,6 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MDc2Nzc1OCw1MTQ1NzMzNDgsLTcwMj
+eyJoaXN0b3J5IjpbMTc0OTk4MDkwNiw1MTQ1NzMzNDgsLTcwMj
 M1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
 -->
