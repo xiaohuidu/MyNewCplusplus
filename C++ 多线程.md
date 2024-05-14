@@ -469,7 +469,7 @@ int main ()
 
 与std::condition_variable::wait() 类似，不过 wait_for可以指定一个时间段，在当前线程收到通知或者指定的时间 rel_time 超时之前，该线程都会处于阻塞状态。而一旦超时或者收到了其他线程的通知，wait_for返回，剩下的处理步骤和 wait()类似。
 
-```text
+```cpp
 template <class Rep, class Period>
   cv_status wait_for (unique_lock<mutex>& lck,
                       const chrono::duration<Rep,Period>& rel_time);
@@ -477,7 +477,7 @@ template <class Rep, class Period>
 
 另外，wait_for 的重载版本的最后一个参数pred表示 wait_for的预测条件，只有当 pred条件为false时调用 wait()才会阻塞当前线程，并且在收到其他线程的通知后只有当 pred为 true时才会被解除阻塞。
 
-```text
+```cpp
 template <class Rep, class Period, class Predicate>
     bool wait_for (unique_lock<mutex>& lck,
          const chrono::duration<Rep,Period>& rel_time, Predicate pred);
@@ -485,7 +485,7 @@ template <class Rep, class Period, class Predicate>
 
 代码示例：
 
-```text
+```cpp
 #include <iostream>           // std::cout
 #include <thread>             // std::thread
 #include <chrono>             // std::chrono::seconds
@@ -685,6 +685,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4LC03MD
-IzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbMTIwMjQwNDE1NCwtMTI0NDkyOTczOCw1MT
+Q1NzMzNDgsLTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5
+NjgyXX0=
 -->
