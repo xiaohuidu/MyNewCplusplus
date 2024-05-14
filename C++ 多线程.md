@@ -228,7 +228,6 @@ void func() {
 
 一种比较好的方法是资源获取即初始化（RAII,Resource Acquisition Is Initialization)，该方法提供一个类，在析构函数中调用`join`。
 
-cpp
 
 ```cpp
 class thread_guard
@@ -783,7 +782,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzMzMTcwMjEsNTEyOTc4OTA2LC0xMj
-Q0OTI5NzM4LDUxNDU3MzM0OCwtNzAyMzUzMDk0LC01NTI3MTA4
-NjIsLTIxMDU0Njk2ODJdfQ==
+eyJoaXN0b3J5IjpbLTczNTAyMzE3MCw1MTI5Nzg5MDYsLTEyND
+Q5Mjk3MzgsNTE0NTczMzQ4LC03MDIzNTMwOTQsLTU1MjcxMDg2
+MiwtMjEwNTQ2OTY4Ml19
 -->
