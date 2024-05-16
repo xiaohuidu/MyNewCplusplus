@@ -7,7 +7,7 @@ C++11中promise和future机制是用于并发编程的一种解决方案，**用
 Promise和Future 在**不需要显式lock的情况下实现在两个不同的thread之间交换数据**。
 
 **当一个thread 需要返回一个值给创建它的thread， 它把值放到promise里， 底层实现让这个值出现在和这个promise 绑定的future里， 调用者可以读取这个值。**
-
+https://www.stroustrup.com/C++11FAQ.html#std-future
 应用场景：顾客在一家奶茶店点了单，服务员给顾客一个单号，当奶茶做好后，服务员更新排号的状态，顾客可以去做自己的事情了，顾客可以通过查询排号来得知奶茶是否做好，当查到奶茶做好了就可以回来取奶茶了。
 
 ```cpp
@@ -441,5 +441,6 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MDM0MDcyMSwxMTk5NzExMzUzXX0=
+eyJoaXN0b3J5IjpbLTEzNTk3MDAzMzIsLTQ4MDM0MDcyMSwxMT
+k5NzExMzUzXX0=
 -->
