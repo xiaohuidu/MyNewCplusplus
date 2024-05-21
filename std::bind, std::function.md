@@ -65,9 +65,11 @@ std::function 是模板类。
 
 1.保存普通函数
 
-```
+```cpp
 void printA(int a)
-{ cout<<a<<endl; }
+{ 
+	cout<<a<<endl; 
+}
  
 //传统的函数指针调用方式
 typedef void(*funcPoint)(int);
@@ -253,6 +255,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTM1ODM2OTQsLTE1Njk4OTk4MTNdfQ
-==
+eyJoaXN0b3J5IjpbMjAyNjIzODMxNSwtMTU2OTg5OTgxM119
 -->
