@@ -61,10 +61,11 @@ int main()
 # std::function
 **可以理解为函数指针**。C++中把函数指针封装成了一个类,这也正是C++中无处不类的思想的体现,即
 
-std::function,且是模板类。
+std::function 是模板类。
 
 1.保存普通函数
 
+```
 void printA(int a)
 { cout<<a<<endl; }
  
@@ -77,6 +78,8 @@ func(2);
 std::function<void(int a)> func;
 func = printA;
 func(2);
+```
+
 2.保存成员函数
 
 struct Foo {
@@ -250,6 +253,6 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDc1OTY1MzYsLTE1Njk4OTk4MTNdfQ
+eyJoaXN0b3J5IjpbLTE2OTM1ODM2OTQsLTE1Njk4OTk4MTNdfQ
 ==
 -->
