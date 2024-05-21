@@ -183,12 +183,13 @@ int main(int argc, char *argv[]){
 **2、非静态成员函数情况**
 
 将上例中Rectangle::onEvent(int param)前的static去掉改为非静态成员函数，则进行动态绑定使得程序正常运行，将Rectangle::initial(void)的定义修改为：
-
+```cpp
 void Rectangle::initial(){
     //sharp.handlerEvent = HandlerEvent(&Rectangle::onEvent);
     sharp.handlerEvent = std::bind(&Rectangle::onEvent,this,std::placeholders::_1);//因onEvent函数需要一个参数，故使用一占位符
     std::cout << "invode initial function!" << std::endl;
 }
+```
 这样，便动态装载函数成功。其它测试数据都不用进行修改。测试结果于上一样。
 
 3、虚成员函数情况
@@ -263,5 +264,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MDQzODM5NywtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbLTk0MTMwOTI0OCwtMTU2OTg5OTgxM119
 -->
