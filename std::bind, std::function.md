@@ -180,7 +180,7 @@ int main(int argc, char *argv[]){
 注：这里使用了静态成员函数，如果把Rectangle前面的static去掉这段代码不能工作，编译都不能通过，因为静态成员函数与非静态成员函数的参数表不一样，原型相同的非静态函数比静态成员函数多一个参数，即第一个参数this指针，指向所属的对象，任何非静态成员函数的第一个参数都是this指 针，所以如果把Rectangle前面的static去掉，其函数原型等效于下面的一个全局函数：void onEvent(Rectangle* this, int);
 ```
 
-2、非静态成员函数情况
+**2、非静态成员函数情况**
 
 将上例中Rectangle::onEvent(int param)前的static去掉改为非静态成员函数，则进行动态绑定使得程序正常运行，将Rectangle::initial(void)的定义修改为：
 
@@ -263,5 +263,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNTYwNjM3LC0xNTY5ODk5ODEzXX0=
+eyJoaXN0b3J5IjpbMTE3MDQzODM5NywtMTU2OTg5OTgxM119
 -->
