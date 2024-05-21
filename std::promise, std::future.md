@@ -117,17 +117,9 @@ std::promise负责存储， std::promise也是一个模板类，它提供了存�
 |valid()  |检查 future 是否处于被使用状态，也就是它被首次在首次调用 get() 或 share() 前。建议使用前加上valid()判断  |
 |wait()  |阻塞等待调用它的线程到共享值成功返回。  |
 |wait_for()  |在规定时间内 阻塞等待调用它的线程到共享值成功返回。  |
-|wait_until()	  |阻塞等待调用它的线程到共享值成功返回。  |
+|wait_until()	  |在指定时间节点内 阻塞等待调用它的线程到共享值成功返回。  |
 
 
-名称												作用
-**operator=**			移动 future 对象，移动！
-share()	返回一个可在多个线程中共享的 std::shared_future 对象。
-get()	获取值（类型由模板类型决定）
-valid()	检查 future 是否处于被使用状态，也就是它被首次在首次调用 get() 或 share() 前。建议使用前加上valid()判断
-wait()	阻塞等待调用它的线程到共享值成功返回。
-wait_for()	在规定时间内 阻塞等待调用它的线程到共享值成功返回。
-wait_until()	在指定时间节点内 阻塞等待调用它的线程到共享值成功返回。
 1、普通构造函数， 默认无参构造函数
 
 2、带自定义内存分配器的构造函数，与默认构造函数类似，但是使用自定义分配器来分配共享状态。
@@ -452,7 +444,7 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ0NTA3Mjg2LC0yNjkxNjY4MDUsLTQ4MD
-M0MDcyMSwtMTM1OTcwMDMzMiwtNDgwMzQwNzIxLDExOTk3MTEz
-NTNdfQ==
+eyJoaXN0b3J5IjpbNzgzNTcxMiwtMjY5MTY2ODA1LC00ODAzND
+A3MjEsLTEzNTk3MDAzMzIsLTQ4MDM0MDcyMSwxMTk5NzExMzUz
+XX0=
 -->
