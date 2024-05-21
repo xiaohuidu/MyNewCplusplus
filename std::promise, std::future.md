@@ -202,7 +202,7 @@ int main()
 ### promise和future进阶
 我们知道异常的场景：
 
-1、当重复调用promise的set_value会导致抛出异常
+**1、当重复调用promise的set_value会导致抛出异常**
 ```
 #include <iostream>
 #include <thread>
@@ -239,9 +239,9 @@ int main()
 
 在linux中运行结果如下： 会有Promise already satisfied的错误提示
 
-2、 当std::promise不设置值时线程就退出
+**2、 当std::promise不设置值时线程就退出**
 如果promise直到销毁时，都未设置过任何值，则promise会在析构时自动设置为std::future_error，这会造成std::future.get抛出std::future_error异常。
-
+```
 #include <iostream> // std::cout, std::endl
  2#include <thread>   // std::thread
  3#include <future>   // std::promise, std::future
@@ -269,34 +269,8 @@ int main()
 25
 26    return 0;
 27}
+```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
 3、通过std::promise让std::future抛出异常
 
 通过std::promise.set_exception函数可以设置自定义异常，该异常最终会被传递到std::future，并在其get函数中被抛出。
@@ -372,7 +346,7 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTgwNTIyMzUsLTMzMTM3NTA0MiwxOD
+eyJoaXN0b3J5IjpbLTE5OTQwNzQ5NzcsLTMzMTM3NTA0MiwxOD
 E3Nzk5MDQyLDUyNjE5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEy
 LC0yNjkxNjY4MDUsLTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtND
 gwMzQwNzIxLDExOTk3MTEzNTNdfQ==
