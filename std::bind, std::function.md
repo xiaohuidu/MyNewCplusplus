@@ -52,7 +52,7 @@ int main()
 
 （成员静态函数除外）；
 
-（3）bind (&A::f, _1)(new A()) 同上，效果是一样的，但是使用了占位符，使得没有固定的的对象，推荐。
+3. bind (&A::f, _1)(new A()) 同上，效果是一样的，但是使用了占位符，使得没有固定的的对象，推荐。
 
 注：使用的时候一定要注意指向的是没有this指针的函数（全局函数或静态成员函数），还是有this指针的函数。
 
@@ -251,5 +251,6 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5ODI1MzMwLC0xNTY5ODk5ODEzXX0=
+eyJoaXN0b3J5IjpbLTE2Mzk4ODIzNDMsLTE1Njk4OTk4MTNdfQ
+==
 -->
