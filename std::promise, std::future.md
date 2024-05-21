@@ -317,9 +317,26 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 
 std::**promise.set_value_at_thread_exit** 线程退出时，std::future收到通过该函数设置的值
 std::**promise.set_exception_at_thread_exit** 线程退出时，std::future则抛出该函数指定的异常。
+
+packaged_task 可以用来简单的启动一个线程， 它会负责创建
+
+**packaged_task**  type is provided to simplify launching a thread to execute a task. In particular, it takes care of setting up a  **future**  connected to a  **promise**  and to provides the wrapper code to put the return value or exception from the task into the  **promise**. For example:
+
+ **double comp(vector<double>& v)
+	{
+		//** package the tasks**:
+		//** (the task here is the standard accumulate() for an array of doubles)**:
+		packaged_task<double(double*,double*,double)> pt0{std::accumulate<double*,double*,double>};
+		packaged_task<double(double*,double*,double)> pt1{std::accumulate<double*,double*,double>};
+
+		auto f0 = pt0.get_future();	//** get hold of the futures **auto f1 = pt1.get_future();
+
+		pt0(&v[0],&v[v.size()/2],0);	//** start the threads **pt1(&v[v.size()/2],&v[size()],0);
+	
+		return f0.get()+f1.get();	//** get the results **}**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0ODM5MDc5MCwtMzMxMzc1MDQyLDE4MT
-c3OTkwNDIsNTI2MTkwMjQ1LC0xOTExNjMyMjAxLDc4MzU3MTIs
-LTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMzU5NzAwMzMyLC00OD
-AzNDA3MjEsMTE5OTcxMTM1M119
+eyJoaXN0b3J5IjpbLTExNjk5ODIzODcsLTMzMTM3NTA0MiwxOD
+E3Nzk5MDQyLDUyNjE5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEy
+LC0yNjkxNjY4MDUsLTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtND
+gwMzQwNzIxLDExOTk3MTEzNTNdfQ==
 -->
