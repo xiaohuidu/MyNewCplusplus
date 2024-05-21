@@ -320,8 +320,8 @@ std::**promise.set_exception_at_thread_exit** 线程退出时，std::future则�
 
 **packaged_task** 可以用来简单的启动一个线程， 它会负责创建 future 和 promise。
 
-
- **double comp(vector<double>& v)
+```
+ double comp(vector<double>& v)
 	{
 		//** package the tasks**:
 		//** (the task here is the standard accumulate() for an array of doubles)**:
@@ -332,9 +332,10 @@ std::**promise.set_exception_at_thread_exit** 线程退出时，std::future则�
 
 		pt0(&v[0],&v[v.size()/2],0);	//** start the threads **pt1(&v[v.size()/2],&v[size()],0);
 	
-		return f0.get()+f1.get();	//** get the results **}**
+		return f0.get()+f1.get();	//** get the results **}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyODk5OTU3NCwtMzMxMzc1MDQyLDE4MT
+eyJoaXN0b3J5IjpbLTY5MTE5NjQ4MiwtMzMxMzc1MDQyLDE4MT
 c3OTkwNDIsNTI2MTkwMjQ1LC0xOTExNjMyMjAxLDc4MzU3MTIs
 LTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMzU5NzAwMzMyLC00OD
 AzNDA3MjEsMTE5OTcxMTM1M119
