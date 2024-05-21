@@ -310,9 +310,8 @@ void **set_exception**(std::exception_ptr p);
 
 自定义异常可以通过位于头文件exception下的**std::make_exception_ptr**函数转化为std::exception_ptr
 
-1.4 std::promise
-通过上面的例子，我们看到std::promise<void>
-是合法的。此时std::promise.set_value不接受任何参数，仅用于通知关联的std::future.get()解除阻塞。
+
+**std::promise<void> 是合法的**。此时std::promise.set_value不接受任何参数，仅用于通知关联的std::future.get()解除阻塞。
 
 1.5 std::promise所在线程退出时
 std::async(异步运行)时，开发人员有时会对std::promise所在线程退出时间比较关注。std::promise支持定制线程退出时的行为：
@@ -320,8 +319,8 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjQwMDU0MjMsLTMzMTM3NTA0MiwxOD
-E3Nzk5MDQyLDUyNjE5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEy
-LC0yNjkxNjY4MDUsLTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtND
-gwMzQwNzIxLDExOTk3MTEzNTNdfQ==
+eyJoaXN0b3J5IjpbNzA5MjE3MTQ0LC0zMzEzNzUwNDIsMTgxNz
+c5OTA0Miw1MjYxOTAyNDUsLTE5MTE2MzIyMDEsNzgzNTcxMiwt
+MjY5MTY2ODA1LC00ODAzNDA3MjEsLTEzNTk3MDAzMzIsLTQ4MD
+M0MDcyMSwxMTk5NzExMzUzXX0=
 -->
