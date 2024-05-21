@@ -109,7 +109,7 @@ f_add_display3(2);        //输出2
 
 **3.保存lambda表达式**
 
-
+```cpp
 std::function<void()> func_1 = [](){cout<<"hello world"<<endl;};
 func_1();
 4.保存函数对象
@@ -126,6 +126,8 @@ class Functor
 Functor fobj;
 std::function<int(int)> func = fobj;
 func(20);   //输出"函数对象 :20"
+```
+
 下面着重讲一些std::function在实际应用中要注意的问题。
 
 1.静态成员函数情况
@@ -258,5 +260,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE1MDg5NDE1LC0xNTY5ODk5ODEzXX0=
+eyJoaXN0b3J5IjpbLTMxMjA2NTQ1OCwtMTU2OTg5OTgxM119
 -->
