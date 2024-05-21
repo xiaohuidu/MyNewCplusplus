@@ -112,8 +112,10 @@ f_add_display3(2);        //输出2
 ```cpp
 std::function<void()> func_1 = [](){cout<<"hello world"<<endl;};
 func_1();
-4.保存函数对象
+```
 
+**4.保存函数对象**
+```cpp
 class Functor
  {
  public:
@@ -260,5 +262,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMjA2NTQ1OCwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbMTUxNDIxNTYzMywtMTU2OTg5OTgxM119
 -->
