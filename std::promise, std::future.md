@@ -144,6 +144,7 @@ std::promise负责存储， std::promise也是一个模板类，它提供了存�
 - std::promise::swap：交换 promise 的共享状态
 
 std::promise的**set相关函数和get_future()只能被调用一次**，多次调用会抛出异常
+
 std::promise作为使用者的异步线程中应当注意到共享变量的生命周期、是否被set问题。如果没被set而线程就结束了，future端就会抛出异常。
 
 ### 多线程std::shared_future
@@ -437,8 +438,8 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ5NDE2NjU5LDE4MTc3OTkwNDIsNTI2MT
-kwMjQ1LC0xOTExNjMyMjAxLDc4MzU3MTIsLTI2OTE2NjgwNSwt
-NDgwMzQwNzIxLC0xMzU5NzAwMzMyLC00ODAzNDA3MjEsMTE5OT
-cxMTM1M119
+eyJoaXN0b3J5IjpbMTAyOTgwNjQ2NSwxODE3Nzk5MDQyLDUyNj
+E5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEyLC0yNjkxNjY4MDUs
+LTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtNDgwMzQwNzIxLDExOT
+k3MTEzNTNdfQ==
 -->
