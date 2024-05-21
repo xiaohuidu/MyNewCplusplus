@@ -63,7 +63,7 @@ int main()
 
 std::function 是模板类。
 
-1.保存普通函数
+**1.保存普通函数**
 
 ```cpp
 void printA(int a)
@@ -82,8 +82,9 @@ func = printA;
 func(2);
 ```
 
-2.保存成员函数
+**2.保存成员函数**
 
+```cpp
 struct Foo {
     Foo(int num) : num_(num) {}
     void print_add1(int i) const { cout << num_+i << '\n'; }
@@ -104,6 +105,7 @@ f_add_display2(2);        //输出4
 std::function<void(int)> f_add_display3 = &Foo::print_add2;
 f_add_display3(2);        //输出2
  
+ ```
 
 3.保存lambda表达式
 
@@ -255,5 +257,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0OTIwMzk1NCwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbMTAwNDU2OTUyNSwtMTU2OTg5OTgxM119
 -->
