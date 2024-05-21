@@ -192,10 +192,10 @@ void Rectangle::initial(){
 ```
 这样，便动态装载函数成功。其它测试数据都不用进行修改。测试结果于上一样。
 
-3、虚成员函数情况
+**3、虚成员函数情况**
 
 定义类Square继承自Rectangle，将Rectangle::onEvent重载，定义一个新的Square::onEvent，Rectangle::initial中的函数不变，仍然使用Rectangle::onEvent进行绑定，则调用成员object.onEvent()时，具体执行Rectangle::onEvent还是Square::onEvent，看object所属对象的静态类型是Rectangle还是Square而定。
-
+```cpp
 #include <iostream>  
 #include <iomanip>  
 #include <memory>  
@@ -263,6 +263,8 @@ int main(int argc, char *argv[]){
     invode Rectangle's onEvent method,get parameter: 23 
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
+   ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MTMwOTI0OCwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbLTIwMzExMzk3MjcsLTE1Njk4OTk4MTNdfQ
+==
 -->
