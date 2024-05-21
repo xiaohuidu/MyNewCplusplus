@@ -157,7 +157,7 @@ std::shared_future 也是一个模板类，它的功能定位、函数接口和 
 它的语法是：
 
 【语法】【伪代码】std::shared_future<Type> s_fu(pt.get_future());
-1
+```
 #include <iostream>
 #include <future>
 #include <thread>
@@ -197,44 +197,8 @@ int main()
 	t3.join();
 }
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
+```
+
 promise和future进阶
 我们知道异常的场景：
 
@@ -438,8 +402,8 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDk1MTE0MjMsMTgxNzc5OTA0Miw1Mj
-YxOTAyNDUsLTE5MTE2MzIyMDEsNzgzNTcxMiwtMjY5MTY2ODA1
-LC00ODAzNDA3MjEsLTEzNTk3MDAzMzIsLTQ4MDM0MDcyMSwxMT
-k5NzExMzUzXX0=
+eyJoaXN0b3J5IjpbLTMzMTM3NTA0MiwxODE3Nzk5MDQyLDUyNj
+E5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEyLC0yNjkxNjY4MDUs
+LTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtNDgwMzQwNzIxLDExOT
+k3MTEzNTNdfQ==
 -->
