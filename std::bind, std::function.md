@@ -48,7 +48,7 @@ int main()
 
 1. **bind（&f)()**  假设f是一个全局函数，绑定全局函数并调用；
 
-2. bind (&A::f, A())()  假设A是一个构造函数为空的类，这个形式绑定了类的成员函数，故第二个参数需要传入一个成员
+2. **bind (&A::f, A())()**  假设A是一个构造函数为空的类，这个形式绑定了类的成员函数，故第二个参数需要传入一个成员
 
 （成员静态函数除外）；
 
@@ -251,5 +251,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0NDE5NTg5MCwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbMTM5ODI1MzMwLC0xNTY5ODk5ODEzXX0=
 -->
