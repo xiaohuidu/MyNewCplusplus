@@ -199,10 +199,11 @@ int main()
 
 ```
 
-promise和future进阶
+### promise和future进阶
 我们知道异常的场景：
 
 1、当重复调用promise的set_value会导致抛出异常
+```
 #include <iostream>
 #include <thread>
 #include <future>
@@ -234,38 +235,8 @@ int main()
 
 	t1.join();
 }
+```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
 在linux中运行结果如下： 会有Promise already satisfied的错误提示
 [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-QwIChyPK-1667983568539)(images/111.png)]
 
@@ -402,7 +373,7 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2Nzg5MjM4NSwtMzMxMzc1MDQyLDE4MT
+eyJoaXN0b3J5IjpbMTAyNTk5MTAyNCwtMzMxMzc1MDQyLDE4MT
 c3OTkwNDIsNTI2MTkwMjQ1LC0xOTExNjMyMjAxLDc4MzU3MTIs
 LTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMzU5NzAwMzMyLC00OD
 AzNDA3MjEsMTE5OTcxMTM1M119
