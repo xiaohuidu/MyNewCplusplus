@@ -1,5 +1,5 @@
 # std::bind
-可以预先**把某个可调用对象的某些参数绑定到已有的变量，产生一个新的可调用对象**。bind本身是一种延迟计算的思想，它本身可以绑定普通函数、全局函数、静态函数、类静态函数甚至是类成员函数。bind最终将会生成一个可调用对象，这个对象可以直接赋值给std::function对象，而std::bind绑定的可调用对象可以是Lambda表达式或者类成员函数等可调用对象。
+可以预先**把某个可调用对象的某些参数绑定到已有的变量，产生一个新的可调用对象**。bind本身是一种**延迟计算的思想**，它本身可以绑定普通函数、全局函数、静态函数、类静态函数甚至是类成员函数。bind最终将会生成一个可调用对象，这个对象可以直接赋值给std::function对象，而std::bind绑定的可调用对象可以是Lambda表达式或者类成员函数等可调用对象。
 
 使用方式：bind（&要调用的函数，&对象， 要调用函数的参数1，要调用函数的参数2...，_1(bind函数的参数1)，_2(bind函数的参数2)...)
 
@@ -249,5 +249,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUyNzQ0NDM1XX0=
+eyJoaXN0b3J5IjpbMTY0MDY3NDIyN119
 -->
