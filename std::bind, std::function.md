@@ -52,13 +52,11 @@ int main()
 
 （成员静态函数除外）；
 
-3. bind (&A::f, _1)(new A()) 同上，效果是一样的，但是使用了占位符，使得没有固定的的对象，推荐。
+3. **bind (&A::f, _1)(new A())** 同上，效果是一样的，但是使用了占位符，使得没有固定的的对象，推荐。
 
 注：使用的时候一定要注意指向的是没有this指针的函数（全局函数或静态成员函数），还是有this指针的函数。
 
-后面一种必须要用bind()函数，而且要多一个参数，因为静态成员函数与非静态成员函数的参 数表不一样，原型相同的非静态函
-
-数比静态成员函数多一个参数，即第一个参数this指针，指向所属的对象，任何非静态成员函数的第一个参数都是this指针。
+后面一种必须要用bind()函数，而且要多一个参数，因为静态成员函数与非静态成员函数的参 数表不一样，原型相同的非静态函数比静态成员函数多一个参数，即第一个参数this指针，指向所属的对象，任何非静态成员函数的第一个参数都是this指针。
 
 std::function可以理解为函数指针。C++中把函数指针封装成了一个类,这也正是C++中无处不类的思想的体现,即
 
@@ -251,6 +249,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mzk4ODIzNDMsLTE1Njk4OTk4MTNdfQ
-==
+eyJoaXN0b3J5IjpbMjgzMDEyOTI1LC0xNTY5ODk5ODEzXX0=
 -->
