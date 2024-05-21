@@ -331,7 +331,7 @@ thread t(&_tagNode::do_some_work, &node,20);
 
 上面创建的线程会调用`node.do_some_work(20)`，第三个参数为成员函数的第一个参数，以此类推。
 
-### 转移线程的所有权")转移线程的所有权
+### 转移线程的所有权
 
 **`thread`是可移动的(movable)的，但不可复制(copyable)**。可以通过`move`来改变线程的所有权，灵活的决定线程在什么时候join或者detach。
 
@@ -870,7 +870,7 @@ int main(void){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MDY5NzgyNywyMTM2MTAzNzE1LDU1Nj
-gyOTk1MCw1MTI5Nzg5MDYsLTEyNDQ5Mjk3MzgsNTE0NTczMzQ4
-LC03MDIzNTMwOTQsLTU1MjcxMDg2MiwtMjEwNTQ2OTY4Ml19
+eyJoaXN0b3J5IjpbMTM0MTQyNTA3LDIxMzYxMDM3MTUsNTU2OD
+I5OTUwLDUxMjk3ODkwNiwtMTI0NDkyOTczOCw1MTQ1NzMzNDgs
+LTcwMjM1MzA5NCwtNTUyNzEwODYyLC0yMTA1NDY5NjgyXX0=
 -->
