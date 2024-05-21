@@ -1,6 +1,6 @@
 介绍
 
-packaged_task类模板也是定义于future头文件中，它包装任何可调用 (Callable) 目标，包括函数、 lambda 表达式、 bind 表达式或其他函数对象，使得能异步调用它，其返回值或所抛异常被存储于能通过 std::future 对象访问的共享状态中。简言之，将一个普通的可调用函数对象转换为异步执行的任务。模板声明如下：
+**packaged_task**类模板也是定义于future头文件中，它包装任何**可调用 (Callable) 目标**，包括**函数、 lambda 表达式、 bind 表达式或其他函数对象**，使得能异步调用它，其返回值或所抛异常被存储于能通过 std::future 对象访问的共享状态中。简言之，将一个普通的可调用函数对象转换为异步执行的任务。模板声明如下：
 
 template< class R, class ...Args > 
 class packaged_task< fn(Args...)>;
@@ -151,5 +151,5 @@ std::promise用于设置共享状态的值，可以用于线程间交流，这�
 
 std::async是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDE3ODc2MTRdfQ==
+eyJoaXN0b3J5IjpbODkxNDYzNTg2XX0=
 -->
