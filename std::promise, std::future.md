@@ -156,7 +156,7 @@ std::shared_future 也是一个模板类，它的功能定位、函数接口和 
 
 它的语法是：
 
-【语法】std::shared_future<Type> s_fu(pt.get_future());
+**【语法】std::shared_future<Type> s_fu(pt.get_future());**
 ```
 #include <iostream>
 #include <future>
@@ -402,7 +402,7 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzAwNjM2NywtMzMxMzc1MDQyLDE4MT
+eyJoaXN0b3J5IjpbLTc2Nzg5MjM4NSwtMzMxMzc1MDQyLDE4MT
 c3OTkwNDIsNTI2MTkwMjQ1LC0xOTExNjMyMjAxLDc4MzU3MTIs
 LTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMzU5NzAwMzMyLC00OD
 AzNDA3MjEsMTE5OTcxMTM1M119
