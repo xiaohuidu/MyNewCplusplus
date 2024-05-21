@@ -38,7 +38,7 @@ int main()
 
 上面的auto关键字代表的是std::function<...>这一长串。
 
-bind能够在绑定时候就同时绑定一部分参数，未提供的参数则使用占位符表示，然后在运行时传入实际的参数值。
+**bind能够在绑定时候就同时绑定一部分参数，未提供的参数则使用占位符表示，然后在运行时传入实际的参数值**。
 
 注：bind对于不事先绑定的参数，通过std::placeholders传递的参数是通过引用传递的；对于事先绑定的函数参数是通过值传
 
@@ -251,5 +251,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Njk4OTk4MTNdfQ==
+eyJoaXN0b3J5IjpbMjE0MTI3NzcxLC0xNTY5ODk5ODEzXX0=
 -->
