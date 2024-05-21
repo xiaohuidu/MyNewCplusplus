@@ -107,7 +107,8 @@ f_add_display3(2);        //输出2
  
  ```
 
-3.保存lambda表达式
+**3.保存lambda表达式**
+
 
 std::function<void()> func_1 = [](){cout<<"hello world"<<endl;};
 func_1();
@@ -257,5 +258,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNDU2OTUyNSwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbNDE1MDg5NDE1LC0xNTY5ODk5ODEzXX0=
 -->
