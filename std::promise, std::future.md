@@ -303,12 +303,11 @@ int main() {
 }
 ```
 
-std::promise虽然支持自定义异常，但它并不直接接受异常对象：
+**std::promise虽然支持自定义异常，但它并不直接接受异常对象：**
 
 // std::promise::set_exception函数原型
-2void set_exception(std::exception_ptr p);
-1
-2
+void set_exception(std::exception_ptr p);
+
 自定义异常可以通过位于头文件exception下的std::make_exception_ptr函数转化为std::exception_ptr
 
 1.4 std::promise
@@ -321,8 +320,8 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDA2MTAxMzYsLTMzMTM3NTA0MiwxOD
-E3Nzk5MDQyLDUyNjE5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEy
-LC0yNjkxNjY4MDUsLTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtND
-gwMzQwNzIxLDExOTk3MTEzNTNdfQ==
+eyJoaXN0b3J5IjpbMTcxOTY0NjI1LC0zMzEzNzUwNDIsMTgxNz
+c5OTA0Miw1MjYxOTAyNDUsLTE5MTE2MzIyMDEsNzgzNTcxMiwt
+MjY5MTY2ODA1LC00ODAzNDA3MjEsLTEzNTk3MDAzMzIsLTQ4MD
+M0MDcyMSwxMTk5NzExMzUzXX0=
 -->
