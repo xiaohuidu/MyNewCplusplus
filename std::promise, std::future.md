@@ -134,17 +134,8 @@ std::promise负责存储， std::promise也是一个模板类，它提供了存�
 |set_value()	  |设置共享状态值，此后promise共享状态标识变为ready。  |
 |set_value_at_thread_exit()  |设置共享状态的值，但是不将共享状态的标志设置为 ready，当线程退出时该 promise 对象会自动设置为 ready  |
 |set_exception()  |设置异常，此后promise的共享状态标识变为ready。  |
-|operator=  |从另一个 std::promise 移动到当前对象。  |
-|operator=  |从另一个 std::promise 移动到当前对象。  |
+|set_exception_at_thread_exit()  |设置异常，但是到该线程结束时才会发出通知。  |
 
-名称	作用
-operator=	从另一个 std::promise 移动到当前对象。
-swap()	交换移动两个 std::promise。
-get_future()	获取与其管理的std::future
-set_value()	设置共享状态值，此后promise共享状态标识变为ready
-set_value_at_thread_exit()	设置共享状态的值，但是不将共享状态的标志设置为 ready，当线程退出时该 promise 对象会自动设置为 ready
-set_exception()	设置异常，此后promise的共享状态标识变为ready
-set_exception_at_thread_exit()	设置异常，但是到该线程结束时才会发出通知。
 1、std::promise::get_future：返回一个与promise共享状态相关联的future对象
 2、std::promise::set_value：设置共享状态的值，此后promise共享状态标识变为ready
 3、std::promise::set_exception：为promise设置异常，此后promise的共享状态标识变为ready
@@ -445,7 +436,7 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTE2MzIyMDEsNzgzNTcxMiwtMjY5MT
-Y2ODA1LC00ODAzNDA3MjEsLTEzNTk3MDAzMzIsLTQ4MDM0MDcy
-MSwxMTk5NzExMzUzXX0=
+eyJoaXN0b3J5IjpbNTI2MTkwMjQ1LC0xOTExNjMyMjAxLDc4Mz
+U3MTIsLTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMzU5NzAwMzMy
+LC00ODAzNDA3MjEsMTE5OTcxMTM1M119
 -->
