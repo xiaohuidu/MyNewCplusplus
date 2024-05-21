@@ -150,7 +150,7 @@ std::promise作为使用者的异步线程中应当注意到共享变量的生�
 ### 多线程std::shared_future
 std::future 有个非常明显的问题，就是只能和一个 std::promise 成对绑定使用，也就意味着仅限于两个线程之间使用。
 
-那么多个线程是否可以呢，可以！就是 std::shared_future。
+那么**多个线程**是否可以呢，可以！就是 std::shared_future。
 
 std::shared_future 也是一个模板类，它的功能定位、函数接口和 std::future 一致，不同的是它允许给多个线程去使用，让多个线程去同步、共享：
 
@@ -438,8 +438,8 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyOTgwNjQ2NSwxODE3Nzk5MDQyLDUyNj
-E5MDI0NSwtMTkxMTYzMjIwMSw3ODM1NzEyLC0yNjkxNjY4MDUs
-LTQ4MDM0MDcyMSwtMTM1OTcwMDMzMiwtNDgwMzQwNzIxLDExOT
-k3MTEzNTNdfQ==
+eyJoaXN0b3J5IjpbLTIxMDk1MTE0MjMsMTgxNzc5OTA0Miw1Mj
+YxOTAyNDUsLTE5MTE2MzIyMDEsNzgzNTcxMiwtMjY5MTY2ODA1
+LC00ODAzNDA3MjEsLTEzNTk3MDAzMzIsLTQ4MDM0MDcyMSwxMT
+k5NzExMzUzXX0=
 -->
