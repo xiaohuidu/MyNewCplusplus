@@ -109,8 +109,8 @@ std::promise负责存储， std::promise也是一个模板类，它提供了存�
 **总结：std::future负责访问，std::promise负责存储，同时promise是future的管理者**
 
 std::future
-名称	作用
-**operator=**	移动 future 对象，移动！
+名称												作用
+**operator=**			移动 future 对象，移动！
 share()	返回一个可在多个线程中共享的 std::shared_future 对象。
 get()	获取值（类型由模板类型决定）
 valid()	检查 future 是否处于被使用状态，也就是它被首次在首次调用 get() 或 share() 前。建议使用前加上valid()判断
@@ -441,6 +441,6 @@ std::async(异步运行)时，开发人员有时会对std::promise所在线程�
 std::promise.set_value_at_thread_exit 线程退出时，std::future收到通过该函数设置的值
 std::promise.set_exception_at_thread_exit 线程退出时，std::future则抛出该函数指定的异常。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NzgwMzcwOSwtNDgwMzQwNzIxLC0xMz
+eyJoaXN0b3J5IjpbLTI2OTE2NjgwNSwtNDgwMzQwNzIxLC0xMz
 U5NzAwMzMyLC00ODAzNDA3MjEsMTE5OTcxMTM1M119
 -->
