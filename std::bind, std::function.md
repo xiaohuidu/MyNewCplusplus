@@ -3,7 +3,7 @@
 
 **bind定义方式**：**bind（&要调用的函数，&对象， 要调用函数的参数1，要调用函数的参数2...，_1(bind函数的参数1)，_2(bind函数的参数2)...)**
 
-```
+```cpp
 #include <iostream>
 #include <functional>
 using namespace std;
@@ -255,5 +255,5 @@ int main(int argc, char *argv[]){
     invode initial function! 
     invode Square's onEvent method,get parameter: 33    */  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNjIzODMxNSwtMTU2OTg5OTgxM119
+eyJoaXN0b3J5IjpbMjA0OTIwMzk1NCwtMTU2OTg5OTgxM119
 -->
