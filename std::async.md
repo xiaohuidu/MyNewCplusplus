@@ -8,6 +8,7 @@
 template< class Function, class... Args>
 std::future<std::result_of_t<std::decay_t<Function>(std::decay_t<Args>...)>>
  async( Function&& f, Args&&... args );
+ 
 //(C++11 起) (C++17 前)
 template< class Function, class... Args >
 std::future<std::result_of_t<std::decay_t<Function>(std::decay_t<Args>...)>>
@@ -201,5 +202,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNDkzNTk4NCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbNDMzODU1NzkyLDczMDk5ODExNl19
 -->
