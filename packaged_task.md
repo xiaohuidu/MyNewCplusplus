@@ -7,9 +7,9 @@ class packaged_task< fn(Args...)>;
 ```
 
 其中：
-
 fn 是可以调用目标
 Args 函数入参
+
 通过packaged_task包装后，可以通过thread启动或者仿函数形式启动，其执行结果返回值或所抛异常被存储于能通过 std::future 对象访问的共享状态中。
 
 实例
@@ -151,5 +151,5 @@ std::promise用于设置共享状态的值，可以用于线程间交流，这�
 
 std::async是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NTU3MzM0MiwtMjQ4ODU2ODYyXX0=
+eyJoaXN0b3J5IjpbMjExNzAzNTcxMCwtMjQ4ODU2ODYyXX0=
 -->
