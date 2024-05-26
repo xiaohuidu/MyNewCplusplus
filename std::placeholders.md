@@ -24,12 +24,14 @@ std::bind是C++11对C++98中对std::bind1st和std::bind2nd的继承,但是,非�
 
 ### 2.std::placeholders
 定义如下：
+```
 namespace placeholders {
   extern /* unspecified */ _1;
   extern /* unspecified */ _2;
   extern /* unspecified */ _3;
   // ...
 }
+ ```
  
 This namespace declares an unspecified number of objects: _1, _2, _3,…, which are used 
 to specify placeholders in calls to function bind.
@@ -212,6 +214,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTkzNDgwMzMsLTE5MjM5NDEyMzIsNz
-MwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTIzMTY3ODY1NSwtMTkyMzk0MTIzMiw3Mz
+A5OTgxMTZdfQ==
 -->
