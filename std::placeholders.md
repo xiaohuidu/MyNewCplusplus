@@ -26,11 +26,11 @@ namespace placeholders {
 位符. 
 
 当调用bind返回的函数对象时,带有占位符_1的参数为被调用中的第一个参数替换，_2被被调用中的第一个参数替换,以此类推.
- 
+ ```cpp
 using namespace std::placeholders;
 auto bound_fn = std::bind (fn,100,_1);
 bound_fn(5);  // calls fn(100,5), i.e.: replacing _1 by the first argument: 5 
- 
+ ```
  
 The type of these placeholder objects is unspecified (it depends on the library 
 implementation, see is_placeholder), but in all cases their type shall at least be 
@@ -198,6 +198,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNjc0NjU4OCwtMjMxNjc4NjU1LC0xOT
+eyJoaXN0b3J5IjpbLTM3MjMxNDAxNSwtMjMxNjc4NjU1LC0xOT
 IzOTQxMjMyLDczMDk5ODExNl19
 -->
