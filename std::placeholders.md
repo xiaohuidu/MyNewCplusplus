@@ -10,7 +10,6 @@ std::bind. If you’re one of them, you may be reluctant to abandon a tool that�
 served you well. That’s understandable, but in this case, change is good, because in
 C++11, lambdas are almost always a better choice than std::bind. As of C++14, the
 case for lambdas isn’t just stronger, it’s downright ironclad.
- ```
  
 std::bind是C++11对C++98中对std::bind1st和std::bind2nd的继承,但是,非正式地说,
 它自2005年以来一直是标准库的一部分.标准化委员会通过了一份称为TR1的文件,其中包
@@ -19,6 +18,7 @@ std::bind是C++11对C++98中对std::bind1st和std::bind2nd的继承,但是,非�
 这段历史意味着一些程序员有十年或更长时间的使用绑定.如果你是其中之一,你可能不
 愿意放弃一个工具,这是可以理解的,但在这种情况下,变化是好的,因为在在C++11中,lambdas
 几乎总是比std::bind更好的选择.lambdas(兰布达斯)的理由不仅仅是更有力,而是无懈可击。
+```
 
 引用阅读1
 
@@ -216,5 +216,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjM5NDEyMzIsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTQ0NDM0NzUxMiwtMTkyMzk0MTIzMiw3Mz
+A5OTgxMTZdfQ==
 -->
