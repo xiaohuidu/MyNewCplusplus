@@ -187,12 +187,6 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 -   默认策略灵活性导致了使用thread_local变量时的不确定性，它隐含着任务可能不会执行，它还影响了基于超时的wait调用的程序逻辑。
 -   **如果异步执行是必需的，指定std::launch::async发射策略。**
 
-  
-
-作者：VE视频引擎  
-链接：https://juejin.cn/post/6921601619758940174  
-来源：稀土掘金  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5Mzg4OTA4MSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMTkxNDkzMjc1LDczMDk5ODExNl19
 -->
