@@ -1,3 +1,4 @@
+### std::bind
 1.摘自《Effective Modern C++》中一段对std::bind描述的话
 ```
 std::bind is the C++11 successor to C++98’s std::bind1st and std::bind2nd,
@@ -20,13 +21,8 @@ std::bind是C++11对C++98中对std::bind1st和std::bind2nd的继承,但是,非�
 几乎总是比std::bind更好的选择.lambdas(兰布达斯)的理由不仅仅是更有力,而是无懈可击。
 ```
 
-引用阅读1
 
-引用阅读2
-
-引用阅读3
-
-2.std::placeholders
+### 2.std::placeholders
 定义如下：
 namespace placeholders {
   extern /* unspecified */ _1;
@@ -216,6 +212,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NDM0NzUxMiwtMTkyMzk0MTIzMiw3Mz
-A5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTE1OTkzNDgwMzMsLTE5MjM5NDEyMzIsNz
+MwOTk4MTE2XX0=
 -->
