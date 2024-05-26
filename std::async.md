@@ -151,11 +151,8 @@ c
 
 它也影响了基于wait循环中的超时情况，因为调度策略可能为`deferred`的，调用wait_for或者wait_until会返回值std::launch::deferred。这意味着下面的循环，看起来最终会停止，但是，实际上可能会一直运行：
 
-c
-
-复制代码
-
-`void func()           // f睡眠1秒后返回
+```cpp
+void func()           // f睡眠1秒后返回
 {
  std::this_thread::sleep_for(1);
 }
@@ -164,7 +161,8 @@ while(fut.wait_for(100ms) !=         // 循环直到f执行结束
  std::future_status::ready)     // 但这可能永远不会发生
 {
  ...
-}` 
+} 
+```
 
 为避免陷入死循环，我们必须检查future是否把任务推迟，然而future无法获知任务是否被推迟，一个好的技巧就是通过wait_for(0)来获取future_status是否是deferred：
 
@@ -198,5 +196,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NTU5NDA0Myw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbNjYxMDQ4MjM2LDczMDk5ODExNl19
 -->
