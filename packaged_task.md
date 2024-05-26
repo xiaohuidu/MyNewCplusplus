@@ -15,11 +15,11 @@ Args 函数入参
 实例
 
 在packaged_task成员中，实现了()运算符重载，因此我们可以直接调用这个开始启动任务。
-
+```cpp
 void operator()( ArgTypes... args );
 以 args 为参数调用存储的任务。
-1
-2
+```
+
 实例代码如下：
 
 #include <iostream>           // std::cout
@@ -151,5 +151,5 @@ std::promise用于设置共享状态的值，可以用于线程间交流，这�
 
 std::async是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MTA3NjU0MywtMjQ4ODU2ODYyXX0=
+eyJoaXN0b3J5IjpbLTE2MzAwMTMwOTMsLTI0ODg1Njg2Ml19
 -->
