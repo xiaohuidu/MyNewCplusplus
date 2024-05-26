@@ -64,7 +64,7 @@ do {
 
 `std::async`的基本用法：
 ```cpp
-`#include <iostream>
+#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <numeric>
@@ -194,5 +194,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTI5MTk3OTUsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTE3MTk4NzY4NTksNzMwOTk4MTE2XX0=
 -->
