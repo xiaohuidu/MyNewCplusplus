@@ -36,7 +36,7 @@ bound_fn(5);  // calls fn(100,5), i.e.: replacing _1 by the first argument: 5
 应该是无抛出默认可构造和无抛出复制可构造.不管分配操作或其他构造函数是否真正，任何复制赋值
 或移动构造函数也不能抛出。
 
-3.std::bind&std::placeholders
+### 3.std::bind&std::placeholders
 3.0 std::bind的使用场景，头文件及原型
 简介：
 std::bind是这样一种机制，它可以预先把指定可调用实体的某些参数绑定到已有的变量，产生一个新
@@ -193,6 +193,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc3ODA2MzcyLC0yMzE2Nzg2NTUsLTE5Mj
-M5NDEyMzIsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTIxMzY1NzUwMywtMjMxNjc4NjU1LC0xOT
+IzOTQxMjMyLDczMDk5ODExNl19
 -->
