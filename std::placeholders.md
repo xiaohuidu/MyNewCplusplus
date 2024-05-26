@@ -22,14 +22,9 @@ namespace placeholders {
 }
  ```
  
-This namespace declares an unspecified number of objects: _1, _2, _3,…, which are used 
-to specify placeholders in calls to function bind.
 这个命名空间声明了未指定数量的对象：_1、_2、_3、...，这些对象用于在函数bind的调用中指定占
-位符.
- 
-When the function object returned by bind is called, an argument with placeholder _1 is 
-replaced by the first argument in the call, _2 is replaced by the second argument in the
-call,etc.
+位符. 
+
 当调用bind返回的函数对象时,带有占位符_1的参数为被调用中的第一个参数替换，_2被被调用中的第一个参数替换,以此类推.
  
 using namespace std::placeholders;
@@ -203,6 +198,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyOTU4MzgxNywtMjMxNjc4NjU1LC0xOT
+eyJoaXN0b3J5IjpbLTMwNjc0NjU4OCwtMjMxNjc4NjU1LC0xOT
 IzOTQxMjMyLDczMDk5ODExNl19
 -->
