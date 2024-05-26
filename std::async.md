@@ -109,11 +109,12 @@ int main(){
  // 调用 a2.get() 或 a2.wait() 时打印 "world!"
 	 auto a2 = std::async(std::launch::deferred, 			
 		 &X::bar, x, "world!");
- // 以 async 策略调用 X()(43) ：
- // 同时打印 "43"
- auto a3 = std::async(std::launch::async, X(), 43);
- a2.wait();                     // 打印 "world!"
- std::cout << a3.get() << '\n'; // 打印 "53"
+	 // 以 async 策略调用 X()(43) ：
+	 // 同时打印 "43"
+	 auto a3 = std::async(std::launch::async, X(), 		
+	 43);
+	 a2.wait();                     // 打印 "world!"
+	 std::cout << a3.get() << '\n'; // 打印 "53"
 } // 若 a1 在此点未完成，则 a1 的析构函数在此打印 "Hello 42"
 ```
 
@@ -197,5 +198,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MDMwNzI1MSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTc1NTU5NDA0Myw3MzA5OTgxMTZdfQ==
 -->
