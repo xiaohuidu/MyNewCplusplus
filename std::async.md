@@ -93,20 +93,22 @@ template <typename RandomIt>int parallel_sum(RandomIt beg, RandomIt end){
 		 return std::accumulate(beg, end, 0);
 	 RandomIt mid = beg + len/2;
 	 auto handle = std::async(std::launch::async,
-	 parallel_sum<RandomIt>, mid, end);
+		 parallel_sum<RandomIt>, mid, end);
 	 int sum = parallel_sum(beg, mid);
 	 return sum + handle.get();
 }
 int main(){
- std::vector<int> v(10000, 1);
- std::cout << "The sum is " << parallel_sum(v.begin(), v.end()) << '\n';
- X x;
- // 以默认策略调用 x.foo(42, "Hello") ：
- // 可能同时打印 "Hello 42" 或延迟执行
- auto a1 = std::async(&X::foo, &x, 42, "Hello");
+	 std::vector<int> v(10000, 1);
+	 std::cout << "The sum is " << 							
+	 parallel_sum(v.begin(), v.end()) << '\n';
+	 X x;
+	 // 以默认策略调用 x.foo(42, "Hello") ：
+	 // 可能同时打印 "Hello 42" 或延迟执行
+	 auto a1 = std::async(&X::foo, &x, 42, "Hello");
  // 以 deferred 策略调用 x.bar("world!")
  // 调用 a2.get() 或 a2.wait() 时打印 "world!"
- auto a2 = std::async(std::launch::deferred, &X::bar, x, "world!");
+	 auto a2 = std::async(std::launch::deferred, 			
+		 &X::bar, x, "world!");
  // 以 async 策略调用 X()(43) ：
  // 同时打印 "43"
  auto a3 = std::async(std::launch::async, X(), 43);
@@ -195,5 +197,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgzMjk4MTAzLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbMTc0MDMwNzI1MSw3MzA5OTgxMTZdfQ==
 -->
