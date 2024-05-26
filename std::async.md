@@ -3,19 +3,16 @@
 然而线程毕竟是比较贴近系统的东西，使用起来仍然不是很方便，特别是线程同步及获取线程运行结果上就更加麻烦。我们不能简单的通过`thread.join()`得到结果，必须定义一个线程共享的变量来传递结果，同时还要考虑线程间的互斥问题。好在`**C++11`中提供了一个相对简单的异步接口`std::async`，通过这个接口可以简单的创建线程并通过`std::future`中获取结果**以往都是自己去封装线程实现自己的async，现在有线程的跨平台接口可以使用就极大的方便了C++多线程编程。
 
 先看一下`std::async`的函数原型
-
-c
-
-复制代码
-
-`//(C++11 起) (C++17 前)
+```
+//(C++11 起) (C++17 前)
 template< class Function, class... Args>
 std::future<std::result_of_t<std::decay_t<Function>(std::decay_t<Args>...)>>
  async( Function&& f, Args&&... args );
 //(C++11 起) (C++17 前)
 template< class Function, class... Args >
 std::future<std::result_of_t<std::decay_t<Function>(std::decay_t<Args>...)>>
- async( std::launch policy, Function&& f, Args&&... args );` 
+ async( std::launch policy, Function&& f, Args&&... args );
+ ```
 
 **第一个参数是线程的创建策略，有两种策略可供选择**：
 
@@ -204,5 +201,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjYzNDI0MDIsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTgzNDkzNTk4NCw3MzA5OTgxMTZdfQ==
 -->
