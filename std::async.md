@@ -74,27 +74,28 @@ do {
 std::mutex m;
 struct X {
  void foo(int i, const std::string& str) {
- std::lock_guard<std::mutex> lk(m);
+		 std::lock_guard<std::mutex> lk(m);
  std::cout << str << ' ' << i << '\n';
  }
  void bar(const std::string& str) {
- std::lock_guard<std::mutex> lk(m);
- std::cout << str << '\n';
+	 std::lock_guard<std::mutex> lk(m);
+	 std::cout << str << '\n';
  }
  int operator()(int i) {
- std::lock_guard<std::mutex> lk(m);
- std::cout << i << '\n';
- return i + 10;
- }};
+	 std::lock_guard<std::mutex> lk(m);
+	 std::cout << i << '\n';
+	 return i + 10;
+ }
+ };
 template <typename RandomIt>int parallel_sum(RandomIt beg, RandomIt end){
- auto len = end - beg;
- if (len < 1000)
- return std::accumulate(beg, end, 0);
- RandomIt mid = beg + len/2;
- auto handle = std::async(std::launch::async,
- parallel_sum<RandomIt>, mid, end);
- int sum = parallel_sum(beg, mid);
- return sum + handle.get();
+	 auto len = end - beg;
+	 if (len < 1000)
+		 return std::accumulate(beg, end, 0);
+	 RandomIt mid = beg + len/2;
+	 auto handle = std::async(std::launch::async,
+	 parallel_sum<RandomIt>, mid, end);
+	 int sum = parallel_sum(beg, mid);
+	 return sum + handle.get();
 }
 int main(){
  std::vector<int> v(10000, 1);
@@ -194,5 +195,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTk4NzY4NTksNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbODgzMjk4MTAzLDczMDk5ODExNl19
 -->
