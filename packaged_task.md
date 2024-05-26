@@ -93,8 +93,8 @@ task_thread :12
 - **std::future**是用于获取将来共享状态的运行结果或异常，相当于一个中间件，std::async 、std::promise、std::packaged_task都离不开它的帮助；
 - **std::packaged_task**用于包装可调用目标，以便异步执行任务；
 - **std::promise**用于设置共享状态的值，可以用于线程间交流，这个是比较特殊的。
-- std::async是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
+- **std::async**是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MTcyNDMyNCwyMDMwNzk3NzQxLC0yND
+eyJoaXN0b3J5IjpbLTE5NTM2ODM0OCwyMDMwNzk3NzQxLC0yND
 g4NTY4NjJdfQ==
 -->
