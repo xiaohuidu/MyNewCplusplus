@@ -63,8 +63,7 @@ do {
 **介绍完了`std::async`的函数原型，那么它到底该如何使用呢？**
 
 `std::async`的基本用法：
-`
-
+```cpp
 `#include <iostream>
 #include <vector>
 #include <algorithm>
@@ -112,19 +111,18 @@ int main(){
  auto a3 = std::async(std::launch::async, X(), 43);
  a2.wait();                     // 打印 "world!"
  std::cout << a3.get() << '\n'; // 打印 "53"
-} // 若 a1 在此点未完成，则 a1 的析构函数在此打印 "Hello 42"` 
+} // 若 a1 在此点未完成，则 a1 的析构函数在此打印 "Hello 42"
+```
 
 可能的结果
 
-python
-
-复制代码
-
-`The sum is 10000
+```
+The sum is 10000
 43
 world!
 53
-Hello 42` 
+Hello 42
+```
 
 由此可见，`std::async`是异步操作做了一个很好的封装，使我们不用关注线程创建内部细节，就能方便的获取异步执行状态和结果，还可以指定线程创建策略。
 
@@ -196,5 +194,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY3NTAxNTg3LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTEzOTI5MTk3OTUsNzMwOTk4MTE2XX0=
 -->
