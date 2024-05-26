@@ -32,12 +32,7 @@ auto bound_fn = std::bind (fn,100,_1);
 bound_fn(5);  // calls fn(100,5), i.e.: replacing _1 by the first argument: 5 
  ```
  
-The type of these placeholder objects is unspecified (it depends on the library 
-implementation, see is_placeholder), but in all cases their type shall at least be 
-nothrow default-constructible and nothrow copy-constructible. Whether assignment 
-operations or additional constructors are supported is implementation-defined, but any 
-copy-assignment or move-constructor shall also be not throwing.
-这些占位符对象的类型未指定(这取决于库实现,见is_placeholder),但在所有情况下,它们的类型至少
+ 这些占位符对象的类型未指定(这取决于库实现,见is_placeholder),但在所有情况下,它们的类型至少
 应该是无抛出默认可构造和无抛出复制可构造.不管分配操作或其他构造函数是否真正，任何复制赋值
 或移动构造函数也不能抛出。
 
@@ -198,6 +193,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MjMxNDAxNSwtMjMxNjc4NjU1LC0xOT
-IzOTQxMjMyLDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbNjc3ODA2MzcyLC0yMzE2Nzg2NTUsLTE5Mj
+M5NDEyMzIsNzMwOTk4MTE2XX0=
 -->
