@@ -1,17 +1,6 @@
 ### std::bind
 1.摘自《Effective Modern C++》中一段对std::bind描述的话
 ```
-std::bind is the C++11 successor to C++98’s std::bind1st and std::bind2nd,
-but, informally, it’s been part of the Standard Library since 2005. That’s when the
-Standardization Committee adopted a document known as TR1, which included
-bind’s specification. (In TR1, bind was in a different namespace, so it was
-std::tr1::bind, not std::bind, and a few interface details were different.) This
-history means that some programmers have a decade or more of experience using
-std::bind. If you’re one of them, you may be reluctant to abandon a tool that’s
-served you well. That’s understandable, but in this case, change is good, because in
-C++11, lambdas are almost always a better choice than std::bind. As of C++14, the
-case for lambdas isn’t just stronger, it’s downright ironclad.
- 
 std::bind是C++11对C++98中对std::bind1st和std::bind2nd的继承,但是,非正式地说,
 它自2005年以来一直是标准库的一部分.标准化委员会通过了一份称为TR1的文件,其中包
 括bind的具体实现(在TR1中,bind位于不同
@@ -214,6 +203,6 @@ int main(){
         return 0;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzMTY3ODY1NSwtMTkyMzk0MTIzMiw3Mz
-A5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMTYyOTU4MzgxNywtMjMxNjc4NjU1LC0xOT
+IzOTQxMjMyLDczMDk5ODExNl19
 -->
