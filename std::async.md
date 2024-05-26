@@ -166,11 +166,8 @@ while(fut.wait_for(100ms) !=         // 循环直到f执行结束
 
 为避免陷入死循环，我们必须检查future是否把任务推迟，然而future无法获知任务是否被推迟，一个好的技巧就是通过wait_for(0)来获取future_status是否是deferred：
 
-c
-
-复制代码
-
-`auto future = std::async(func);      // （概念上）异步执行f
+```cpp
+auto future = std::async(func);      // （概念上）异步执行f
 if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 {
  ...     // fut使用get或wait来同步调用f
@@ -179,8 +176,9 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
  ...    // 任务没有被推迟也没有就绪，所以做一些并发的事情直到任务就绪
  }
  ...        // fut就绪
-}` 
+}
 
+```
 有人可能会说既然有这么多缺点为啥还要用它，因为毕竟我们考虑的极限情况下的可能，有时候我不要求它是并发还是同步执行，也不需要考虑修改那个线程thread_local变量，同时也能接受可能任务永远不会执行，那么这种方式就是一种方便且高效的调度策略。
 
 **综上所述，我们总结出以下几点：**
@@ -196,5 +194,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYxMDQ4MjM2LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTc5Mzg4OTA4MSw3MzA5OTgxMTZdfQ==
 -->
