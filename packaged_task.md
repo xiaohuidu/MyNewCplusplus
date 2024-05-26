@@ -78,13 +78,12 @@ int main(int argc, char *argv[])
 ```
 
 运行结果：
-
+```
 task_lambda :12
 task_thread :12
 task_thread :12
-1
-2
-3
+```
+
 区别
 
 那么std::async 、std::promise、std::packaged_task以及std::future之间有什么联系和区别呢？
@@ -99,5 +98,6 @@ std::promise用于设置共享状态的值，可以用于线程间交流，这�
 
 std::async是最优雅地方式启动任务异步执行；在多数情况下，建议使用asyn开启异步任务，而不是使用packaged_task方式。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMDc5Nzc0MSwtMjQ4ODU2ODYyXX0=
+eyJoaXN0b3J5IjpbMTU3NDk4MzgyNywyMDMwNzk3NzQxLC0yND
+g4NTY4NjJdfQ==
 -->
