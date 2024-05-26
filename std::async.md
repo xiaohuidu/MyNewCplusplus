@@ -62,11 +62,8 @@ do {
 
 **介绍完了`std::async`的函数原型，那么它到底该如何使用呢？**
 
-`std::async`的基本用法：[示例链接](https://link.juejin.cn?target=https%3A%2F%2Fwww.apiref.com%2Fcpp-zh%2Fcpp%2Fthread%2Fasync.html "https://www.apiref.com/cpp-zh/cpp/thread/async.html")
-
-c
-
-复制代码
+`std::async`的基本用法：
+`
 
 `#include <iostream>
 #include <vector>
@@ -199,5 +196,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDAxMTg2MjMsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbNzY3NTAxNTg3LDczMDk5ODExNl19
 -->
