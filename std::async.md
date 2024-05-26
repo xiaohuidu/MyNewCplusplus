@@ -39,7 +39,7 @@ std::future<std::result_of_t<std::decay_t<Function>(std::decay_t<Args>...)>>
 -   timeout：异步操作超时，主要用于std::future.wait_for()
 
 **示例：**
-```
+```cpp
 `//查询future的状态
 std::future_status status;
 do {
@@ -52,6 +52,7 @@ do {
  std::cout << "ready!" << std::endl;
  }
 } while (status != std::future_status::ready);` 
+```
 
 `std::future`获取结果的方式有三种：
 
@@ -198,5 +199,5 @@ if (fut.wait_for(0) == std::future_status::deferred)  // 如果任务被推迟
 来源：稀土掘金  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NjM0Njk0Niw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTEyMDAxMTg2MjMsNzMwOTk4MTE2XX0=
 -->
