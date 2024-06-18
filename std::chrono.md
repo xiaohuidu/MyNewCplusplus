@@ -218,14 +218,26 @@ now() 获取当前时钟
  4 #include <ratio>
  5 #include <chrono>
  6  
- 7 int main () 8 {
- 9   using namespace std::chrono; 10  
-11   steady_clock::time_point t1 = steady_clock::now(); 12  
-13   std::cout << "printing out 1000 stars...\n"; 14   for (int i=0; i<1000; ++i) std::cout << "*"; 15   std::cout << std::endl; 16  
-17   steady_clock::time_point t2 = steady_clock::now(); 18  
-19   duration<double> time_span = duration_cast<duration<double>>(t2 - t1); 20  
-21   std::cout << "It took me " << time_span.count() << " seconds."; 22   std::cout << std::endl; 23  
-24   return 0; 25 } 26  
+ 7 int main () 
+ 8 {
+ 9   using namespace std::chrono; 
+ 10  
+11   steady_clock::time_point t1 = steady_clock::now(); 
+12  
+13   std::cout << "printing out 1000 stars...\n"; 
+14   for (int i=0; i<1000; ++i) std::cout << "*"; 
+15   std::cout << std::endl; 
+16  
+17   steady_clock::time_point t2 = steady_clock::now(); 
+18  
+19   duration<double> time_span = duration_cast<duration<double>>(t2 - t1); 
+20  
+21   std::cout << "It took me " << time_span.count() << " seconds."; 
+22   std::cout << std::endl; 
+23  
+24   return 0; 
+25 } 
+26  
 ```
 
 最后一个时钟，std::chrono::high_resolution_clock 顾名思义，这是系统可用的最高精度的时钟。实际上high_resolution_clock只不过是system_clock或者steady_clock的typedef。
@@ -234,6 +246,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI1ODQyMDQ2LC00MTA4MjgxNCwtMTE2Nz
+eyJoaXN0b3J5IjpbMzcyNzgxNzQyLC00MTA4MjgxNCwtMTE2Nz
 U5ODQ5NCwxMzc5MjU0NDMwLDEyMTQ2NTUzNDhdfQ==
 -->
