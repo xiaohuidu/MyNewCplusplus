@@ -182,16 +182,26 @@ from_time_t() 从time_t转换成time_point
  4 #include <ratio>
  5 #include <chrono>
  6  
- 7 int main () 8 {
- 9   using std::chrono::system_clock; 10  
+ 7 int main () 
+ 8 {
+ 9   using std::chrono::system_clock; 
+ 10  
 11   std::chrono::duration<int,std::ratio<60*60*24> > one_day (1); 12  
-13   system_clock::time_point today = system_clock::now(); 14   system_clock::time_point tomorrow = today + one_day; 15  
-16 std::time_t tt; 17  
-18   tt = system_clock::to_time_t ( today ); 19   std::cout << "today is: " << ctime(&tt); 20  
-21   tt = system_clock::to_time_t ( tomorrow ); 22   std::cout << "tomorrow will be: " << ctime(&tt); 23  
-24   return 0; 25 } 26  
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+13   system_clock::time_point today = system_clock::now(); 
+14   system_clock::time_point tomorrow = today + one_day; 
+15  
+16 std::time_t tt; 
+17  
+18   tt = system_clock::to_time_t ( today ); 
+19   std::cout << "today is: " << ctime(&tt); 
+20  
+21   tt = system_clock::to_time_t ( tomorrow ); 
+22   std::cout << "tomorrow will be: " << ctime(&tt); 
+23  
+24   return 0; 
+25 } 
+26  
+```
 
 std::chrono::steady_clock 为了表示稳定的时间间隔，后一次调用now()得到的时间总是比前一次的值大（这句话的意思其实是，如果中途修改了系统时间，也不影响now()的结果），每次tick都保证过了稳定的时间间隔。
 
@@ -226,6 +236,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NjE1ODIzOSwtNDEwODI4MTQsLTExNj
+eyJoaXN0b3J5IjpbLTUwMTc2NTQyNSwtNDEwODI4MTQsLTExNj
 c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
