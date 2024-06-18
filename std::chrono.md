@@ -175,11 +175,7 @@ from_time_t() 从time_t转换成time_point
 ```
 
 典型的应用是计算时间日期：
-
-  
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
-
+```cpp
  1 // system_clock example
  2 #include <iostream>
  3 #include <ctime>
@@ -230,6 +226,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk0NDg1NTQyLC00MTA4MjgxNCwtMTE2Nz
-U5ODQ5NCwxMzc5MjU0NDMwLDEyMTQ2NTUzNDhdfQ==
+eyJoaXN0b3J5IjpbLTc5NjE1ODIzOSwtNDEwODI4MTQsLTExNj
+c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
