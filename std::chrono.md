@@ -133,10 +133,10 @@ time_point有一个函数**time_from_eproch()**用来获得1970年1月1日到tim
 举个例子，如果timepoint以天为单位，函数返回的duration就以天为单位。
 
 由于各种time_point表示方式不同，chrono也提供了相应的转换函数 time_point_cast。
-
+```cpp
 1 template <class ToDuration, class Clock, class Duration>
 2   time_point<Clock,ToDuration> time_point_cast (const time_point<Clock,Duration>& tp);
-
+```
 比如计算
 
 /
@@ -226,6 +226,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTM1OTE4MDYsLTQxMDgyODE0LC0xMT
+eyJoaXN0b3J5IjpbLTE3MzAyODEyOTUsLTQxMDgyODE0LC0xMT
 Y3NTk4NDk0LDEzNzkyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
