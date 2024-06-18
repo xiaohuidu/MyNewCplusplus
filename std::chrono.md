@@ -109,7 +109,7 @@ std::time_point<high_resolution_clock> high_resolution_clock::now();
 设置一个高精度时间点
 
 std::chrono::time_point<std::chrono::system_clock> now=std::chrono::system_clock::now();
-
+设置系统时钟
 ```
 下面是构造使用time_point的例子：
 ```cpp
@@ -292,7 +292,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MzQxNTQwMywtNzk2NzA5NTI5LDEwMz
+eyJoaXN0b3J5IjpbLTYxNzM5OTkxMiwtNzk2NzA5NTI5LDEwMz
 kzOTg1NTQsMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNjc1OTg0
 OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
