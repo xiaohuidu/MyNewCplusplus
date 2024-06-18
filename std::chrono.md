@@ -166,12 +166,13 @@ std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所
 每一个clock类中都有确定的time_point, duration, Rep, Period类型。
 
 操作有：
-
+```cpp
 now() 当前时间time_point
 
 to_time_t() time_point转换成time_t秒
 
 from_time_t() 从time_t转换成time_point
+```
 
 典型的应用是计算时间日期：
 
@@ -229,6 +230,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MzE4ODI5MywtNDEwODI4MTQsLTExNj
-c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbNjk0NDg1NTQyLC00MTA4MjgxNCwtMTE2Nz
+U5ODQ5NCwxMzc5MjU0NDMwLDEyMTQ2NTUzNDhdfQ==
 -->
