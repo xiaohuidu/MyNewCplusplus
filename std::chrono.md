@@ -168,7 +168,7 @@ chrono库定义了三种不同的时钟:
 ```
 这三个时钟类都提供了一个静态成员函数**now()**用于获取当前时间，该函数的返回值是一个time_point类型。
 
-std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。就类似Windows系统右下角那个时钟，是系统时间。明显那个时钟是可以乱设置的。明明是早上10点，却可以设置成下午3点。
+**std::chrono::system_clock** 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。就类似Windows系统右下角那个时钟，是系统时间。明显那个时钟是可以乱设置的。明明是早上10点，却可以设置成下午3点。
 
 每一个clock类中都有确定的time_point, duration, Rep, Period类型。
 
@@ -254,7 +254,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDMzODU4MzgsMTAzOTM5ODU1NCwxND
+eyJoaXN0b3J5IjpbLTE1MjM3ODQ2ODYsMTAzOTM5ODU1NCwxND
 Y5MzAwNzI1LC00MTA4MjgxNCwtMTE2NzU5ODQ5NCwxMzc5MjU0
 NDMwLDEyMTQ2NTUzNDhdfQ==
 -->
