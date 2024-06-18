@@ -113,7 +113,7 @@ template <class Clock, class Duration = typename Clock::duration>  class time_po
 11  
 12   time_point <system_clock,duration<int>> tp_seconds (duration<int>(1)); 
 13  
-14 system_clock::time_point tp (tp_seconds); 
+14   system_clock::time_point tp (tp_seconds); 
 15  
 16   std::cout << "1 second since system_clock epoch = "; 
 17   std::cout << tp.time_since_epoch().count(); 
@@ -226,6 +226,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk0MTc2MDAyLC0xMTY3NTk4NDk0LDEzNz
+eyJoaXN0b3J5IjpbLTQxMDgyODE0LC0xMTY3NTk4NDk0LDEzNz
 kyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
