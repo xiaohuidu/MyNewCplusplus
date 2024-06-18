@@ -69,9 +69,8 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
 23   return 0; 
 24 } 
 ```
+duration还有一个成员函数count()返回Rep类型的Period数量，看代码： 
 ```cpp
-26 duration还有一个成员函数count()返回Rep类型的Period数量，看代码： 
-27 
 28 // duration::count
 29 #include <iostream>     // std::cout
 30 #include <chrono>       // std::chrono::seconds, std::chrono::milliseconds 
@@ -220,6 +219,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2ODY3MTIxMiwtMTE2NzU5ODQ5NCwxMz
+eyJoaXN0b3J5IjpbLTQzNzEyMzUzMywtMTE2NzU5ODQ5NCwxMz
 c5MjU0NDMwLDEyMTQ2NTUzNDhdfQ==
 -->
