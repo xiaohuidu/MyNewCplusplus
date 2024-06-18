@@ -203,15 +203,14 @@ from_time_t() 从time_t转换成time_point
 26  
 ```
 
-std::chrono::steady_clock 为了表示稳定的时间间隔，后一次调用now()得到的时间总是比前一次的值大（这句话的意思其实是，如果中途修改了系统时间，也不影响now()的结果），每次tick都保证过了稳定的时间间隔。
+**std::chrono::steady_clock** 为了表示稳定的时间间隔，后一次调用now()得到的时间总是比前一次的值大（这句话的意思其实是，如果中途修改了系统时间，也不影响now()的结果），每次tick都保证过了稳定的时间间隔。
 
 操作有：
 
 now() 获取当前时钟
 
 典型的应用是给算法计时：
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+```cpp
 
  1 // steady_clock example
  2 #include <iostream>
@@ -227,8 +226,7 @@ now() 获取当前时钟
 19   duration<double> time_span = duration_cast<duration<double>>(t2 - t1); 20  
 21   std::cout << "It took me " << time_span.count() << " seconds."; 22   std::cout << std::endl; 23  
 24   return 0; 25 } 26  
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+```
 
 最后一个时钟，std::chrono::high_resolution_clock 顾名思义，这是系统可用的最高精度的时钟。实际上high_resolution_clock只不过是system_clock或者steady_clock的typedef。
 
@@ -236,6 +234,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMTc2NTQyNSwtNDEwODI4MTQsLTExNj
-c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbNjI1ODQyMDQ2LC00MTA4MjgxNCwtMTE2Nz
+U5ODQ5NCwxMzc5MjU0NDMwLDEyMTQ2NTUzNDhdfQ==
 -->
