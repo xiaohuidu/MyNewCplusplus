@@ -150,8 +150,7 @@ time_point有一个函数**time_from_eproch()**用来获得1970年1月1日到tim
 12   time_point<system_clock,days_type> today = time_point_cast<days_type>(system_clock::now()); 13  
 14   std::cout << today.time_since_epoch().count() << " days since epoch" << std::endl; 15  
 16   return 0; 17 }
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+```
 
 3.Clocks
 
@@ -223,6 +222,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNDg3OTUwNywtNDEwODI4MTQsLTExNj
-c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbMjUxNDc2NzUsLTQxMDgyODE0LC0xMTY3NT
+k4NDk0LDEzNzkyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
