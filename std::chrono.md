@@ -160,6 +160,10 @@ time_point有一个函数**time_from_eproch()**用来获得1970年1月1日到tim
 ```
 
 **3.Clocks**
+chrono库定义了三种不同的时钟:
+```cpp
+1 std::chrono::system_clock:  依据系统的当前时间 (不稳定) 2 std::chrono::steady_clock:  以统一的速率运行(不能被调整) 3  std::chrono::high_resolution_clock: 提供最高精度的计时周期(可能是steady_clock或者system_clock的typedef)
+```
 
 std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。
 
@@ -247,6 +251,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNj
-c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbNzA1NzkyNTcsMTQ2OTMwMDcyNSwtNDEwOD
+I4MTQsLTExNjc1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4
+XX0=
 -->
