@@ -8,9 +8,10 @@ discarded-value 表达式包括:
 
 数组到指针的转换， 函数到指针的转换 不能引用在 discarded-value 表达式计算出来的值。
 
-### 
+###  [[nodiscard]]
+如果一个声明了 nodiscard的函数， 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MTQxNzY2MCwxODM3NDg0NzYwLDI5Nj
+eyJoaXN0b3J5IjpbMTE2NDgzMTUyMywxODM3NDg0NzYwLDI5Nj
 AyMTYzMF19
 -->
