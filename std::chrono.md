@@ -2,12 +2,12 @@ C++11提供了日期时间相关的库chrono，通过chrono库可以很方便的
 
 要使用chrono库，需要#include<chrono>，其所有实现均在std::chrono namespace下。注意标准库里面的每个命名空间代表了一个独立的概念。所以下文中的概念均以命名空间的名字表示！ chrono是一个**模版库**，使用简单，功能强大，只需要理解**三个概念：duration、time_point、clock**
 
- 1. Durations
+ **1. Durations**
 
 std::chrono::duration 表示一段时间，比如两个小时，12.88秒，半个时辰，一炷香的时间等等，只要能换算成秒即可。
-
-1 template <class Rep, class Period = ratio<1> > class duration;
-
+```cpp
+template <class Rep, class Period = ratio<1> > class duration;
+```
 其中
 
 Rep表示一种数值类型，用来表示Period的数量，比如int float double
@@ -201,5 +201,5 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI0NDc5MzY1XX0=
+eyJoaXN0b3J5IjpbLTEwMDk2MDc0MjVdfQ==
 -->
