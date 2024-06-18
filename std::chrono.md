@@ -100,9 +100,7 @@ std::chrono::time_point 表示一个具体时间，如上个世纪80年代、你
 template <class Clock, class Duration = typename Clock::duration>  class time_point;
 ```
 下面是构造使用time_point的例子：
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
-
+```cpp
  1 // time_point constructors
  2 #include <iostream>
  3 #include <chrono>
@@ -118,8 +116,7 @@ template <class Clock, class Duration = typename Clock::duration>  class time_po
 20   // display time_point:
 21   std::time_t tt = system_clock::to_time_t(tp); 22   std::cout << "time_point tp is: " << ctime(&tt); 23  
 24   return 0; 25 } 26  
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+```
 
 time_point有一个函数time_from_eproch()用来获得1970年1月1日到time_point时间经过的duration。
 
@@ -219,6 +216,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzcyNTE5MzMxLC0xMTY3NTk4NDk0LDEzNz
+eyJoaXN0b3J5IjpbNjIwNjEyMzM4LC0xMTY3NTk4NDk0LDEzNz
 kyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
