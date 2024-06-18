@@ -6,9 +6,11 @@ discarded-value 表达式包括:
  - 内置的逗号(,) 操作符的做边操作数 a, b 
  - 被转化成 void 类型的 cast 表达式的操作数
 
-数组到指针的转换， 函数到指针的转换
+数组到指针的转换， 函数到指针的转换 不能引用在 discarded-value 表达式计算出来的值。
+
+### 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NTg1ODg3MSwxODM3NDg0NzYwLDI5Nj
+eyJoaXN0b3J5IjpbMTE4MTQxNzY2MCwxODM3NDg0NzYwLDI5Nj
 AyMTYzMF19
 -->
