@@ -104,6 +104,12 @@ duration还有一个成员函数count()返回Rep类型的Period数量，看代�
 std::chrono::time_point 表示一个具体时间，如上个世纪80年代、你的生日、今天下午、火车出发时间等，只要它能用计算机时钟表示。鉴于我们使用时间的情景不同，这个time point具体到什么程度，由选用的单位决定。**一个time point必须有一个clock计时**。参见clock的说明。
 ```cpp
 template <class Clock, class Duration = typename Clock::duration>  class time_point;
+
+std::time_point<high_resolution_clock> high_resolution_clock::now();
+设置一个高精度时间点
+
+std::chrono::time_point<std::chrono::system_clock> now=std::chrono::system_clock::now();
+
 ```
 下面是构造使用time_point的例子：
 ```cpp
@@ -286,7 +292,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDg3NjQ2OTgsLTc5NjcwOTUyOSwxMD
-M5Mzk4NTU0LDE0NjkzMDA3MjUsLTQxMDgyODE0LC0xMTY3NTk4
-NDk0LDEzNzkyNTQ0MzAsMTIxNDY1NTM0OF19
+eyJoaXN0b3J5IjpbLTg5MzQxNTQwMywtNzk2NzA5NTI5LDEwMz
+kzOTg1NTQsMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNjc1OTg0
+OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
