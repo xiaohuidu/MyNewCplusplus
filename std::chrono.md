@@ -140,19 +140,26 @@ time_point有一个函数**time_from_eproch()**用来获得1970年1月1日到tim
 比如计算
 
 ```cpp
- 1 / time_point_cast 2 #include <iostream>
+ 1 / time_point_cast 
+ 2 #include <iostream>
  3 #include <ratio>
  4 #include <chrono>
  5  
- 6 int main () 7 {
- 8   using namespace std::chrono; 9  
-10   typedef duration<int,std::ratio<60*60*24>> days_type; 11  
-12   time_point<system_clock,days_type> today = time_point_cast<days_type>(system_clock::now()); 13  
-14   std::cout << today.time_since_epoch().count() << " days since epoch" << std::endl; 15  
-16   return 0; 17 }
+ 6 int main () 
+ 7 {
+ 8   using namespace std::chrono; 
+ 9  
+10   typedef duration<int,std::ratio<60*60*24>> days_type; 
+11  
+12   time_point<system_clock,days_type> today = time_point_cast<days_type>(system_clock::now()); 
+13  
+14   std::cout << today.time_since_epoch().count() << " days since epoch" << std::endl; 
+15  
+16   return 0; 
+17 }
 ```
 
-3.Clocks
+**3.Clocks**
 
 std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。
 
@@ -222,6 +229,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUxNDc2NzUsLTQxMDgyODE0LC0xMTY3NT
-k4NDk0LDEzNzkyNTQ0MzAsMTIxNDY1NTM0OF19
+eyJoaXN0b3J5IjpbMTk1MzE4ODI5MywtNDEwODI4MTQsLTExNj
+c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
