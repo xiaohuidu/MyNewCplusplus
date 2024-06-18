@@ -15,7 +15,7 @@ Rep表示一种数值类型，用来表示Period的数量，比如int float doub
 Period是ratio类型，用来表示【用秒表示的时间单位】比如second milisecond
 
 常用的duration<Rep,Period>已经定义好了，在std::chrono::duration下：
-
+```cpp
 ratio<3600, 1>  hours
 
 ratio<60, 1>  minutes
@@ -27,7 +27,7 @@ ratio<1, 1000>  microseconds
 ratio<1, 1000000>  microseconds
 
 ratio<1, 1000000000> nanosecons
-
+```
 这里需要说明一下ratio这个类模版的原型：
 
 1 template <intmax_t N, intmax_t D = 1> class ratio;
@@ -201,5 +201,5 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDk2MDc0MjVdfQ==
+eyJoaXN0b3J5IjpbMTIxNDY1NTM0OF19
 -->
