@@ -177,6 +177,7 @@ chrono库定义了三种不同的时钟:
 now() 当前时间time_point
 
 to_time_t() time_point转换成time_t秒
+system_clock除了now()函数外，还提供了to_time_t()静态成员函数。用于将系统时间转换成熟悉的std::time_t类型，得到了time_t类型的值，在使用ctime()函数将时间转换成字符串格式，就可以很方便地打印当前时间了。
 
 from_time_t() 从time_t转换成time_point
 ```
@@ -254,7 +255,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjM3ODQ2ODYsMTAzOTM5ODU1NCwxND
-Y5MzAwNzI1LC00MTA4MjgxNCwtMTE2NzU5ODQ5NCwxMzc5MjU0
-NDMwLDEyMTQ2NTUzNDhdfQ==
+eyJoaXN0b3J5IjpbMTM0MTg3ODA4MiwxMDM5Mzk4NTU0LDE0Nj
+kzMDA3MjUsLTQxMDgyODE0LC0xMTY3NTk4NDk0LDEzNzkyNTQ0
+MzAsMTIxNDY1NTM0OF19
 -->
