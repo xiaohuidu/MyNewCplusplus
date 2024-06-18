@@ -1,6 +1,6 @@
 C++11提供了日期时间相关的库chrono，通过chrono库可以很方便的处理日期和时间, chrono是一个time library, 源于boost，现在已经是C++标准。
 
-要使用chrono库，需要#include<chrono>，其所有实现均在std::chrono namespace下。注意标准库里面的每个命名空间代表了一个独立的概念。所以下文中的概念均以命名空间的名字表示！ chrono是一个模版库，使用简单，功能强大，只需要理解三个概念：duration、time_point、clock
+要使用chrono库，需要#include<chrono>，其所有实现均在std::chrono namespace下。注意标准库里面的每个命名空间代表了一个独立的概念。所以下文中的概念均以命名空间的名字表示！ chrono是一个**模版库**，使用简单，功能强大，只需要理解三个概念：duration、time_point、clock
 
 1.Durations
 
@@ -201,5 +201,5 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMzMyMjUzOV19
+eyJoaXN0b3J5IjpbNTc0OTA3NDM1XX0=
 -->
