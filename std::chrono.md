@@ -51,22 +51,34 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
  4 #include <chrono>
  5  
  6 int main () 7 {
- 8   typedef std::chrono::duration<int> seconds_type; 9   typedef std::chrono::duration<int,std::milli> milliseconds_type; 10   typedef std::chrono::duration<int,std::ratio<60*60>> hours_type; 11  
+ 8   typedef std::chrono::duration<int> seconds_type;
+ 9   typedef std::chrono::duration<int,std::milli> milliseconds_type; 
+ 10   typedef std::chrono::duration<int,std::ratio<60*60>> hours_type; 
+ 11  
 12   hours_type h_oneday (24);                  // 24h
 13   seconds_type s_oneday (60*60*24);          // 86400s
 14   milliseconds_type ms_oneday (s_oneday);    // 86400000ms
 15  
-16   seconds_type s_onehour (60*60);            // 3600s 17 //hours_type h_onehour (s_onehour); // NOT VALID (type truncates), use:
-18   hours_type h_onehour (std::chrono::duration_cast<hours_type>(s_onehour)); 19   milliseconds_type ms_onehour (s_onehour);  // 3600000ms (ok, no type truncation)
+16   seconds_type s_onehour (60*60);            // 3600s 
+17 //hours_type h_onehour (s_onehour); // NOT VALID (type truncates), use:
+18   hours_type h_onehour (std::chrono::duration_cast<hours_type>(s_onehour)); 
+19   milliseconds_type ms_onehour (s_onehour);  // 3600000ms (ok, no type truncation)
 20  
-21   std::cout << ms_onehour.count() << "ms in 1h" << std::endl; 22  
-23   return 0; 24 } 25  
-26 duration还有一个成员函数count()返回Rep类型的Period数量，看代码： 27 
+21   std::cout << ms_onehour.count() << "ms in 1h" << std::endl; 
+22  
+23   return 0; 
+24 } 
+25  
+26 duration还有一个成员函数count()返回Rep类型的Period数量，看代码： 
+27 
 28 // duration::count
 29 #include <iostream>     // std::cout
-30 #include <chrono>       // std::chrono::seconds, std::chrono::milliseconds 31                         // std::chrono::duration_cast
+30 #include <chrono>       // std::chrono::seconds, std::chrono::milliseconds 
+31                         // std::chrono::duration_cast
 32  
-33 int main () 34 { 35   using namespace std::chrono; 36   // std::chrono::milliseconds is an instatiation of std::chrono::duration:
+33 int main () 
+34 { 
+35   using namespace std::chrono; 36   // std::chrono::milliseconds is an instatiation of std::chrono::duration:
 37   milliseconds foo (1000); // 1 second
 38   foo*=60; 39  
 40   std::cout << "duration (in periods): "; 41   std::cout << foo.count() << " milliseconds.\n"; 42  
@@ -199,6 +211,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyOTY5MDIxOCwxMzc5MjU0NDMwLDEyMT
+eyJoaXN0b3J5IjpbMTkwNTY5NTQzMCwxMzc5MjU0NDMwLDEyMT
 Q2NTUzNDhdfQ==
 -->
