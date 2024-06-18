@@ -139,10 +139,7 @@ time_point有一个函数**time_from_eproch()**用来获得1970年1月1日到tim
 ```
 比如计算
 
-/
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
-
+```cpp
  1 / time_point_cast 2 #include <iostream>
  3 #include <ratio>
  4 #include <chrono>
@@ -226,6 +223,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MjMxNjc4NSwtNDEwODI4MTQsLTExNj
+eyJoaXN0b3J5IjpbLTgyNDg3OTUwNywtNDEwODI4MTQsLTExNj
 c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
