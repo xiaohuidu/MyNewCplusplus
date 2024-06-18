@@ -29,9 +29,9 @@ ratio<1, 1000000>  microseconds
 ratio<1, 1000000000> nanosecons
 ```
 这里需要说明一下ratio这个类模版的原型：
-
-1 template <intmax_t N, intmax_t D = 1> class ratio;
-
+```cpp
+template <intmax_t N, intmax_t D = 1> class ratio;
+```
 N代表分子，D代表分母，所以ratio表示一个分数值。
 
 注意，我们自己可以定义Period，比如ratio<1, -2>表示单位时间是-0.5秒。
@@ -201,5 +201,5 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNDY1NTM0OF19
+eyJoaXN0b3J5IjpbMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
