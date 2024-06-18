@@ -37,10 +37,10 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
 注意，我们自己可以定义Period，比如ratio<1, -2>表示单位时间是-0.5秒。
 
 由于各种duration表示不同，chrono库提供了duration_cast类型转换函数。
-
+```cpp
 1 template <class ToDuration, class Rep, class Period>
 2   constexpr ToDuration duration_cast (const duration<Rep,Period>& dtn);
-
+```
 典型的用法是表示一段时间：
 
 ![复制代码](https://assets.cnblogs.com/images/copycode.gif)
@@ -201,5 +201,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbMjEwNjI4Njk2NSwxMzc5MjU0NDMwLDEyMT
+Q2NTUzNDhdfQ==
 -->
