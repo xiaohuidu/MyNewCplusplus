@@ -78,12 +78,20 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
 32  
 33 int main () 
 34 { 
-35   using namespace std::chrono; 36   // std::chrono::milliseconds is an instatiation of std::chrono::duration:
+35   using namespace std::chrono; 
+36   // std::chrono::milliseconds is an instatiation of std::chrono::duration:
 37   milliseconds foo (1000); // 1 second
-38   foo*=60; 39  
-40   std::cout << "duration (in periods): "; 41   std::cout << foo.count() << " milliseconds.\n"; 42  
-43   std::cout << "duration (in seconds): "; 44   std::cout << foo.count() * milliseconds::period::num / milliseconds::period::den; 45   std::cout << " seconds.\n"; 46  
-47   return 0; 48 }
+38   foo*=60; 
+39  
+40   std::cout << "duration (in periods): "; 
+41   std::cout << foo.count() << " milliseconds.\n"; 
+42  
+43   std::cout << "duration (in seconds): "; 
+44   std::cout << foo.count() * milliseconds::period::num / milliseconds::period::den; 
+45   std::cout << " seconds.\n"; 
+46  
+47   return 0; 
+48 }
 ```
 **_2.Time points_**
 
@@ -211,6 +219,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNTY5NTQzMCwxMzc5MjU0NDMwLDEyMT
-Q2NTUzNDhdfQ==
+eyJoaXN0b3J5IjpbLTExNjc1OTg0OTQsMTM3OTI1NDQzMCwxMj
+E0NjU1MzQ4XX0=
 -->
