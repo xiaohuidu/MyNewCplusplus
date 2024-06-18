@@ -243,9 +243,10 @@ now() 获取当前时钟
 最后一个时钟，**std::chrono::high_resolution_clock** 顾名思义，这是系统可用的最高精度的时钟。实际上high_resolution_clock只不过是system_clock或者steady_clock的typedef。
 
 操作有：
-
+```cpp
 now() 获取当前时钟。
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMDU3NDU0NiwtNDEwODI4MTQsLTExNj
+eyJoaXN0b3J5IjpbMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNj
 c1OTg0OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
