@@ -9,9 +9,10 @@ discarded-value 表达式包括:
 数组到指针的转换， 函数到指针的转换 不能引用在 discarded-value 表达式计算出来的值。
 
 ###  [[nodiscard]]
-如果一个声明了 nodiscard的函数， 或者一个返回 enumeration的函数， 或者一个声明了
+在 C++ 中，`[[nodiscard]]` 属性用于指示函数的返回值不应被忽略。
+当调用带有 `[[nodiscard]]` 标记的函数并且其返回值被丢弃而没有使用时，编译器会发出警告。这有助于防止潜在的错误，例如返回值被意外忽略。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjkyMTA1MDcsMTgzNzQ4NDc2MCwyOT
-YwMjE2MzBdfQ==
+eyJoaXN0b3J5IjpbMjkyMjQ4MjgyLDE4Mzc0ODQ3NjAsMjk2MD
+IxNjMwXX0=
 -->
