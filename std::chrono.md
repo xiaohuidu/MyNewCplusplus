@@ -167,7 +167,7 @@ chrono库定义了三种不同的时钟:
 3  std::chrono::high_resolution_clock: 提供最高精度的计时周期(可能是steady_clock或者system_clock的typedef)
 ```
 
-std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。
+std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。就类似Windows系统右下角那个时钟，是系统时间。明显那个时钟是可以乱设置的。明明是早上10点，却可以设置成下午3点。
 
 每一个clock类中都有确定的time_point, duration, Rep, Period类型。
 
@@ -209,7 +209,7 @@ from_time_t() 从time_t转换成time_point
 26  
 ```
 
-**std::chrono::steady_clock** 为了表示稳定的时间间隔，后一次调用now()得到的时间总是比前一次的值大（这句话的意思其实是，如果中途修改了系统时间，也不影响now()的结果），每次tick都保证过了稳定的时间间隔。
+**std::chrono::steady_clock** 为了表示稳定的时间间隔，后一次调用now()得到的时间总是比前一次的值大（这句话的意思其实是，如果中途修改了系统时间，也不影响now()的结果），每次tick都保证过了稳定的时间间隔。steady_clock则针对system_clock可以随意设置这个缺陷而提出来的，他表示时钟是不能设置的。
 
 操作有：
 
@@ -253,7 +253,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NjcxMzgzNSwxNDY5MzAwNzI1LC00MT
+eyJoaXN0b3J5IjpbMTAzOTM5ODU1NCwxNDY5MzAwNzI1LC00MT
 A4MjgxNCwtMTE2NzU5ODQ5NCwxMzc5MjU0NDMwLDEyMTQ2NTUz
 NDhdfQ==
 -->
