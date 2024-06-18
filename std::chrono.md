@@ -39,11 +39,11 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
 由于各种duration表示不同，chrono库提供了duration_cast类型转换函数。
 ```cpp
 1 template <class ToDuration, class Rep, class Period>
-2   constexpr ToDuration duration_cast (const duration<Rep,Period>& dtn);
+2 constexpr ToDuration duration_cast (const duration<Rep,Period>& dtn);
 ```
 典型的用法是表示一段时间：
 
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
+```cpp
 
  1 // duration constructor
  2 #include <iostream>
@@ -72,9 +72,7 @@ N代表分子，D代表分母，所以ratio表示一个分数值。
 40   std::cout << "duration (in periods): "; 41   std::cout << foo.count() << " milliseconds.\n"; 42  
 43   std::cout << "duration (in seconds): "; 44   std::cout << foo.count() * milliseconds::period::num / milliseconds::period::den; 45   std::cout << " seconds.\n"; 46  
 47   return 0; 48 }
-
-![复制代码](https://assets.cnblogs.com/images/copycode.gif)
-
+```
 **_2.Time points_**
 
 std::chrono::time_point 表示一个具体时间，如上个世纪80年代、你的生日、今天下午、火车出发时间等，只要它能用计算机时钟表示。鉴于我们使用时间的情景不同，这个time point具体到什么程度，由选用的单位决定。一个time point必须有一个clock计时。参见clock的说明。
@@ -201,6 +199,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNjI4Njk2NSwxMzc5MjU0NDMwLDEyMT
+eyJoaXN0b3J5IjpbMjEyOTY5MDIxOCwxMzc5MjU0NDMwLDEyMT
 Q2NTUzNDhdfQ==
 -->
