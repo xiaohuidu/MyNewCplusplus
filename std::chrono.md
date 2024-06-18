@@ -7,8 +7,11 @@ C++11提供了日期时间相关的库chrono，通过chrono库可以很方便的
 std::chrono::duration 表示一段时间，比如两个小时，12.88秒，半个时辰，一炷香的时间等等，只要能换算成秒即可。
 ```cpp
 template <class Rep, class Period = ratio<1> > class duration;
+
+std::chrono::duration<int,ratio<60,1>> 
+表示持续的一段时间,这段时间的单位是由ratio<60,1>决定的,int表示这段时间的值的类型,函数返回的类型还是一个时间段duration
 ```
-std::chrono::duration<int,ratio<60,1>> 表示持续的一段时间,这段时间的单位是由ratio<60,1>决定的,int表示这段时间的值的类型,函数返回的类型还是一个时间段duration
+
 其中
 
 Rep表示一种数值类型，用来表示Period的数量，比如int float double
@@ -281,7 +284,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MTMyODY3OCwtNzk2NzA5NTI5LDEwMz
+eyJoaXN0b3J5IjpbMjA5NzAwNDkwMiwtNzk2NzA5NTI5LDEwMz
 kzOTg1NTQsMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNjc1OTg0
 OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
 -->
