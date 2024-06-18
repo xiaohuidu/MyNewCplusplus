@@ -107,15 +107,25 @@ template <class Clock, class Duration = typename Clock::duration>  class time_po
  4 #include <ctime>
  5  
  6 int main () 7 {
- 8   using namespace std::chrono; 9  
+ 8   using namespace std::chrono; 
+ 9  
 10   system_clock::time_point tp_epoch;    // epoch value
 11  
-12   time_point <system_clock,duration<int>> tp_seconds (duration<int>(1)); 13  
-14 system_clock::time_point tp (tp_seconds); 15  
-16   std::cout << "1 second since system_clock epoch = "; 17   std::cout << tp.time_since_epoch().count(); 18   std::cout << " system_clock periods." << std::endl; 19  
+12   time_point <system_clock,duration<int>> tp_seconds (duration<int>(1)); 
+13  
+14 system_clock::time_point tp (tp_seconds); 
+15  
+16   std::cout << "1 second since system_clock epoch = "; 
+17   std::cout << tp.time_since_epoch().count(); 
+18   std::cout << " system_clock periods." << std::endl; 
+19  
 20   // display time_point:
-21   std::time_t tt = system_clock::to_time_t(tp); 22   std::cout << "time_point tp is: " << ctime(&tt); 23  
-24   return 0; 25 } 26  
+21   std::time_t tt = system_clock::to_time_t(tp); 
+22   std::cout << "time_point tp is: " << ctime(&tt); 
+23  
+24   return 0; 
+25 } 
+26  
 ```
 
 time_point有一个函数time_from_eproch()用来获得1970年1月1日到time_point时间经过的duration。
@@ -216,6 +226,6 @@ now() 获取当前时钟
 
 now() 获取当前时钟。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIwNjEyMzM4LC0xMTY3NTk4NDk0LDEzNz
+eyJoaXN0b3J5IjpbNDk0MTc2MDAyLC0xMTY3NTk4NDk0LDEzNz
 kyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
