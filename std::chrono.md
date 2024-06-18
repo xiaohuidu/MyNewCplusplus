@@ -9,7 +9,9 @@ std::chrono::duration 表示一段时间，比如两个小时，12.88秒，半�
 template <class Rep, class Period = ratio<1> > class duration;
 
 std::chrono::duration<int,ratio<60,1>> 
-表示持续的一段时间,这段时间的单位是由ratio<60,1>决定的,int表示这段时间的值的类型,函数返回的类型还是一个时间段duration
+表示持续的一段时间,这段时间的单位是由ratio<60,1>决定的,
+int表示这段时间的值的类型,
+函数返回的类型还是一个时间段duration
 ```
 
 其中
@@ -284,7 +286,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5NzAwNDkwMiwtNzk2NzA5NTI5LDEwMz
-kzOTg1NTQsMTQ2OTMwMDcyNSwtNDEwODI4MTQsLTExNjc1OTg0
-OTQsMTM3OTI1NDQzMCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbLTE4NDg3NjQ2OTgsLTc5NjcwOTUyOSwxMD
+M5Mzk4NTU0LDE0NjkzMDA3MjUsLTQxMDgyODE0LC0xMTY3NTk4
+NDk0LDEzNzkyNTQ0MzAsMTIxNDY1NTM0OF19
 -->
