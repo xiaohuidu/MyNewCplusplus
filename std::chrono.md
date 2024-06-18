@@ -184,6 +184,29 @@ system_clock除了now()函数外，还提供了to_time_t()静态成员函数。
 from_time_t() 从time_t转换成time_point
 ```
 
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+#include<ctime>//将时间格式的数据转换成字符串
+#include<chrono>
+using namespace std::chrono;
+using namespace std;
+int main()
+{
+    //获取系统的当前时间
+    auto t = system_clock::now();
+    //将获取的时间转换成time_t类型
+    auto tNow = system_clock::to_time_t(t);
+
+    //ctime()函数将time_t类型的时间转化成字符串格式,这个字符串自带换行符
+    string str_time = std::ctime(&tNow);
+
+    cout<<str_time;
+
+    return 0;
+}
+```
 典型的应用是计算时间日期：
 ```cpp
  1 // system_clock example
@@ -257,7 +280,7 @@ now() 获取当前时钟
 now() 获取当前时钟。
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI0NjkxODQyLDEwMzkzOTg1NTQsMTQ2OT
-MwMDcyNSwtNDEwODI4MTQsLTExNjc1OTg0OTQsMTM3OTI1NDQz
-MCwxMjE0NjU1MzQ4XX0=
+eyJoaXN0b3J5IjpbLTc5NjcwOTUyOSwxMDM5Mzk4NTU0LDE0Nj
+kzMDA3MjUsLTQxMDgyODE0LC0xMTY3NTk4NDk0LDEzNzkyNTQ0
+MzAsMTIxNDY1NTM0OF19
 -->
